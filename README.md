@@ -1,4 +1,4 @@
-# Oraneg Portfólio - SQUAD 5
+# Orange Portfólio - SQUAD 5
 
 Comandos para rodar ao clonar o repositório:
 

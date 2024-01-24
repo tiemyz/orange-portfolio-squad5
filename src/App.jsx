@@ -1,10 +1,11 @@
 import GlobalStyles from "./GlobalStyles";
+import { Buttons } from "./components/Buttons";
 
 function App() {
   return (
     <>
       <GlobalStyles/>
-      Hello
+      <Buttons/>
     </>
   )
 }

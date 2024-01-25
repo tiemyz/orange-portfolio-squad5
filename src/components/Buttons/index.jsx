@@ -1,8 +1,10 @@
-import './styles.css'
-
+import { ButtonGrayDefault} from './ButtonStyles'
 const Buttons = () => {
   return (
-    <button>Adicionar Projeto</button>
+    <div>
+      <ButtonGrayDefault>Adicionar Progeto</ButtonGrayDefault>
+      <div></div>
+    </div>
   )
 }
 

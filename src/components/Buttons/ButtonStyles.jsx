@@ -23,3 +23,20 @@ export const ButtonDefault = styled.button`
     
     }
 `;
+
+export const ButtonGrayDefault = styled.button`
+    height: 2.6rem;
+    padding: .5rem 1.37rem;
+    border: none;
+    border-radius: 0.25rem;
+    background: rgba(0, 0, 0, 0.12);
+    align-items: center;
+
+    /* Fonts */
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 0.93rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    letter-spacing: 0.028rem;
+    text-transform: uppercase;
+`

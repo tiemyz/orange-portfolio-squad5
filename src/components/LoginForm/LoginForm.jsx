@@ -67,6 +67,21 @@ function LoginForm() {
   return (
     <div>
       <h1>Formulário de Login</h1>
+      <form onSubmit={handleSignIn}>
+        <label>Email:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+  
+        <label>Senha:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+  
+        <button type="submit" disabled={loading}>
+          {loading ? "Carregando..." : "Entrar"}
+        </button>
+  
+        {warning && <p style={{ color: "red" }}>{warning}</p>}
+  
+        <Link to="/cadastro">Ir para a página de cadastro</Link>
+      </form>
     </div>
   );
 }

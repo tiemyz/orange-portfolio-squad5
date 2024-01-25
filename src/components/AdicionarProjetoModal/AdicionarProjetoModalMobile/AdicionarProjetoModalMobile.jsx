@@ -1,10 +1,7 @@
-import { StyledBodyText2} from "../SecaoMeusProjetos/SecaoMeusProjetosStyle";
-import { BotaoProjetoModal, CampoInput, DescricaoInput, ModalContainer, ModalP, SubtituloAdicionarProjeto } from "./AdicionarProjetoModalStyle";
+import { StyledBodyText2} from "../../SecaoMeusProjetos/SecaoMeusProjetosStyle";
+import { BotaoProjetoModal, CampoInput, DescricaoInput, ModalContainer, ModalP, SubtituloAdicionarProjeto } from "./AdicionarProjetoModalStyleMobile";
 
-export default function AdicionarProjetoModal () {
-    const handleClick = () => {
-        window.alert("Tudo ok!");
-      };
+export default function AdicionarProjetoModalMobile () {
 
     return (
         <ModalContainer>

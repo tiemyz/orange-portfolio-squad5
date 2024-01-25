@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
-export const ModalDiv = styled.div`
+
+export const ModalBackgroung = styled.div`
+    display: inline-flex;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+`;
+
+
+export const ModalContent = styled.div`
     display: inline-flex;
     flex-direction: column;
     row-gap: 24px;

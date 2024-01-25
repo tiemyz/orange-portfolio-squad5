@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
-//Estilo da Seção Projetos
+//Estilo da Seção Projetos - Mobile
 export const SecaoProjetos = styled.section`
-    margin: 40px 0 16px 0;
+    margin: 40px 0 27px 0;
+    width: 312px;
+    height: 441px;
     display: flex;
     flex-direction: column;
+
+//Desktop
+    @media (min-width: 768px) {
+        margin: 56px 0 79px 32px;
+        width: 589px;
+        height: 323px;
+    }
 `;
 
-//Estilo do subtítulo "Meus Projetos"
+//Estilo do subtítulo "Meus Projetos" - Mobile and Desktop
 export const SubtituloProjetos = styled.h6 `
     margin: 0 0 16px 24px;
     color: var(--Neutral-130);
@@ -16,13 +25,15 @@ export const SubtituloProjetos = styled.h6 `
     opacity: 0.6;
 `
 
-//Estilo do campo de busca
+//Estilo do campo de busca - Mobile
 export const CampoBuscarTags = styled.input`
     align-self: stretch;
     margin: 0 24px 24px 24px;
     padding: 10px 12px;
-    border: 1px solid var(--Neutral-110);
-    width: 79vw;
+    border: 1px solid var(--Neutral-100);
+    border-radius: 4px;
+    width: 90%;
+    height: 24px;
     &:hover {
         border: 1px solid var(--Neutral-110);
     }
@@ -30,19 +41,30 @@ export const CampoBuscarTags = styled.input`
     &:focus {
         border: 2px solid var(--Info-100);
     }
+
+//Desktop
+    @media (min-width: 768px) {
+        width: 513px;
+    }
 `;
 
-//Estilo botão projeto
+//Estilo botão projeto - Mobile
 export const BotaoProjeto = styled.button`
     margin: 0 24px;
     padding: 68px 21px;
     background-color: var(--Neutral-70);
     border-radius: 4px;
-    min-width: 312px;
-    min-height: 258px;
+    width: 100%;
+    height: 70%;
     border: none;
     cursor: pointer;
     align-content: center;
+
+//Desktop
+    @media (min-width: 768px) {
+    width: 53%;
+    height: 70%;
+    }
 `;
 
 //Estilo do p 1 do botão

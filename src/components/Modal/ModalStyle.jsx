@@ -10,6 +10,9 @@ export const ModalDiv = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media (width >= 1024px ) {
+        width: 351px;
+    }
 `;
 
 export const ModalH5 = styled.h5`

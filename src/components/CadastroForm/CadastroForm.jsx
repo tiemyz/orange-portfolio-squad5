@@ -57,8 +57,27 @@ function CadastroForm() {
   };
 
   return (
-    <h1>Formulário de cadastro</h1>
+    <form onSubmit={handleSignUp}>
+      <h1>Formulário de cadastro</h1>
+      
+      {/* Adicione os campos do formulário */}
+      <label>Email:</label>
+      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+  
+      <label>Senha:</label>
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+  
+      {/* Adicione o botão de envio */}
+      <button type="submit" disabled={loading}>
+        {loading ? "Carregando..." : "Cadastrar"}
+      </button>
+  
+      {/* Adicione mensagens de aviso ou sucesso */}
+      {warning && <p style={{ color: "red" }}>{warning}</p>}
+      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+      
+      {/* Adicione um link para redirecionar para outra página, se necessário */}
+      <Link to="/">Voltar para a página inicial</Link>
+    </form>
   );
 }
-
-export default CadastroForm;

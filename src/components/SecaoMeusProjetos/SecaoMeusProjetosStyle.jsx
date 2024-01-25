@@ -29,11 +29,11 @@ export const SubtituloProjetos = styled.h6 `
 export const CampoBuscarTags = styled.input`
     align-self: stretch;
     margin: 0 24px 24px 24px;
-    padding: 10px 12px;
+    padding: 0 12px;
     border: 1px solid var(--Neutral-100);
     border-radius: 4px;
     width: 90%;
-    height: 24px;
+    height: 52px;
     &:hover {
         border: 1px solid var(--Neutral-110);
     }

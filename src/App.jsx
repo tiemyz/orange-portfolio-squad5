@@ -1,12 +1,12 @@
 import GlobalStyles from "./GlobalStyles";
-import SecaoMeusProjetos from "./components/SecaoMeusProjetos/SecaoMeusProjetos";
+import AdicionarProjetoModal from "./components/AdicionarProjetoModal/AdicionarProjetoModal";
 
 
 function App() {
   return (
     <>
       <GlobalStyles/>
-      <SecaoMeusProjetos/>
+      <AdicionarProjetoModal/>
     </>
   )
 }

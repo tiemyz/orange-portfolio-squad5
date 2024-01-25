@@ -19,7 +19,7 @@ export default function SecaoMeusProjetos () {
                         <BotaoProjeto>
                             <img
                                 id="icon-img"
-                                src="../../../assets/collections.png"
+                                src="../../../assets/secao-projetos/collections.png"
                                 alt="Icon imagem"
                             />
                             <StyledBodyText1>Adicione seu primeiro projeto</StyledBodyText1>

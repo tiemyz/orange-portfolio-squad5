@@ -10,3 +10,11 @@ export const ModalDiv = styled.div`
 
 `;
 
+export const ModalH5 = styled.h5`
+    color: #515255;
+    font-style: normal;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+`;

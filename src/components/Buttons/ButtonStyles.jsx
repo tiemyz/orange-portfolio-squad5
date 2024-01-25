@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ButtonDefault = styled.button`
     cursor: pointer;
+    width: 517px;
     padding: 8px 22px;
     border: none;
     border-radius: 4px;
@@ -21,15 +22,22 @@ export const ButtonDefault = styled.button`
     &:hover {
         background: #CC4400;
     }
+
+    @media (max-width: 768px) {
+        width: 312px;
+
+    }
   
 `;
+
+
+export const ButtonOrangeSmall = styled(ButtonDefault)`
+    width: 100px;
+`
 
 export const ButtonOrangeMedium = styled(ButtonDefault)`
     width: 254px;
 `
-export const ButtonOrangeMediumLarge = styled(ButtonDefault)`
-    width: 312px;
-`
 export const ButtonOrangeLarge = styled(ButtonDefault)`
-    width: 517px;
+    width: 312px;
 `

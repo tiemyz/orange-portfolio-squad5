@@ -1,10 +1,10 @@
-import CadastroForm from "../../components/CadastroForm/CadastroForm";
+import CadastroForm from "../../components/Login-Cadastro/CadastroForm/CadastroForm";
 
 function CadastroPage() {
     return (
         <div>
             <CadastroForm/>
-            <h1>Página de cadastro</h1>
+            <h1>Página inicial de cadastro</h1>
         </div>
     );
 }

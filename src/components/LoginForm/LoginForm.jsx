@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import arrowImg from "../../assets/arrow.svg";
+//import arrowImg from "../../assets/arrow.svg";
 
 function LoginForm() {
   const [email, setEmail] = useState("");

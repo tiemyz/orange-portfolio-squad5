@@ -24,3 +24,12 @@ export const ModalPreVisualizacaoContent = styled.div`
 
 `;
 
+export const ModalPreVisualizacaoH5 = styled.h5`
+    color: var(--Neutral-Colors-Neutral-120, #303133);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 100% */
+
+`;

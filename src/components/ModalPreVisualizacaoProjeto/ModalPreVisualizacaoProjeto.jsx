@@ -1,6 +1,6 @@
 import Chip from "../Chip/Chip";
 import { ChipDiv } from "../Chip/ChipStyle";
-import { ModalPreVisualizacaoBackground, ModalPreVisualizacaoContent, ModalPreVisualizacaoH5, Teste } from "./ModalPreVisualizacaoProjetoStyle";
+import { ModalPreVisualizacaoBackground, ModalPreVisualizacaoContent, ModalPreVisualizacaoH5} from "./ModalPreVisualizacaoProjetoStyle";
 
 function ModalPreVisualizacaoProjeto() {
     return (

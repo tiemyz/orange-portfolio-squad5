@@ -8,12 +8,20 @@ export const LoginFormContainer = styled.div`
     flex-direction: column;
     width: 540px;
     row-gap: 32px;
+
+    @media screen and (max-width: 768px) {
+        width: 312px;
+    }
 `
 export const TitleGoogleDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 32px;
+
+    @media screen and (max-width: 768px) {
+        width: 270px;
+    }
 `
 export const Title = styled.h3`
     font-style: normal;
@@ -21,7 +29,13 @@ export const Title = styled.h3`
     font-size: 47.5px; 
     font-weight: 400;
     line-height: 40px; 
+    line-height: 47.5px; 
     color: #222244;
+
+    @media screen and (max-width: 768px) {
+        font-size: 23.8px; 
+        line-height: 23.8px; 
+    }
 `
 export const GoogleButton = styled.button`
     cursor: pointer;
@@ -54,6 +68,11 @@ export const StyledForm = styled.form`
     width: 517px;
     row-gap: 17px;
     flex-shrink: 0;
+
+    @media screen and (max-width: 768px) {
+        width: 312px;
+        padding-bottom: 3px;
+    }
 `
 export const FormTitle = styled.h5`
     align-self: stretch;
@@ -62,10 +81,21 @@ export const FormTitle = styled.h5`
     font-weight: 400;
     line-height: 24px; 
     color: #515255;
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 16px; 
+        letter-spacing: 0.15px;
+        margin-bottom: 16px;
+    }
 `
 export const InputContainer = styled.div`
     position: relative;
     width: 517px; 
+
+    @media screen and (max-width: 768px) {
+        width: 312px; 
+    }
 `
 export const InputLabel = styled.label`
     /* Label */
@@ -115,6 +145,10 @@ export const InputField = styled.input`
     &:hover {
         border-color: #000000;
     }
+
+    @media screen and (max-width: 768px) {
+        width: 91.6%; 
+    }
 `
 export const VisibilityButton = styled.button`
     transform: translateY(-50%);
@@ -145,12 +179,26 @@ export const CadastroFormContainer = styled.div`
     flex-direction: column;
     width: 517px;
     row-gap: 32px;
+
+    @media screen and (max-width: 768px) {
+        width: 312px;
+    }
 `
 export const InputContainerFlex = styled(InputContainer)`
     display: flex;
     column-gap: 16px;
+
+    @media screen and (max-width: 768px) {
+        row-gap: 16px;
+        flex-direction: column;
+    }
 `
 export const InputLabelSobrenome = styled(InputLabel)`
     top: -7px;
     left: 283px;
+
+    @media screen and (max-width: 768px) {
+        top: 60px;
+        left: 16px;
+    }
 `

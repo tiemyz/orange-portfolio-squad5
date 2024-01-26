@@ -1,11 +1,11 @@
 import GlobalStyles from './GlobalStyles'
-// import AppRoutes from "./routes/AppRoutes";
+import { Perfil } from './components/Perfil'
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      {/* <AppRoutes/> */}
+      <Perfil />
     </>
   )
 }

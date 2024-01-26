@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+/* ------------ ESTILOS: FORM LOGIN ------------ */
 export const LoginFormContainer = styled.div`
     display: flex;
     align-items: center;
@@ -44,15 +45,6 @@ export const GoogleButtonText = styled.span`
     font-size: 14px;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.54);
-`
-export const FormContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 517px; 
-    gap: 18px;
-    flex-shrink: 0;
 `
 export const StyledForm = styled.form`
     display: flex;
@@ -145,4 +137,20 @@ export const LinkCadastro = styled(Link)`
     line-height: 16px; 
     letter-spacing: 0.15px;
     color: #818388;
+`
+/* ------------ ESTILOS: FORM CADASTRO ------------ */
+export const CadastroFormContainer = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 517px;
+    row-gap: 32px;
+`
+export const InputContainerFlex = styled(InputContainer)`
+    display: flex;
+    column-gap: 16px;
+`
+export const InputLabelSobrenome = styled(InputLabel)`
+    top: -7px;
+    left: 283px;
 `

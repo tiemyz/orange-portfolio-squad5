@@ -81,3 +81,5 @@ function CadastroForm() {
     </form>
   );
 }
+
+export default CadastroForm;

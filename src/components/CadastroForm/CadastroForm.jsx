@@ -73,8 +73,9 @@ function CadastroForm() {
       </button>
   
       {/* Adicione mensagens de aviso ou sucesso */}
-      {warning && <p style={{ color: "red" }}>{warning}</p>}
-      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+      {loading && <p>Carregando...</p>}
+      {!loading && warning && <p style={{ color: "red" }}>{warning}</p>}
+      {!loading && successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
       
       {/* Adicione um link para redirecionar para outra página, se necessário */}
       <Link to="/">Voltar para a página inicial</Link>

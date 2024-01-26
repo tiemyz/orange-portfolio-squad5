@@ -1,14 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../services/firebaseConfig";
+import { auth, updateProfile } from "../../services/firebaseConfig";
 
 function CadastroForm() {
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [warning, setWarning] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -16,7 +19,7 @@ function CadastroForm() {
     e.preventDefault();
 
     // caso algum campo não tenha sido preenchido
-    if (!email || !password) {
+    if (!name || !lastName || !email || !password) {
       setWarning("Preencha todos os campos obrigatórios!");
       return;
     }
@@ -32,9 +35,16 @@ function CadastroForm() {
 
     try {
       // Criar usuário no Firebase
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      // Adicionar nome ao perfil do usuário
+      await updateProfile(userCredential.user, {
+        displayName: `${name} ${lastName}`
+      });
 
       // Limpar os campos e exibir mensagem de sucesso
+      setName("");
+      setLastName("");
       setEmail("");
       setPassword("");
       setSuccessMessage("Cadastro realizado!");
@@ -56,27 +66,40 @@ function CadastroForm() {
     }
   };
 
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <form onSubmit={handleSignUp}>
-      <h1>Formulário de cadastro</h1>
-      
+      <h1>Cadastre-se</h1>
+
       {/* Adicione os campos do formulário */}
+      <label>Nome:</label>
+      <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+
+      <label>Sobrenome:</label>
+      <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+
       <label>Email:</label>
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-  
-      <label>Senha:</label>
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-  
+      <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required />
+
+      <label>Password:</label>
+      <input type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} required autoComplete="current-password" />
+      <button type="button" onClick={handleTogglePassword}>
+        {showPassword ? "Esconder Senha" : "Mostrar Senha"}
+      </button>
+
       {/* Adicione o botão de envio */}
       <button type="submit" disabled={loading}>
         {loading ? "Carregando..." : "Cadastrar"}
       </button>
-  
+
       {/* Adicione mensagens de aviso ou sucesso */}
       {loading && <p>Carregando...</p>}
       {!loading && warning && <p style={{ color: "red" }}>{warning}</p>}
       {!loading && successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-      
+
       {/* Adicione um link para redirecionar para outra página, se necessário */}
       <Link to="/">Voltar para a página inicial</Link>
     </form>

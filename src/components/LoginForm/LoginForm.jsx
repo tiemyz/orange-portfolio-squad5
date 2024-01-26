@@ -1,42 +1,78 @@
-import GoogleLogoImg from '../../assets/logo-googleg-48dp.svg';
-import { LoginContainer, ElementDivs, LoginTitle, GoogleButton, GoogleButtonLogo, GoogleButtonText, FormTitleContainer, FormTitle, FormContainer, StyledForm, Input, Button, LinkCadastro } from './LoginForm.styles';
+import { useState } from 'react';
+import { ButtonDefault } from '../Buttons/ButtonStyles';
+import { LoginFormContainer, 
+        TitleGoogleDiv, 
+        Title, 
+        GoogleButton, 
+        GoogleButtonLogo, 
+        GoogleButtonText, 
+        FormContainer, 
+        StyledForm, 
+        FormTitle, 
+        InputContainer, 
+        InputLabel, 
+        InputField, 
+        VisibilityButton, 
+        EyesIcon, 
+        LinkCadastro } from './LoginForm.styles';
+import GoogleLogoImg from '../../assets/logo-google.svg';
+import EyeOpenIcon from '../../assets/visibility-default.svg';
+import EyeClosedIcon from '../../assets/visibility-off.svg';
 
 function LoginForm() {
 
-    /* teste de botão */
+    /* Teste botão do google */
     const handleClick = () => {
         console.log("este botão está funcionando!");
-      };
+    };
 
-    return(
-        <LoginContainer>
-            {/* div do titulo */}
-            <ElementDivs >
-                <LoginTitle>Entre no Orange Portfólio</LoginTitle>
-            </ElementDivs>
+    /* Olho de visibilidade da senha */
+    const [showPassword, setShowPassword] = useState(false);
 
-            {/* div do botão do google */}
-            <ElementDivs>
-                <GoogleButton type="submit" onClick={handleClick}>
-                    <GoogleButtonLogo src={GoogleLogoImg} alt="Google Logo" />
-                    <GoogleButtonText>Entrar com Google</GoogleButtonText>
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
+    };
+
+    return (
+        <LoginFormContainer>
+            {/* Div superior com o título e botão do google*/}
+            <TitleGoogleDiv>
+                <Title>Entre no Orange Portfólio</Title>
+                <GoogleButton type="button" onClick={handleClick}>
+                    <GoogleButtonLogo src={GoogleLogoImg} alt='Logo do google'/>
+                    <GoogleButtonText>Entre com Google</GoogleButtonText>
                 </GoogleButton>
-            </ElementDivs>
+            </TitleGoogleDiv>
 
-            {/* div do formulário */}
+            {/* Formulário de login */}
             <FormContainer>
-                <FormTitleContainer>
-                    <FormTitle>Faça login com email</FormTitle>
-                </FormTitleContainer>
-
                 <StyledForm>
-                    <Input type="email" placeholder="Email address"/>
-                    <Input type="password" placeholder="Password"/>
-                    <Button type="submit">ENTRAR</Button>
+                    <FormTitle>Faça login com email</FormTitle>
+    
+                    <InputContainer>
+                        <InputLabel>Email address</InputLabel>
+                        <InputField type="text"/>
+                    </InputContainer>
+
+                    <InputContainer>
+                        <InputLabel>Password</InputLabel>
+                        <InputField type={showPassword ? 'text' : 'password'}/>
+                        <VisibilityButton type="button" onClick={handleTogglePassword}>
+                            {showPassword ? (
+                            <EyesIcon src={EyeClosedIcon} alt="Hide Password"/>
+                            ) : (
+                            <EyesIcon src={EyeOpenIcon} alt="Show Password"/>
+                            )}
+                        </VisibilityButton>
+                    </InputContainer>
+
+                    <ButtonDefault type="submit">ENTRAR</ButtonDefault>
                 </StyledForm>
+
+                {/* Botão de redirecionamento a página de cadastro */}
                 <LinkCadastro to="/cadastro">Cadastre-se</LinkCadastro>
             </FormContainer>
-        </LoginContainer>
+        </LoginFormContainer>
     );
 }
 

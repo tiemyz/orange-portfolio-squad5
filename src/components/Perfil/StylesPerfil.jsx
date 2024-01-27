@@ -1,21 +1,22 @@
 import styled from 'styled-components'
 
 export const ProfileContent = styled.div`
-  width: 312px;
-  height: 236px;
-  border: 1px solid red;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 16px;
+
+  /* Medias */
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 42px;
+  }
 `
 
 export const ImageProfile = styled.div`
   width: 122px;
   height: 122px;
-  margin-bottom: 16px;
-
   /* Imagem de perfil */
 
   img {
@@ -39,9 +40,12 @@ export const InfoContainer = styled.div`
     line-height: 24px;
   }
 
-  span {
+  p {
     color: #0b0c0d;
     font-size: 16px;
-    line-height: 0.15px;
+  }
+
+  @media (min-width: 768px) {
+    gap: 24px;
   }
 `

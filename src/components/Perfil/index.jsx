@@ -18,4 +18,3 @@ const Perfil = () => {
 }
 
 export { Perfil }
-1

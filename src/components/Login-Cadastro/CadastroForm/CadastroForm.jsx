@@ -10,12 +10,12 @@ import { CadastroFormContainer,
     InputContainer, 
     VisibilityButton, 
     EyesIcon} from '../Forms.styles';
-import EyeClosedIcon from '../../../assets/visibility-off.svg';
 import EyeOpenIcon from '../../../assets/visibility-default.svg';
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
-import { auth, addToFirestore } from "../../services/firebaseConfig";
+import EyeClosedIcon from '../../../assets/visibility-off.svg';
+// Importações do FirebaseConfig
+import { createUserWithEmailAndPassword, updateProfile, signInWithPopup, GoogleAuthProvider, getAuth } from "firebase/auth";
+import { Form, Link, useNavigate } from "react-router-dom";
+import { addToFirestore } from "../../../services/firebaseFirestore";
 
 function CadastroForm() {
     const [name, setName] = useState("");
@@ -27,6 +27,7 @@ function CadastroForm() {
     const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+    const auth = getAuth();
 
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
@@ -35,19 +36,23 @@ function CadastroForm() {
     const handleSignUp = async (e) => {
         e.preventDefault();
 
-        // caso algum campo não tenha sido preenchido
+        // Limpar mensagens anteriores
+        setWarning("");
+        setSuccessMessage("");
+
+        // Verificar se os campos obrigatórios foram preenchidos
         if (!name || !lastName || !email || !password) {
             setWarning("Preencha todos os campos obrigatórios!");
             return;
         }
 
-        // caso o usuário esqueça de colocar o @ 
+        // Verificar se o e-mail é válido
         if (!email.includes("@")) {
             setWarning("Digite um email válido.");
             return;
         }
 
-        // se as infos estiverem ok, carregamento para a home
+        // Iniciar o carregamento
         setLoading(true);
 
         try {
@@ -64,11 +69,13 @@ function CadastroForm() {
             const userData = { name, lastName, email, userId };
             await addToFirestore("users", userData);
 
-            // Limpar os campos e exibir mensagem de sucesso
+            // Limpar os campos
             setName("");
             setLastName("");
             setEmail("");
             setPassword("");
+
+            // Exibir mensagem de sucesso
             setSuccessMessage("Cadastro realizado!");
 
             // Redirecionar para a página inicial (ou ajuste conforme necessário)
@@ -79,6 +86,10 @@ function CadastroForm() {
             // Tratar erros específicos
             if (error.code === "auth/email-already-in-use") {
                 setWarning("Este e-mail já está cadastrado. Tente outro.");
+            } else if (error.code === "auth/weak-password") {
+                setWarning("A senha é muito fraca. Tente uma senha mais forte.");
+            } else if (error.code === "auth/invalid-email" || error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
+                setWarning("E-mail ou senha incorretos. Tente novamente.");
             } else {
                 setWarning("Erro ao criar conta. Tente novamente mais tarde.");
             }
@@ -104,6 +115,7 @@ function CadastroForm() {
             <Title>Cadastre-se</Title>
             <StyledForm onSubmit={handleSignUp}>
                 <InputContainerFlex>
+                    {/* TODO: MELHORAR LABEL CONFORME O FIGMA */}
                     <InputLabel>Nome*</InputLabel>
                     <InputField type="text" value={name} onChange={(e) => setName(e.target.value)}/>
 

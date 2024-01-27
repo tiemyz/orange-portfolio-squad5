@@ -21,8 +21,8 @@ import GoogleLogoImg from '../../../assets/logo-google.svg';
 import EyeOpenIcon from '../../../assets/visibility-default.svg';
 import EyeClosedIcon from '../../../assets/visibility-off.svg';
 
-// Importe a função `signInWithPopup` e `GoogleAuthProvider` do seu arquivo
-import { signInWithPopup, googleProvider } from "../../services/firebaseConfig";
+// Importações do FirebaseConfig
+import { signInWithPopup, googleProvider } from "../../../services/firebaseConfig";
 
 function LoginForm() {
     const [email, setEmail] = useState("");
@@ -56,26 +56,28 @@ function LoginForm() {
 
     const handleSignIn = async (e) => {
         e.preventDefault();
-
+    
         if (!email || !password) {
             setWarning("Preencha todos os campos obrigatórios!");
             return;
         }
-
+    
         if (!email.includes("@")) {
             setWarning("Digite um email válido.");
             return;
         }
-
+    
         setLoading(true);
-
+    
         try {
             await signInWithEmailAndPassword(authInstance, email, password);
             setEmail("");
             setPassword("");
+            setWarning(""); 
+            setSuccessMessage("Login bem-sucedido!");
         } catch (error) {
             console.error("Erro ao fazer login:", error.message);
-
+    
             if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
                 setWarning("Credenciais inválidas. Verifique seu email e senha.");
             } else if (error.code === "auth/invalid-email") {
@@ -86,17 +88,17 @@ function LoginForm() {
         } finally {
             setLoading(false);
         }
-    };
+    };    
 
-    // Adicione a função para lidar com o login com Google
     const handleSignInWithGoogle = async () => {
         try {
-            const result = await signInWithPopup(authInstance, googleProvider);
+            const result = await signInWithPopup(authInstance, new GoogleAuthProvider());
             const user = result.user;
             console.log("Usuário autenticado com Google:", user);
-            // Você pode adicionar lógica adicional aqui conforme necessário
+            // Lógica adicional com o login do Google, se necessário
         } catch (error) {
             console.error("Erro ao autenticar com Google:", error.message);
+            // Adicione um estado ou função para exibir mensagens de erro ao usuário
         }
     };
 
@@ -118,6 +120,7 @@ function LoginForm() {
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        autoComplete="username"
                     />
                 </InputContainer>
 
@@ -127,6 +130,7 @@ function LoginForm() {
                         type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        autoComplete="current-password"
                     />
                     <VisibilityButton type="button" onClick={handleTogglePassword}>
                         {showPassword ? (
@@ -140,6 +144,11 @@ function LoginForm() {
                 <ButtonDefault type="submit">ENTRAR</ButtonDefault>
                 <LinkCadastro to="/cadastro">Cadastre-se</LinkCadastro>
             </StyledForm>
+
+            {/* Adicione mensagens de aviso ou sucesso */}
+            {loading && <p>Carregando...</p>}
+            {!loading && warning && <p style={{ color: "red" }}>{warning}</p>}
+            {!loading && successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
         </LoginFormContainer>
     );
 }

@@ -1,5 +1,6 @@
 import CadastroForm from "../../components/Login-Cadastro/CadastroForm/CadastroForm";
 
+
 function CadastroPage() {
     return (
         <div>

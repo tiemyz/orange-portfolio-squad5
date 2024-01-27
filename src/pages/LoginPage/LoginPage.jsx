@@ -1,11 +1,21 @@
-import LoginForm from "../../components/LoginForm/LoginForm";
+import LoginForm from "../../components/Login-Cadastro/LoginForm/LoginForm";
+import { LoginPageContainer,
+        DivForm,
+        DivImg, 
+        Img} from '../LoginPage/LoginPage.styles';
+import LoginPageImg from '../../assets/img-pagina-login.png'
 
 function LoginPage() {
     return (
-        <div>
-            <LoginForm/>
-            <h1>Página inicial de login</h1>
-        </div>
+        <LoginPageContainer>
+            <DivImg>
+                <Img src={LoginPageImg} alt="Imagem ilustrativa"/>
+            </DivImg>
+
+            <DivForm>
+                <LoginForm/> 
+            </DivForm>
+        </LoginPageContainer>
     );
 }
 

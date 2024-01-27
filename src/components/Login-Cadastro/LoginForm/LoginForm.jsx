@@ -28,7 +28,7 @@ function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [warning, setWarning] = useState("");
-    const [successMessage, setSuccessMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState(""); // Mova a definição para cá
     const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -41,7 +41,6 @@ function LoginForm() {
             if (user) {
                 if (!warning) {
                     setWarning("");
-                    setSuccessMessage("Login bem-sucedido!");
                     navigate("/");
                 }
             }

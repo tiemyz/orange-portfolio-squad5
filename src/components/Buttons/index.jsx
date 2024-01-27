@@ -2,13 +2,8 @@ import { ButtonGrayDefault } from './ButtonStyles'
 const Buttons = () => {
   return (
     <div>
-      <div>
-        <ButtonGrayDefault>Adicionar Projeto</ButtonGrayDefault>
-      </div>
+      <ButtonGrayDefault>Adicionar Projeto</ButtonGrayDefault>
       <br />
-      <div>
-        <ButtonGrayDefault>Cancelar</ButtonGrayDefault>
-      </div>
     </div>
   )
 }

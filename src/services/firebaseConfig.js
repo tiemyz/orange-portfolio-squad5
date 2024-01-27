@@ -1,7 +1,7 @@
-// Import the functions you need from the SDKs you need
+// Importe as funções necessárias do Firebase
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy9wJB83lwjoRAXXlkQtYusUwzvnBXv04",
@@ -13,8 +13,13 @@ const firebaseConfig = {
   measurementId: "G-ZN7KKLQ6V7"
 };
 
-// Initialize Firebase
+// Inicializar o Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export { createUserWithEmailAndPassword, updateProfile };
-//const analytics = getAnalytics(app);
+
+// Criar instâncias dos serviços
+const auth = getAuth(app);
+const db = getFirestore(app);
+const googleProvider = new GoogleAuthProvider();
+
+// Exportar as instâncias dos serviços para uso em outros lugares do seu aplicativo
+export { app, auth, db, createUserWithEmailAndPassword, signInWithPopup, googleProvider };

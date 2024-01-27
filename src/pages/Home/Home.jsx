@@ -1,7 +1,11 @@
+import { Perfil } from '../../components/Perfil'
+
 function Home() {
-    return (
-        <h1>Home</h1>
-    );
+  return (
+    <div>
+      <Perfil />
+    </div>
+  )
 }
 
-export default Home;
+export default Home

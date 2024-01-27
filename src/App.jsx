@@ -1,13 +1,11 @@
 import GlobalStyles from './GlobalStyles'
-import { Perfil } from './components/Perfil'
-import { Buttons } from './components/Buttons'
+import AppRoutes from './routes/AppRoutes'
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Perfil />
-      <Buttons />
+      <AppRoutes />
     </>
   )
 }

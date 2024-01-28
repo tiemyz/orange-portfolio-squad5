@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoginPageContainer = styled.div`
+export const PageContainer = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -28,7 +28,7 @@ export const DivForm = styled.div`
         width: 1000%;
     }  
 `
-export const Img = styled.img`
+export const SideImg = styled.img`
     width: 100%;
     height: 100%;
     object-fit: fit;

@@ -28,7 +28,7 @@ function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [warning, setWarning] = useState("");
-    const [successMessage, setSuccessMessage] = useState(""); // Mova a definição para cá
+    const [successMessage, setSuccessMessage] = useState("");
     const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -80,7 +80,7 @@ function LoginForm() {
             if (error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
                 setWarning("Credenciais inválidas. Verifique seu email e senha.");
             } else if (error.code === "auth/invalid-email") {
-                setWarning("Email incorreto. Por favor, verifique o email digitado.");
+                setWarning("Email incorreto. Por favor, digite um email válido.");
             } else {
                 setWarning("Erro ao fazer login. Por favor, tente novamente.");
             }
@@ -94,10 +94,8 @@ function LoginForm() {
             const result = await signInWithPopup(authInstance, new GoogleAuthProvider());
             const user = result.user;
             console.log("Usuário autenticado com Google:", user);
-            // Lógica adicional com o login do Google, se necessário
         } catch (error) {
             console.error("Erro ao autenticar com Google:", error.message);
-            // Adicione um estado ou função para exibir mensagens de erro ao usuário
         }
     };
 
@@ -144,7 +142,7 @@ function LoginForm() {
                 <LinkCadastro to="/cadastro">Cadastre-se</LinkCadastro>
             </StyledForm>
 
-            {/* Adicione mensagens de aviso ou sucesso */}
+            {/* Adicionar mensagens de aviso ou sucesso */}
             {loading && <p>Carregando...</p>}
             {!loading && warning && <p style={{ color: "red" }}>{warning}</p>}
             {!loading && successMessage && <p style={{ color: "green" }}>{successMessage}</p>}

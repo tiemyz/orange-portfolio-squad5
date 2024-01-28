@@ -76,7 +76,7 @@ function CadastroForm() {
             setPassword("");
 
             // Exibir mensagem de sucesso
-            setSuccessMessage("Cadastro realizado!");
+            setSuccessMessage("Cadastro realizado, com sucesso!");
 
             // Redirecionar para a página inicial (ou ajuste conforme necessário)
             navigate("/");
@@ -85,11 +85,11 @@ function CadastroForm() {
 
             // Tratar erros específicos
             if (error.code === "auth/email-already-in-use") {
-                setWarning("Este e-mail já está cadastrado. Tente outro.");
+                setWarning("Este e-mail já está cadastrado.");
             } else if (error.code === "auth/weak-password") {
-                setWarning("A senha é muito fraca. Tente uma senha mais forte.");
+                setWarning(" cada senha deve ter, no mínimo, 6 caracteres e atender aos seguintes requisitos: Incluir números e letras maiúsculas e minúsculas.");
             } else if (error.code === "auth/invalid-email" || error.code === "auth/user-not-found" || error.code === "auth/wrong-password") {
-                setWarning("E-mail ou senha incorretos. Tente novamente.");
+                setWarning("E-mail ou senha incorretos.");
             } else {
                 setWarning("Erro ao criar conta. Tente novamente mais tarde.");
             }
@@ -104,7 +104,6 @@ function CadastroForm() {
             const result = await signInWithPopup(auth, new GoogleAuthProvider());
             const user = result.user;
             console.log("Usuário autenticado com Google:", user);
-            // Lógica adicional com o login do Google, se necessário
         } catch (error) {
             console.error("Erro ao autenticar com Google:", error.message);
         }
@@ -148,10 +147,10 @@ function CadastroForm() {
             {!loading && warning && <p style={{ color: "red" }}>{warning}</p>}
             {!loading && successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
 
-            {/* Adicione um link para redirecionar para outra página, se necessário */}
+            {/* Adicionar um link para redirecionar para outra página, se necessário */}
             <Link to="/">Voltar para a página inicial</Link>
 
-            {/* Adicione o botão de login com Google */}
+            {/* Adicionar o botão de login com Google */}
             <button type="button" onClick={handleSignInWithGoogle}>
                 Entrar com Google
             </button>

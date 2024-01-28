@@ -15,20 +15,37 @@ export const ModalPreVisualizacaoBackground = styled.div`
 `;
 
 export const ModalPreVisualizacaoContent = styled.div`
-    width: 100%;
-    height: 100%;
-    margin-top: 204px;
+    width: 1042px;
+    height: auto;
+    margin: 134px 119px 28px 119px;
+    /* left: 119px; */
     padding: 24px;
-    border-radius: var(--3, 24px) var(--3, 24px) var(--none, 0px) var(--none, 0px);
     display: inline-flex;
     flex-direction: column;
     background: #FFF;
     align-items: center;
-    justify-content: start;
+    
 
+    @media (max-width: 768px){
+        width: 100%;
+        height: 100%;
+        margin: 204px 0px 0px 0px;
+        border-radius: var(--3, 24px) var(--3, 24px) var(--none, 0px) var(--none, 0px);
+        justify-content: start;
+    }
 
 `;
 
+/*Imagem */
+export const ModalPreVisualizacaoImagem = styled.img`
+    width: 838px;
+    height: 585px;
+
+    @media (max-width: 768px){
+        width: 312px;
+        height: 258px;
+    }
+`;
 
 /* Titulo */
 export const ModalPreVisualizacaoH5 = styled.h5`
@@ -47,11 +64,16 @@ export const ModalPreVisualizacaoH5 = styled.h5`
 /* Informaçoes do usuario */
 export const ModalPreVisualizacaoInfoContainer = styled.div`
     display: inline-flex;
-    width: 312px;
+    position: relative;
+    width: 838px;
     align-items: center;
+    align-content: center;
     justify-content: space-between;
     gap: var(--1, 8px);
- 
+
+    @media (max-width: 768px){
+        width: 312px;
+    }
 
 `;
 
@@ -70,7 +92,7 @@ export const ModalPreVisualizacaoInfoUsuario = styled.div`
     height: 50px;
     flex-direction: column;
     justify-content: center;
-    /* align-items: start; */
+    align-items: start;
     gap: var(--1, 8px);
    
 
@@ -98,8 +120,15 @@ export const ModalPreVisualizacaoTime = styled.time`
 
 /*Paragrafo sobre o projeto */
 export const ModalPreVisualizacaoTextContainer = styled.div`
-    width: 308px;
+    width: 838px;
     
+
+    @media (max-width: 768px) {
+        width: 308px;
+    }
+    @media (width > 1024px) {
+        margin-bottom: 83px;
+    }
     
 `;
 
@@ -111,6 +140,7 @@ export const ModalPreVisualizacaoP = styled.p`
     font-weight: 400;
     line-height: 16px; /* 100% */
     letter-spacing: 0.5px;
+
  
 
 `;

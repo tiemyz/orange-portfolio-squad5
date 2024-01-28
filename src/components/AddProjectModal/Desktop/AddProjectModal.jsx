@@ -20,6 +20,10 @@ import {
   * Verificar se dá para transformar dois em um componente só,
   reorganizando a ordem dos itens do componente de acordo com a tela
   * Ao implementar, discutir se ao clicar fora do Modal ele se fechará
+  * Ao implementar, adicionar funcionalidade ao btnAddProject que pode ser
+  ativo ao clicar na preview area (onde o mouse aparece como cursor)
+  * Ao implementar, colocar a imagem da miniatura para aparecer no lugar
+  de 'preview area'
   */
 export function AddProjectModal() {
 	return (

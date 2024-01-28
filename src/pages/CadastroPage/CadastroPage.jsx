@@ -1,12 +1,21 @@
-import CadastroForm from "../../components/Login-Cadastro/CadastroForm/CadastroForm";
-
+import CadastroForm from "../../../components/Login-Cadastro/CadastroForm/CadastroForm";
+import { PageContainer, 
+        DivForm,
+        DivImg, 
+        SideImg } from '../LoginCadastro.styles';
+import CadastroPageImg from '../../../assets/img-pagina-cadastro.png';
 
 function CadastroPage() {
     return (
-        <div>
-            <CadastroForm/>
-            <h1>Página inicial de cadastro</h1>
-        </div>
+        <PageContainer>
+            <DivImg>
+                <SideImg src={CadastroPageImg} alt="Imagem ilustrativa"/>
+            </DivImg>
+
+            <DivForm>
+                <CadastroForm/> 
+            </DivForm>
+        </PageContainer>
     );
 }
 

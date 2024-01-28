@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export const ModalPreVisualizacaoBackground = styled.div`
     display: inline-flex;
-    position: absolute;
+    position: relative;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
@@ -18,7 +18,6 @@ export const ModalPreVisualizacaoContent = styled.div`
     width: 1042px;
     height: auto;
     margin: 134px 119px 28px 119px;
-    /* left: 119px; */
     padding: 24px;
     display: inline-flex;
     flex-direction: column;
@@ -36,8 +35,7 @@ export const ModalPreVisualizacaoContent = styled.div`
 
 `;
 
-/*Imagem */
-export const ModalPreVisualizacaoImagem = styled.img`
+export const ModalPreVisualizacaoDivImagem = styled.div`
     width: 838px;
     height: 585px;
 
@@ -45,6 +43,15 @@ export const ModalPreVisualizacaoImagem = styled.img`
         width: 312px;
         height: 258px;
     }
+
+`;
+
+
+/*Imagem */
+export const ModalPreVisualizacaoImagem = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 `;
 
 /* Titulo */
@@ -64,15 +71,17 @@ export const ModalPreVisualizacaoH5 = styled.h5`
 /* Informaçoes do usuario */
 export const ModalPreVisualizacaoInfoContainer = styled.div`
     display: inline-flex;
-    position: relative;
-    width: 838px;
+    width: 312px;
     align-items: center;
     align-content: center;
     justify-content: space-between;
     gap: var(--1, 8px);
 
-    @media (max-width: 768px){
-        width: 312px;
+    @media (min-width: 768px){
+        width: 838px;
+        position: relative;
+        top: -670px;
+        
     }
 
 `;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 export const ModalPreVisualizacaoBackground = styled.div`
     display: inline-flex;
     position: absolute;
@@ -14,14 +13,19 @@ export const ModalPreVisualizacaoBackground = styled.div`
 export const ModalPreVisualizacaoContent = styled.div`
     display: inline-flex;
     flex-direction: column;
+    /* row-gap: 24px; */
     width: 100%;
     height: 100%;
     margin-top: 15%;
     border-radius: var(--3, 24px) var(--3, 24px) var(--none, 0px) var(--none, 0px);
     background: #FFF;
     align-items: center;
-    align-content: center;
+    justify-content: center;
 
+`;
+
+export const ModalPreVisualizacaoTextContainer = styled.div`
+    width: 308px;
 `;
 
 export const ModalPreVisualizacaoH5 = styled.h5`
@@ -31,5 +35,45 @@ export const ModalPreVisualizacaoH5 = styled.h5`
     font-style: normal;
     font-weight: 400;
     line-height: 24px; /* 100% */
+
+`;
+
+export const ModalPreVisualizacaoInfoUsuario = styled.div`
+    display: flex;
+    width: 104px;
+    height: 50px;
+    padding: var(--none, 0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--1, 8px);
+
+`;
+
+export const ModalPreVisualizacaoNomeUsuario = styled.sub`
+    color: var(--Neutral-Colors-Neutral-120, #303133);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+`;
+
+export const ModalPreVisualizacaoTime = styled.time`
+    color: var(--Neutral-Colors-Neutral-110, #515255);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+`;
+
+export const ModalPreVisualizacaoDiv = styled.div`
+    display: inline-flex;
+    width: 100%;
+    padding: var(--none, 10px);
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--1, 8px);
 
 `;

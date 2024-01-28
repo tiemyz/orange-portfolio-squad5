@@ -4,6 +4,8 @@ import {SecaoProjetos, CampoBuscarTags, SubtituloProjetos, BotaoProjeto, StyledB
 * Acrescentar quadros "em branco",
 * Verificar necessidade de efeitos hover e focus no input
 * Remover "adicionar primeiro projeto" depois que o usuário já tiver adicionado algum projeto
+* Acrescentar botãozinho de lápis ao lado de miniatura do projeto, 
+para editar ou excluir (Será outro componente)
  */
 
 export default function SecaoMeusProjetos () {

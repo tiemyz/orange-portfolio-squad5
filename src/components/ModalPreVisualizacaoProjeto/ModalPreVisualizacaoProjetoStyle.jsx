@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 
+/*Background do modal */
+
 export const ModalPreVisualizacaoBackground = styled.div`
     display: inline-flex;
     position: absolute;
@@ -8,48 +10,69 @@ export const ModalPreVisualizacaoBackground = styled.div`
     width: 100%;
     height: 100%;
     justify-content: center;
+    align-items: center;
     
 `;
 
 export const ModalPreVisualizacaoContent = styled.div`
     width: 100%;
-        height: 100%;
-        margin-top: 15%;
-        border-radius: var(--3, 24px) var(--3, 24px) var(--none, 0px) var(--none, 0px);
+    height: 100%;
+    margin-top: 204px;
+    padding: 24px;
+    border-radius: var(--3, 24px) var(--3, 24px) var(--none, 0px) var(--none, 0px);
     display: inline-flex;
     flex-direction: column;
-    /* row-gap: 24px; */
     background: #FFF;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+
 
 `;
 
-export const ModalPreVisualizacaoTextContainer = styled.div`
-    width: 308px;
-    
-    
-`;
 
+/* Titulo */
 export const ModalPreVisualizacaoH5 = styled.h5`
     color: var(--Neutral-Colors-Neutral-120, #303133);
+    padding-top: 16px;
+    padding-bottom: 32px;
     text-align: center;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 100% */
+    line-height: 24px;
+ 
+
+`;
+
+/* Informaçoes do usuario */
+export const ModalPreVisualizacaoInfoContainer = styled.div`
+    display: inline-flex;
+    width: 312px;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--1, 8px);
+ 
+
+`;
+
+export const ModalPreVisualizacaoInfoUsuarioContainer = styled.div`
+    display: inline-flex;
+    padding-top: 10px;
+    padding-bottom: 26px;
+    gap: var(--1, 8px);
+   
 
 `;
 
 export const ModalPreVisualizacaoInfoUsuario = styled.div`
     display: flex;
-    width: 104px;
+    width: auto;
     height: 50px;
-    padding: var(--none, 0px);
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    /* align-items: start; */
     gap: var(--1, 8px);
+   
 
 `;
 
@@ -71,15 +94,15 @@ export const ModalPreVisualizacaoTime = styled.time`
 
 `;
 
-export const ModalPreVisualizacaoDiv = styled.div`
-    display: inline-flex;
-    width: 100%;
-    padding: var(--none, 10px);
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--1, 8px);
 
+
+/*Paragrafo sobre o projeto */
+export const ModalPreVisualizacaoTextContainer = styled.div`
+    width: 308px;
+    
+    
 `;
+
 
 export const ModalPreVisualizacaoP = styled.p`
     color: var(--Neutral-Colors-Neutral-120, #303133);
@@ -88,6 +111,7 @@ export const ModalPreVisualizacaoP = styled.p`
     font-weight: 400;
     line-height: 16px; /* 100% */
     letter-spacing: 0.5px;
+ 
 
 `;
 
@@ -98,6 +122,7 @@ export const ModalPreVisualizacaoH6 = styled.h6`
     font-weight: 400;
     line-height: 16px;
     letter-spacing: 0.15px;
+
 
 `;
 

@@ -133,9 +133,9 @@ function CadastroForm() {
                     <InputField type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)}/>
                     <VisibilityButton type="button" onClick={handleTogglePassword}>
                         {showPassword ? (
-                            <EyesIcon src={EyeOpenIcon} alt="Show Password"/>
-                        ) : (
                             <EyesIcon src={EyeClosedIcon} alt="Hide Password"/>
+                        ) : (
+                            <EyesIcon src={EyeOpenIcon} alt="Show Password"/>
                         )}
                     </VisibilityButton>
                 </InputContainer>

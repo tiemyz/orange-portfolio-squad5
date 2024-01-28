@@ -1,5 +1,11 @@
 import {SecaoProjetos, CampoBuscarTags, SubtituloProjetos, BotaoProjeto, StyledBodyText1, StyledBodyText2} from "./SecaoMeusProjetosStyle"
 
+/* TODO: 
+* Acrescentar quadros "em branco",
+* Verificar necessidade de efeitos hover e focus no input
+* Remover "adicionar primeiro projeto" depois que o usuário já tiver adicionado algum projeto
+ */
+
 export default function SecaoMeusProjetos () {
     return (
         <SecaoProjetos>

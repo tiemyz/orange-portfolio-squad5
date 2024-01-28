@@ -7,17 +7,18 @@ export const ModalPreVisualizacaoBackground = styled.div`
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
+    justify-content: center;
     
 `;
 
 export const ModalPreVisualizacaoContent = styled.div`
+    width: 100%;
+        height: 100%;
+        margin-top: 15%;
+        border-radius: var(--3, 24px) var(--3, 24px) var(--none, 0px) var(--none, 0px);
     display: inline-flex;
     flex-direction: column;
     /* row-gap: 24px; */
-    width: 100%;
-    height: 100%;
-    margin-top: 15%;
-    border-radius: var(--3, 24px) var(--3, 24px) var(--none, 0px) var(--none, 0px);
     background: #FFF;
     align-items: center;
     justify-content: center;
@@ -26,6 +27,8 @@ export const ModalPreVisualizacaoContent = styled.div`
 
 export const ModalPreVisualizacaoTextContainer = styled.div`
     width: 308px;
+    
+    
 `;
 
 export const ModalPreVisualizacaoH5 = styled.h5`
@@ -75,5 +78,35 @@ export const ModalPreVisualizacaoDiv = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: var(--1, 8px);
+
+`;
+
+export const ModalPreVisualizacaoP = styled.p`
+    color: var(--Neutral-Colors-Neutral-120, #303133);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
+    letter-spacing: 0.5px;
+
+`;
+
+export const ModalPreVisualizacaoH6 = styled.h6`
+    color: #0B0C0D;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.15px;
+
+`;
+
+export const ModalPreVisualizacaoLinks = styled.a`
+    color: var(--Support-Colors-Info-info-80, #608AE1);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.25px;
 
 `;

@@ -1,6 +1,6 @@
 import Chip from "../Chip/Chip";
 import { ChipDiv } from "../Chip/ChipStyle";
-import { ModalPreVisualizacaoBackground, ModalPreVisualizacaoContent, ModalPreVisualizacaoDiv, ModalPreVisualizacaoH5, ModalPreVisualizacaoInfoUsuario, ModalPreVisualizacaoNomeUsuario, ModalPreVisualizacaoTextContainer, ModalPreVisualizacaoTime } from "./ModalPreVisualizacaoProjetoStyle";
+import { ModalPreVisualizacaoBackground, ModalPreVisualizacaoContent, ModalPreVisualizacaoDiv, ModalPreVisualizacaoH5, ModalPreVisualizacaoH6, ModalPreVisualizacaoInfoUsuario, ModalPreVisualizacaoLinks, ModalPreVisualizacaoNomeUsuario, ModalPreVisualizacaoP, ModalPreVisualizacaoTextContainer, ModalPreVisualizacaoTime } from "./ModalPreVisualizacaoProjetoStyle";
 
 function ModalPreVisualizacaoProjeto(url) {
     return (
@@ -26,10 +26,10 @@ function ModalPreVisualizacaoProjeto(url) {
                         </ChipDiv>
                     </ModalPreVisualizacaoDiv>
                     <ModalPreVisualizacaoTextContainer>
-                        <p>Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um modelo de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso primeiro template de e-commerce.</p>
+                        <ModalPreVisualizacaoP>Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um modelo de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso primeiro template de e-commerce.</ModalPreVisualizacaoP>
                         <br></br>
-                        <h6>Download</h6>
-                        <a href={url}>link</a>
+                        <ModalPreVisualizacaoH6>Download</ModalPreVisualizacaoH6>
+                        <ModalPreVisualizacaoLinks href={url}>link</ModalPreVisualizacaoLinks>
                     </ModalPreVisualizacaoTextContainer>
 
                 </div>

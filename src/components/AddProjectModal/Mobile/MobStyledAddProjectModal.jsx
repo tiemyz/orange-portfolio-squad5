@@ -22,7 +22,7 @@ export const AddProjectDiv = styled.div`
 	display: flex;
 	flex-direction: row;
 	position: relative;
-	margin: 148px 24px;
+	margin: 148px 0;
 `;
 
 export const StyledH5 = styled.h5`
@@ -30,10 +30,9 @@ export const StyledH5 = styled.h5`
 	font-size: 24px;
 	font-weight: 400;
 	left: 0;
-	margin: 24px;
+	margin: 18px 20px;
 	position: absolute;
-	top: -10px;
-	width: 263px;
+
 `;
 export const StyledAddForm = styled.form`
 	align-items: flex-start;
@@ -41,9 +40,9 @@ export const StyledAddForm = styled.form`
 	flex-direction: column;
 	gap: 16px;
 	height: 684px;
-	left: 6px;
+	left: 4px;
 	margin: 60px 0 0 4px;
-	position: absolute;
+	position: relative;
 	width: 263px;
 `;
 
@@ -120,7 +119,7 @@ export const PreviewContainer = styled.div`
 	width: 263px;
 	display: flex;
 	align-items: center;
-	margin: 16px 24px;
+	margin: 16px 20px;
 `;
 
 export const StyledText1 = styled.p`
@@ -128,7 +127,7 @@ export const StyledText1 = styled.p`
 	font-size: 16px;
 	font-weight: 400;
 	position: relative;
-	margin: 0 16px;
+	margin: 0 14px;
 `;
 
 export const PreviewArea = styled.div`
@@ -175,7 +174,7 @@ export const StyledBtnContainer = styled.div`
 		color: #303133;
 		font-size: 16px;
 		font-weight: 400;
-		margin: 0 16px;
+		margin: 0 14px;
 		position: relative;
 		top: -35px;
 	}
@@ -193,7 +192,7 @@ export const Btns = styled.div`
 export const StyledFormContainer = styled.div`
 	height: 336px;
 	left: 32px;
-	position: absolute;
+	position: relative;
 	top: 72px;
 	width: 826px;
 `;

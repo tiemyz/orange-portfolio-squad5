@@ -1,14 +1,30 @@
 import Chip from "../Chip/Chip";
 import { ChipDiv } from "../Chip/ChipStyle";
-import { ModalPreVisualizacaoBackground, ModalPreVisualizacaoContent, ModalPreVisualizacaoH5, ModalPreVisualizacaoH6, ModalPreVisualizacaoImagem, ModalPreVisualizacaoInfoContainer, ModalPreVisualizacaoInfoUsuario, ModalPreVisualizacaoInfoUsuarioContainer, ModalPreVisualizacaoLinks, ModalPreVisualizacaoNomeUsuario, ModalPreVisualizacaoP, ModalPreVisualizacaoTextContainer, ModalPreVisualizacaoTime } from "./ModalPreVisualizacaoProjetoStyle";
+import { ModalPreVisualizacaoBackground,
+    ModalPreVisualizacaoContent,
+    ModalPreVisualizacaoDivImagem,
+    ModalPreVisualizacaoH5,
+    ModalPreVisualizacaoH6,
+    ModalPreVisualizacaoImagem,
+    ModalPreVisualizacaoInfoContainer,
+    ModalPreVisualizacaoInfoUsuario,
+    ModalPreVisualizacaoInfoUsuarioContainer,
+    ModalPreVisualizacaoLinks,
+    ModalPreVisualizacaoNomeUsuario, 
+    ModalPreVisualizacaoP,
+    ModalPreVisualizacaoTextContainer,
+    ModalPreVisualizacaoTime } from "./ModalPreVisualizacaoProjetoStyle";
 
-function ModalPreVisualizacaoProjeto({url, nomeProjeto, nomeUsuario, data}) {
+function ModalPreVisualizacaoProjeto({ url, nomeProjeto, nomeUsuario, data }) {
     return (
         <ModalPreVisualizacaoBackground>
             <ModalPreVisualizacaoContent>
                 <button>X</button>
                 <ModalPreVisualizacaoH5>{nomeProjeto}</ModalPreVisualizacaoH5>
-                <ModalPreVisualizacaoImagem src="src\assets\img\img_landingpage.png" alt="Project-Photo"></ModalPreVisualizacaoImagem>
+                <ModalPreVisualizacaoDivImagem>
+                    <ModalPreVisualizacaoImagem src="src\assets\img\img_landingpage.png" alt="Project-Photo"></ModalPreVisualizacaoImagem>
+
+                </ModalPreVisualizacaoDivImagem>
 
 
                 <ModalPreVisualizacaoInfoContainer>
@@ -23,6 +39,7 @@ function ModalPreVisualizacaoProjeto({url, nomeProjeto, nomeUsuario, data}) {
                     <ChipDiv>
                         <Chip chiptext={'UX'}></Chip>
                         <Chip chiptext={'Web'}></Chip>
+                        <Chip chiptext={'Fullstack'}></Chip>
                     </ChipDiv>
                 </ModalPreVisualizacaoInfoContainer>
 

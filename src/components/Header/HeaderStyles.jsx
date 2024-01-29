@@ -32,6 +32,10 @@ export const NavContainer = styled.nav`
     .button-mobile {
       display: none;
     }
+
+    .show {
+      transition: none;
+    }
   }
 `
 
@@ -40,6 +44,17 @@ export const Menu = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 3px;
+
+  @media (min-width: 768px) {
+    gap: 100px;
+    .divider {
+      display: none;
+    }
+
+    .config {
+      display: none;
+    }
+  }
 `
 
 export const ButtonsMobile = styled.div`
@@ -61,31 +76,37 @@ export const Button = styled.button`
 export const Logo = styled.img`
   width: 83px;
   height: 31px;
+
+  @media (min-width: 728px) {
+    width: 111px;
+    height: 41px;
+  }
 `
 export const NavbarList = styled.ul`
   width: 147px;
   height: 155px;
   padding: 8px 0 0;
-  position: fixed;
   background: #fff;
+  position: fixed;
+  top: 64px;
+  left: -147px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
-  top: 64px;
-  left: -147px;
-
   @media (min-width: 768px) {
     width: auto;
     height: 41px;
-    margin-left: 100px;
-    background: none;
-    top: 0;
-    right: 0;
+    padding: 0;
+    background: transparent;
     position: relative;
+    top: 0;
+    left: 0;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 24px;
 
     #navbar {
       display: flex;
@@ -124,6 +145,19 @@ export const Link = styled.a`
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.15px;
+
+  @media (min-width: 768px) {
+    color: #fcfdff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+
+    /* Hover */
+    &:hover {
+      color: #d3d4d5;
+      transition: 0.3s;
+    }
+  }
 `
 
 export const Divider = styled.div`

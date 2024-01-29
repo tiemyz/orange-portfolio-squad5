@@ -1,9 +1,21 @@
-import { HeaderContent, Nav, Navbar } from './HeaderStyles'
-import MenuOpen from '../../assets/images/menu-open.svg'
-import Logo from '../../assets/images/Logo-orange.png'
-import IconNotifications from '../../assets/images/notifications.png'
-import PhotoProfile from '../../assets/images/profile.png'
 import { useState } from 'react'
+import {
+  HeaderContent,
+  NavContainer,
+  Menu,
+  ButtonsMobile,
+  Button,
+  Logo,
+  NavbarList,
+  List,
+  Link,
+  Divider,
+  Perfil,
+  ImagemPerfil,
+  Notifications
+} from './HeaderStyles'
+
+import MenuOpen from '../../assets/images/menu-open.svg'
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false)
@@ -17,50 +29,49 @@ const Header = () => {
   }
   return (
     <HeaderContent>
-      <Nav>
-        <div id="menu">
-          <div className="buttons mobile">
-            <button
+      <NavContainer>
+        <Menu>
+          <ButtonsMobile className="button-mobile">
+            <Button
               className={`menu-open ${isOpen ? 'hidden' : ''}`}
               onClick={handleMenuOpen}
             >
               <img src={MenuOpen} alt="Abrir menu" />
-            </button>
-            <button
+            </Button>
+
+            <Button
               className={`menu-close ${isOpen ? '' : 'hidden'}`}
               onClick={handleMenuClose}
             >
               <img src={MenuOpen} alt="Abrir menu" />
-            </button>
-          </div>
+            </Button>
+          </ButtonsMobile>
 
-          <img src={Logo} alt="Logo Oranje" className="logo" />
-        </div>
-        <Navbar className={isOpen ? 'show' : ''}>
-          <ul id="navbar">
-            <li>
-              <a href="#">Meus Projetos</a>
-            </li>
-            <li>
-              <a href="#">Descobrir</a>
-            </li>
-            <div className="divider"></div>
-            <li className="config">
-              <a href="#">Configurações</a>
-            </li>
-          </ul>
-        </Navbar>
-        <div className="perfil">
-          <div className="img-perfil">
-            <img src={PhotoProfile} alt="Foto de perfil" />
-          </div>
-          <img
-            src={IconNotifications}
-            alt="Botão de notificação"
-            className="notification"
-          />
-        </div>
-      </Nav>
+          <Logo src="src/assets/images/Logo-orange.png"></Logo>
+
+          <NavbarList className={isOpen ? 'show' : ''}>
+            <List>
+              <Link href="#">Meus Projetos</Link>
+            </List>
+            <List>
+              <Link href="#">Descobrir</Link>
+            </List>
+            <Divider></Divider>
+            <List>
+              <Link href="#">Configurações</Link>
+            </List>
+          </NavbarList>
+        </Menu>
+
+        <Perfil className="perfil">
+          <ImagemPerfil
+            ClassName="img-perfil"
+            src="src/assets/images/profile.png"
+            alt="Foto de perfil"
+          ></ImagemPerfil>
+          <Notifications src="src/assets/images/notifications.png"></Notifications>
+        </Perfil>
+      </NavContainer>
     </HeaderContent>
   )
 }

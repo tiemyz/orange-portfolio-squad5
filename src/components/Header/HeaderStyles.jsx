@@ -19,22 +19,9 @@ export const NavContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  .notification {
-    cursor: pointer;
-  }
-
-  .show {
-    left: 0;
-    transition: 0.3s;
-  }
-
   @media (min-width: 768px) {
     .button-mobile {
       display: none;
-    }
-
-    .show {
-      transition: none;
     }
   }
 `
@@ -45,14 +32,16 @@ export const Menu = styled.div`
   align-items: center;
   gap: 3px;
 
+  .show {
+    left: 0;
+    transition: 0.3s;
+  }
+
   @media (min-width: 768px) {
     gap: 100px;
-    .divider {
-      display: none;
-    }
 
-    .config {
-      display: none;
+    .show {
+      transition: none;
     }
   }
 `
@@ -77,7 +66,7 @@ export const Logo = styled.img`
   width: 83px;
   height: 31px;
 
-  @media (min-width: 728px) {
+  @media (min-width: 768px) {
     width: 111px;
     height: 41px;
   }
@@ -108,24 +97,11 @@ export const NavbarList = styled.ul`
     justify-content: center;
     gap: 24px;
 
-    #navbar {
-      display: flex;
-    }
-
-    #navbar li a {
-      color: #fcfdff;
-      font-family: Roboto;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 20px; /* 100% */
-      letter-spacing: 0.15px;
-    }
-
-    #navbar .config {
+    .divider {
       display: none;
     }
 
-    .divider {
+    .config {
       display: none;
     }
   }

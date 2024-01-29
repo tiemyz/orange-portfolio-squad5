@@ -82,6 +82,7 @@ function CadastroForm() {
             navigate("/");
         } catch (error) {
             console.error("Erro ao criar conta:", error.message);
+            console.log("Código de erro Firebase:", error.code);
 
             // Tratar erros específicos
             if (error.code === "auth/email-already-in-use") {
@@ -146,14 +147,6 @@ function CadastroForm() {
             {loading && <p>Carregando...</p>}
             {!loading && warning && <p style={{ color: "red" }}>{warning}</p>}
             {!loading && successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-
-            {/* Adicionar um link para redirecionar para outra página, se necessário */}
-            <Link to="/">Voltar para a página inicial</Link>
-
-            {/* Adicionar o botão de login com Google */}
-            <button type="button" onClick={handleSignInWithGoogle}>
-                Entrar com Google
-            </button>
         </CadastroFormContainer>
     );
 }

@@ -132,7 +132,7 @@ function LoginForm() {
                     <VisibilityButton type="button" onClick={handleTogglePassword}>
                         {showPassword ? (
                             <EyesIcon src={EyeClosedIcon} alt="Hide Password"/>
-                        ) : (
+                            ) : (
                             <EyesIcon src={EyeOpenIcon} alt="Show Password"/>
                         )}
                     </VisibilityButton>

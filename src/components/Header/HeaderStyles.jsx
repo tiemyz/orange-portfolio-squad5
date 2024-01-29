@@ -12,103 +12,69 @@ export const HeaderContent = styled.header`
   box-sizing: border-box;
 `
 
-export const Nav = styled.div`
+export const NavContainer = styled.nav`
   width: 100%;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  img.logo {
-    width: 83px;
-    height: 31px;
-  }
-
-  .perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .img-perfil img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    clip-path: circle();
-  }
-
   .notification {
     cursor: pointer;
   }
 
-  #menu {
-    display: flex;
-  }
-
-  .menu-open,
-  .menu-close {
-    cursor: pointer;
-    padding: 8px;
-    background: transparent;
-    border: none;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .show {
     left: 0;
+    transition: 0.3s;
   }
 
   @media (min-width: 768px) {
-    .mobile {
+    .button-mobile {
       display: none;
     }
   }
 `
 
-export const Navbar = styled.nav`
+export const Menu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+`
+
+export const ButtonsMobile = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .hidden {
+    display: none;
+  }
+`
+export const Button = styled.button`
+  cursor: pointer;
+  padding: 8px;
+  background: transparent;
+  border: none;
+`
+
+export const Logo = styled.img`
+  width: 83px;
+  height: 31px;
+`
+export const NavbarList = styled.ul`
   width: 147px;
   height: 155px;
+  padding: 8px 0 0;
+  position: fixed;
   background: #fff;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: fixed;
+
   top: 64px;
-  left: -159px;
-
-  #navbar li {
-    list-style: none;
-    padding: 6px 16px;
-    align-items: center;
-    position: relative;
-  }
-
-  #navbar li a {
-    color: rgba(0, 0, 0, 0.87);
-    text-decoration: none;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0.15px;
-  }
-
-  .divider {
-    width: 147px;
-    height: 1px;
-    margin: 8px 0;
-    background: rgba(0, 0, 0, 0.12);
-  }
+  left: -147px;
 
   @media (min-width: 768px) {
     width: auto;
@@ -142,4 +108,45 @@ export const Navbar = styled.nav`
       display: none;
     }
   }
+`
+
+export const List = styled.li`
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  align-items: center;
+`
+
+export const Link = styled.a`
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+`
+
+export const Divider = styled.div`
+  width: 147px;
+  height: 1px;
+  margin: 8px 0;
+  background: rgba(0, 0, 0, 0.12);
+`
+
+export const Perfil = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+`
+export const ImagemPerfil = styled.img`
+  display: flex;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  clip-path: circle();
+`
+
+export const Notifications = styled.img`
+  cursor: pointer;
 `

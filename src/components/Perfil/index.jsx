@@ -1,17 +1,23 @@
-import { ProfileContent, ImageProfile, InfoContainer } from './StylesPerfil'
-import { Buttons } from '../Buttons'
-import ProfileImg from '../../assets/profile.png'
+import {
+  ProfileContent,
+  ImageProfile,
+  InfoContainer,
+  Name,
+  Local
+} from './StylesPerfil'
+import { ButtonGrayDefault } from '../Buttons/ButtonStyles'
 
 const Perfil = () => {
   return (
     <ProfileContent>
-      <ImageProfile>
-        <img src={ProfileImg} alt="foto de perfil" />
-      </ImageProfile>
+      <ImageProfile
+        src="src/assets/profile.png"
+        alt="foto de perfil"
+      ></ImageProfile>
       <InfoContainer>
-        <h5>Camila Soares</h5>
-        <p>Brasil</p>
-        <Buttons />
+        <Name>Camila Soares</Name>
+        <Local>Brasil</Local>
+        <ButtonGrayDefault>Adicionar Projeto</ButtonGrayDefault>
       </InfoContainer>
     </ProfileContent>
   )

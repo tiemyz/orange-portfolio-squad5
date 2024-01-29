@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy9wJB83lwjoRAXXlkQtYusUwzvnBXv04",
@@ -22,4 +23,5 @@ const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 
 // Exportar as instâncias dos serviços para uso em outros lugares do seu aplicativo
-export { app, auth, db, createUserWithEmailAndPassword, signInWithPopup, googleProvider };
+export { app, auth, db, createUserWithEmailAndPassword, signInWithPopup, googleProvider};
+export const storage = getStorage(app);

@@ -56,8 +56,8 @@ const Header = () => {
             <List>
               <Link href="#">Descobrir</Link>
             </List>
-            <Divider></Divider>
-            <List>
+            <Divider className="divider"></Divider>
+            <List className="config">
               <Link href="#">Configurações</Link>
             </List>
           </NavbarList>

@@ -36,11 +36,11 @@ function CadastroForm() {
     const handleSignUp = async (e) => {
         e.preventDefault();
 
-        // Limpar mensagens anteriores
+        // Limpa mensagens anteriores
         setWarning("");
         setSuccessMessage("");
 
-        // Verificar se os campos obrigatórios foram preenchidos
+        // Verifica se os campos obrigatórios foram preenchidos
         if (!name || !lastName || !email || !password) {
             setWarning("Preencha todos os campos obrigatórios!");
             return;

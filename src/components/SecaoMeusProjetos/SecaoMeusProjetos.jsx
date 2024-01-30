@@ -12,7 +12,8 @@ import {
 } from './SecaoMeusProjetosStyle';
 
 /* TODO: 
-- Retoques na responsividade (verificar a necessidade de tela intermediária) */
+- Retoques na responsividade (verificar a necessidade de tela intermediária) 
+- Ocultar botão editar */
 
 export default function SecaoMeusProjetos() {
 	const [openEdit, setOpenEdit] = useState(false);
@@ -43,6 +44,7 @@ export default function SecaoMeusProjetos() {
 							<BotaoProjeto onClick={() => window.alert('Tudo ok!')}>
 							<StyledBodyText1>Adicione seu primeiro projeto</StyledBodyText1>
 							</BotaoProjeto>
+							{openEdit && <BotaoEditarOuExcluir />}
 						</ContainerProjeto>
 						
 							<ContainerProjeto></ContainerProjeto>
@@ -52,7 +54,7 @@ export default function SecaoMeusProjetos() {
 					</ListaProjetos>
 				</div>
 			</SecaoProjetos>
-			{openEdit && <BotaoEditarOuExcluir />}
+
 		</>
 	);
 }

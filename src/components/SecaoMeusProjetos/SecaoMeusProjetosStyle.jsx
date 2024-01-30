@@ -2,13 +2,19 @@ import styled from "styled-components";
 
 //Estilo da Seção Projetos - Mobile
 export const SecaoProjetos = styled.section`
-    margin: 40px 0 27px 0;
+    margin: 40px;
     display: flex;
     flex-direction: column;
 
-//Desktop
-    @media (min-width: 768px) {
+    //Tablet 
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        flex-direction: row;
+    }
+
+    //Desktop
+    @media screen and (min-width: 1024px) {
         margin: 56px 0 79px 32px;
+        flex-direction: row;
         width: 589px;
         height: 323px;
     }
@@ -16,7 +22,7 @@ export const SecaoProjetos = styled.section`
 
 //Estilo do subtítulo "Meus Projetos" - Mobile and Desktop
 export const SubtituloProjetos = styled.h6 `
-    margin: 0 0 16px 24px;
+    margin: 0 0 16px 30px;
     color: #0B0C0D;
     font-size: 20px;
     font-weight: 500;
@@ -26,56 +32,78 @@ export const SubtituloProjetos = styled.h6 `
 //Estilo do campo de busca - Mobile
 export const CampoBuscarTags = styled.input`
     align-self: stretch;
-    margin: 0 24px 24px 24px;
+    margin: 0 24px 24px 30px;
     padding: 10px 12px;
     border: 1px solid #818388;
     border-radius: 4px;
-    width: 90%;
+    width: 300px;
     height: 24px;
-    &:hover {
+    &::hover {
         border: 1px solid #000000;
     }
     //Para code review: Focus não está funcionando como deveeria (Cor não muda)!
-    &:focus {
+    &::focus {
         border: 2px solid #2348B1;
     }
 
-//Desktop
-    @media (min-width: 768px) {
-        width: 513px;
+    //Tablet 
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 420px;
+    }
+    //Desktop
+    @media screen and (min-width: 1024px) {
+        width: 520px;
     }
 `;
 
-//Container projetos
+//Container projetos - Mobile
 export const ListaProjetos = styled.ul`
     position: absolute;
-    flex-direction: row;
     list-style: none;
-    width: 100vw;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    margin: 0 10px;
+    flex-direction: column;
+    margin: 0 0 0 18px;
+    gap: 24px;
     padding: 0;
 
+    //Tablet 
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        flex-direction: row;
+    }
+
+    //Desktop
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        gap: 16px;
+        width: 100vw;
+    }
 `
 
 export const ContainerProjeto = styled.li`	
     position: relative;
     display: flex;
-    margin: 0 14px;
+    margin: 0 0 0 10px;
+    width: 330px;
+    height: 260px;
     background-color: #E6E9F233;
     border-radius: 4px;
-    width: 390px;
-    height: 260px;
     border: none;
-    flex-direction: column;
+    flex-direction: row;
+
+    //Desktop
+    @media screen and (min-width: 1024px) {
+        margin: 0 14px;
+        width: 100vw;
+        width: 390px;
+        height: 260px;
+    }
 `
 
 //Estilo botão projeto - Mobile
 export const BotaoProjeto = styled.button`
     position: relative;
     width: 100%;
-    height: 100%;
     border: none;
     cursor: pointer;
     flex-direction: column;
@@ -87,38 +115,58 @@ export const BotaoProjeto = styled.button`
     &::before{
     content: 'Compartilhe seu talento com milhares de pessoas';
     display: flex;
-    position: relative;
-    right: -5%;
+    position: absolute;
+    right: 0;
     color: #303133;
     opacity: 0.6;
     font-size: 14px;
     font-weight: 400;
     text-align: left;
-    margin: 155px 50px 0 40px;
+    margin: 155px 20px 0 20px;
     }
 
-//Desktop
-    //@media (max-width: 768px) {
-    //width: 53%;
-   // height: 70%;
-   // }
+    //Tablet 
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        &::before {
+        margin: 155px 40px 0 30px;
+        }
+    }
+    //Desktop
+    @media screen and (min-width: 1024px) {
+        &::before{
+            margin: 155px 40px 0 45px;
+        }
+    }
 `;
 
 //Estilo do p 1 do botão
 export const StyledBodyText1 = styled.p`
     position: absolute;
-    display: flex;
-    top: 42%;
-    right: 30%;
+    top: 110px;
+    right: 100px;
     color: #303133;
     opacity: 0.6;
     font-size: 16px;
     font-weight: 400;
     text-align: left;
+
+    //Tablet 
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+    position: relative;
+    margin: 10px 30px 10px 0;
+    top: 115px;
+    right: -25px;
+    }
+    //Desktop
+    @media screen and (min-width: 1024px) {
+    position: relative;
+    margin: 10px 30px 10px 0;
+    top: 115px;
+    right: -38px;
+    }
 `;
 
 //Estilo do botão de lápis para dropdown:
-
 export const BotaoLapis = styled.img`
     position: absolute;
     z-index: 1;
@@ -136,8 +184,8 @@ export const BotaoLapis = styled.img`
 //Estilo do dropdown:
 export const EditDeleteDropdown = styled.div`
     position: absolute;
-    top: 214px;
-    right: 850px;
+    top: 50px;
+    right: 15px;
     width: 180px;
     height: 55px;
     padding: 16px 0;
@@ -154,6 +202,15 @@ export const EditDeleteDropdown = styled.div`
     height: 10px;
     transform: rotate(45deg);
     background-color: white;
+    }
+
+    //Tablet
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        right: 15px;
+    }
+    //Desktop
+    @media screen and (min-width: 1024px) {
+        right: 15px;
     }
 `
 

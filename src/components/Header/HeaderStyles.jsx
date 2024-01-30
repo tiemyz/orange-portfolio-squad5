@@ -122,17 +122,32 @@ export const Link = styled.a`
   font-weight: 400;
   letter-spacing: 0.15px;
 
+  /* Hover */
+  &:hover:active {
+    color: #cc4400;
+  }
+
+  /* After */
+  &::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #cc4400;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    transition: width 0.2s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
   @media (min-width: 768px) {
     color: #fcfdff;
     font-size: 20px;
     font-weight: 500;
     line-height: 20px;
-
-    /* Hover */
-    &:hover {
-      color: #d3d4d5;
-      transition: 0.3s;
-    }
   }
 `
 

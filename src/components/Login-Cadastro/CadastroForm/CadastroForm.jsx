@@ -10,6 +10,7 @@ import { CadastroFormContainer,
     InputContainer, 
     VisibilityButton, 
     EyesIcon} from '../Forms.styles';
+import SuccessPopup from '../../SuccessPopUp/SuccessPopup';
 import EyeOpenIcon from '../../../assets/visibility-default.svg';
 import EyeClosedIcon from '../../../assets/visibility-off.svg';
 // Importações do FirebaseConfig
@@ -17,15 +18,16 @@ import { createUserWithEmailAndPassword, updateProfile, signInWithPopup, GoogleA
 import { Form, Link, useNavigate } from "react-router-dom";
 import { addToFirestore } from "../../../services/firebaseFirestore";
 
+
 function CadastroForm() {
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [warning, setWarning] = useState("");
-    const [successMessage, setSuccessMessage] = useState("");
     const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false); 
     const navigate = useNavigate();
     const auth = getAuth();
 
@@ -38,7 +40,6 @@ function CadastroForm() {
 
         // Limpar mensagens anteriores
         setWarning("");
-        setSuccessMessage("");
 
         // Verificar se os campos obrigatórios foram preenchidos
         if (!name || !lastName || !email || !password) {
@@ -75,11 +76,12 @@ function CadastroForm() {
             setEmail("");
             setPassword("");
 
-            // Exibir mensagem de sucesso
-            setSuccessMessage("Cadastro realizado, com sucesso!");
-
-            // Redirecionar para a página inicial (ou ajuste conforme necessário)
-            navigate("/");
+             // Exibir o popup de sucesso após o usuário clicar em "cadastrar"
+            setShowSuccessPopup(true);  
+                // Redirecionamento para a página de login e timout de 1 segundo
+                setTimeout(() => {
+                    navigate("/");
+                }, 1000);
         } catch (error) {
             console.error("Erro ao criar conta:", error.message);
             console.log("Código de erro Firebase:", error.code);
@@ -100,18 +102,9 @@ function CadastroForm() {
         }
     };
 
-    const handleSignInWithGoogle = async () => {
-        try {
-            const result = await signInWithPopup(auth, new GoogleAuthProvider());
-            const user = result.user;
-            console.log("Usuário autenticado com Google:", user);
-        } catch (error) {
-            console.error("Erro ao autenticar com Google:", error.message);
-        }
-    };
-
     return (
         <CadastroFormContainer>
+            {showSuccessPopup && <SuccessPopup />}
             <Title>Cadastre-se</Title>
             <StyledForm onSubmit={handleSignUp}>
                 <InputContainerFlex>
@@ -143,10 +136,8 @@ function CadastroForm() {
                 <ButtonDefault type="submit">CADASTRAR</ButtonDefault>
             </StyledForm>
 
-            {/* Adicione mensagens de aviso ou sucesso */}
             {loading && <p>Carregando...</p>}
             {!loading && warning && <p style={{ color: "red" }}>{warning}</p>}
-            {!loading && successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
         </CadastroFormContainer>
     );
 }

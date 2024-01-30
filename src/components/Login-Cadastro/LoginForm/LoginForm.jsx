@@ -41,7 +41,7 @@ function LoginForm() {
             if (user) {
                 if (!warning) {
                     setWarning("");
-                    navigate("/");
+                    navigate("/home");
                 }
             }
         });

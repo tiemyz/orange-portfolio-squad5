@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import {
   HeaderContent,
   NavContainer,
@@ -15,15 +15,16 @@ import {
   Notifications
 } from './HeaderStyles'
 
-import MenuOpen from '../../assets/images/menu-open.svg'
-
 const Header = () => {
   const [isOpen, setOpen] = useState(false)
+  const menuRef = useRef(null)
 
+  // Fecha o menu
   const handleMenuOpen = () => {
     setOpen(true)
   }
 
+  // Abre o menu
   const handleMenuClose = () => {
     setOpen(false)
   }
@@ -32,24 +33,38 @@ const Header = () => {
   const handleLinkClick = () => {
     setOpen(false)
   }
+  // Fecha o menu quando clicar em outro campo da página
+  const handleOutsideMenu = clickEvent => {
+    if (menuRef.current && !menuRef.current.contains(clickEvent.target)) {
+      setOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideMenu)
+
+    return () => {
+      document.addEventListener('click', handleOutsideMenu)
+    }
+  }, [])
 
   return (
     <HeaderContent>
       <NavContainer>
-        <Menu>
+        <Menu ref={menuRef}>
           <ButtonsMobile className="button-mobile">
             <Button
               className={`menu-open ${isOpen ? 'hidden' : ''}`}
               onClick={handleMenuOpen}
             >
-              <img src={MenuOpen} alt="Abrir menu" />
+              <img src="src/assets/images/menu-open.svg" alt="Abrir menu" />
             </Button>
 
             <Button
               className={`menu-close ${isOpen ? '' : 'hidden'}`}
               onClick={handleMenuClose}
             >
-              <img src={MenuOpen} alt="Abrir menu" />
+              <img src="src/assets/images/menu-open.svg" alt="Abrir menu" />
             </Button>
           </ButtonsMobile>
 

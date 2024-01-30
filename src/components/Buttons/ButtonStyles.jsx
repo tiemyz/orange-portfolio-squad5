@@ -30,6 +30,7 @@ export const ButtonDefault = styled.button`
   
 `;
 
+
 export const ButtonOrangeSmall = styled(ButtonDefault)`
     width: 100px;
 `

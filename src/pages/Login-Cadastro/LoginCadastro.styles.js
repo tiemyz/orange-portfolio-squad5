@@ -14,7 +14,11 @@ export const DivImg = styled.div`
     justify-content: center;
     overflow: hidden; 
 
-    @media screen and (max-width: 1020px) {
+    @media screen and (max-width: 1400px) {
+        width: 40%;
+    }
+
+    @media screen and (max-width: 1120px) {
         display: none;
     }
 `
@@ -24,8 +28,12 @@ export const DivForm = styled.div`
     align-items: center;
     width: 70%;
 
-    @media screen and (max-width: 1020px) {
-        width: 1000%;
+    @media screen and (max-width: 1400px) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: 1120px) {
+        width: 100%;
     }  
 `
 export const SideImg = styled.img`

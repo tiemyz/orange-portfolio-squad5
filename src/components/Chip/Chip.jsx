@@ -1,8 +1,8 @@
-import { ChipContent, ChipDiv, ChipText } from "./ChipStyle";
+import { ChipContent, ChipText } from "./ChipStyle";
 
-function Chip({chiptext}){
+function Chip({ chiptext }) {
     /*TODO: criar lógica para gerar chips de tags que o usuario digitar */
-    return(
+    return (
         <ChipContent>
             <ChipText>{chiptext}</ChipText>
         </ChipContent>

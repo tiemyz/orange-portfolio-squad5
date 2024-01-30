@@ -33,13 +33,38 @@ export const ModalPreVisualizacaoContent = styled.div`
         justify-content: start;
     }
 
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 80%;
+    }
+
 `;
 
+
+export const DivCloseButton = styled.div`
+    display: inline-flex;
+    width: 100%;
+    justify-content: right;
+`;
+
+
+export const CloseButtonPreVisualizacaoProjeto = styled.button`
+    width: 14px;
+    background-color: #FFF;
+    border: none;
+
+    &:hover {
+        background-color: grey;
+    }
+
+`;
+
+/*Imagem Projeto */
 export const ModalPreVisualizacaoDivImagem = styled.div`
-    width: 838px;
+    width: 100%;
+    /* width: 838px; */
     height: 585px;
 
-    @media (max-width: 768px){
+    @media screen and (max-width: 768px){
         width: 312px;
         height: 258px;
     }
@@ -47,7 +72,7 @@ export const ModalPreVisualizacaoDivImagem = styled.div`
 `;
 
 
-/*Imagem */
+
 export const ModalPreVisualizacaoImagem = styled.img`
     width: 100%;
     height: 100%;
@@ -77,8 +102,12 @@ export const ModalPreVisualizacaoInfoContainer = styled.div`
     justify-content: space-between;
     gap: var(--1, 8px);
 
-    @media (min-width: 768px){
-        width: 838px;
+    @media screen and (min-width: 770px) and (max-width: 1023px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 769px){
+        width: 100%;
         position: relative;
         top: -670px;
         
@@ -129,13 +158,20 @@ export const ModalPreVisualizacaoTime = styled.time`
 
 /*Paragrafo sobre o projeto */
 export const ModalPreVisualizacaoTextContainer = styled.div`
-    width: 838px;
     
+    width: 838px;
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 767px) {
         width: 308px;
     }
-    @media (width > 1024px) {
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+    }
+
+
+    @media screen and (min-width: 1024px) {
+        margin-top: -50px;
         margin-bottom: 83px;
     }
     
@@ -149,8 +185,6 @@ export const ModalPreVisualizacaoP = styled.p`
     font-weight: 400;
     line-height: 16px; /* 100% */
     letter-spacing: 0.5px;
-
- 
 
 `;
 

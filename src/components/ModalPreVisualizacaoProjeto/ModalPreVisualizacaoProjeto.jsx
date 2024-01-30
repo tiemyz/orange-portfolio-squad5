@@ -1,6 +1,7 @@
 import Chip from "../Chip/Chip";
 import { ChipDiv } from "../Chip/ChipStyle";
-import { ModalPreVisualizacaoBackground,
+import {
+    CloseButtonPreVisualizacaoProjeto, DivCloseButton, ModalPreVisualizacaoBackground,
     ModalPreVisualizacaoContent,
     ModalPreVisualizacaoDivImagem,
     ModalPreVisualizacaoH5,
@@ -10,16 +11,19 @@ import { ModalPreVisualizacaoBackground,
     ModalPreVisualizacaoInfoUsuario,
     ModalPreVisualizacaoInfoUsuarioContainer,
     ModalPreVisualizacaoLinks,
-    ModalPreVisualizacaoNomeUsuario, 
+    ModalPreVisualizacaoNomeUsuario,
     ModalPreVisualizacaoP,
     ModalPreVisualizacaoTextContainer,
-    ModalPreVisualizacaoTime } from "./ModalPreVisualizacaoProjetoStyle";
+    ModalPreVisualizacaoTime
+} from "./ModalPreVisualizacaoProjetoStyle";
 
 function ModalPreVisualizacaoProjeto({ url, nomeProjeto, nomeUsuario, data }) {
     return (
         <ModalPreVisualizacaoBackground>
             <ModalPreVisualizacaoContent>
-                <button>X</button>
+                <DivCloseButton>
+                    <CloseButtonPreVisualizacaoProjeto type='button'><img src='src\assets\img\Vector.png'></img></CloseButtonPreVisualizacaoProjeto>
+                </DivCloseButton>
                 <ModalPreVisualizacaoH5>{nomeProjeto}</ModalPreVisualizacaoH5>
                 <ModalPreVisualizacaoDivImagem>
                     <ModalPreVisualizacaoImagem src="src\assets\img\img_landingpage.png" alt="Project-Photo"></ModalPreVisualizacaoImagem>
@@ -29,7 +33,7 @@ function ModalPreVisualizacaoProjeto({ url, nomeProjeto, nomeUsuario, data }) {
 
                 <ModalPreVisualizacaoInfoContainer>
                     <ModalPreVisualizacaoInfoUsuarioContainer>
-                        <img src="src\assets\img\user-profile.png" alt="user-profile" width={40} height={40} />
+                        <img src="src\assets\img\user-profile.png" alt="user-profile" width={40} height={40} style={{ borderRadius: '50%' }} />
                         <ModalPreVisualizacaoInfoUsuario>
                             <ModalPreVisualizacaoNomeUsuario>{nomeUsuario}</ModalPreVisualizacaoNomeUsuario>
                             <ModalPreVisualizacaoTime>{data}</ModalPreVisualizacaoTime>

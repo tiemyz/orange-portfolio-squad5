@@ -1,6 +1,8 @@
-import GlobalStyles from "./GlobalStyles";
-//import { AddProjectModal } from "./components/AddProjectModal/Desktop/AddProjectModal";
-//import { MobAddProjectModal } from "./components/AddProjectModal/Mobile/MobAddProjectModal"
+import SecaoMeusProjetos from "./components/SecaoMeusProjetos/SecaoMeusProjetos";
+import GlobalStyles from './GlobalStyles';
+import Header from './components/Header';
+import AppRoutes from './routes/AppRoutes';
+
 
 function App() {
 
@@ -8,9 +10,10 @@ function App() {
 
   return (
     <>
-      <GlobalStyles/>
+      <GlobalStyles />
+      <AppRoutes />
     </>
   )
   }
 
-export default App;
+export default App

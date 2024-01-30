@@ -6,14 +6,13 @@ import {
 	SubtituloProjetos,
 	BotaoProjeto,
 	StyledBodyText1,
-	StyledBodyText2,
 	ListaProjetos,
-  BotaoLapis,
+	BotaoLapis,
+	ContainerProjeto,
 } from './SecaoMeusProjetosStyle';
 
-/* TODO: O botão de editar tá saindo do lugar com a mudança de tela, consertar isso.
- - Adicionar os "espaços em branco" na lista de projetos
- - Retoques na responsividade (verificar a necessidade de tela intermediária) */
+/* TODO: 
+- Retoques na responsividade (verificar a necessidade de tela intermediária) */
 
 export default function SecaoMeusProjetos() {
 	const [openEdit, setOpenEdit] = useState(false);
@@ -34,25 +33,22 @@ export default function SecaoMeusProjetos() {
 						</label>
 					</div>
 					<ListaProjetos>
-						<BotaoProjeto>
+						<ContainerProjeto>
 							<BotaoLapis
 								id='pencil-icon'
 								src='/assets/pencil.png'
 								alt='Pencil icon'
 								onClick={() => setOpenEdit(!openEdit)}
 							/>
-							<img
-								id='icon-img'
-								src='../../../assets/collections.png'
-								alt='Icon imagem'
-							/>
+							<BotaoProjeto onClick={() => window.alert('Tudo ok!')}>
 							<StyledBodyText1>Adicione seu primeiro projeto</StyledBodyText1>
-							<StyledBodyText2>
-								Compartilhe seu talento com milhares de pessoas
-							</StyledBodyText2>
-						</BotaoProjeto>
-            <li></li>
-						<li></li>
+							</BotaoProjeto>
+						</ContainerProjeto>
+						
+							<ContainerProjeto></ContainerProjeto>
+						
+						
+							<ContainerProjeto></ContainerProjeto>
 					</ListaProjetos>
 				</div>
 			</SecaoProjetos>

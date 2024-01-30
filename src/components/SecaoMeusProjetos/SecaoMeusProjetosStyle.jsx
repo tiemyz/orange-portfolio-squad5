@@ -48,61 +48,82 @@ export const CampoBuscarTags = styled.input`
 
 //Container projetos
 export const ListaProjetos = styled.ul`
+    position: absolute;
+    flex-direction: row;
     list-style: none;
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    margin: 0;
+    margin: 0 10px;
     padding: 0;
 
 `
 
+export const ContainerProjeto = styled.li`	
+    position: relative;
+    display: flex;
+    margin: 0 14px;
+    background-color: #E6E9F233;
+    border-radius: 4px;
+    width: 390px;
+    height: 260px;
+    border: none;
+    flex-direction: column;
+`
 
 //Estilo botão projeto - Mobile
 export const BotaoProjeto = styled.button`
     position: relative;
-    margin: 0 24px;
-    padding: 60px;
-    background-color: #E6E9F2;
-    border-radius: 4px;
-    width: 389px;
-    height: 258px;
+    width: 100%;
+    height: 100%;
     border: none;
     cursor: pointer;
     flex-direction: column;
-
-//Desktop
-    @media (max-width: 768px) {
-    width: 53%;
-    height: 70%;
-    }
-`;
-
-//Estilo do p 1 do botão
-export const StyledBodyText1 = styled.p`
-    color: #303133;
-    opacity: 0.6;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: left;
-    margin: 16px auto;
-`;
-
-//Estilo do p 2 do botão
-export const StyledBodyText2 = styled.p`
+    background-image: url('../../../assets/collections.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 30%;
+    &::before{
+    content: 'Compartilhe seu talento com milhares de pessoas';
+    display: flex;
+    position: relative;
+    right: -5%;
     color: #303133;
     opacity: 0.6;
     font-size: 14px;
     font-weight: 400;
     text-align: left;
-    margin: 0;
+    margin: 155px 50px 0 40px;
+    }
+
+//Desktop
+    //@media (max-width: 768px) {
+    //width: 53%;
+   // height: 70%;
+   // }
+`;
+
+//Estilo do p 1 do botão
+export const StyledBodyText1 = styled.p`
+    position: absolute;
+    display: flex;
+    top: 42%;
+    right: 30%;
+    color: #303133;
+    opacity: 0.6;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
 `;
 
 //Estilo do botão de lápis para dropdown:
 
 export const BotaoLapis = styled.img`
     position: absolute;
-    top: 10px;
-    right: 12px;
+    z-index: 1;
+    top: 4%;
+    right: 3%;
     width: 25px;
     height: 25px;
     padding: 4px;
@@ -116,7 +137,7 @@ export const BotaoLapis = styled.img`
 export const EditDeleteDropdown = styled.div`
     position: absolute;
     top: 214px;
-    right: 806px;
+    right: 850px;
     width: 180px;
     height: 55px;
     padding: 16px 0;

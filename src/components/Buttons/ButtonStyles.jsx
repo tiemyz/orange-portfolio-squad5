@@ -23,13 +23,12 @@ export const ButtonDefault = styled.button`
         background: #CC4400;
     }
 
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         width: 312px;
 
     }
   
 `;
-
 
 export const ButtonOrangeSmall = styled(ButtonDefault)`
     width: 100px;

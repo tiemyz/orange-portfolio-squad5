@@ -4,15 +4,15 @@ import LoginPage from "../pages/Login-Cadastro/LoginPage/LoginPage";
 import Home from "../pages/Home/Home";
 
 function AppRoutes() {
-    return(
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<LoginPage/>}/>
-                <Route path="/cadastro" element={<CadastroPage/>}/>
-                <Route path="/home" element={<Home/>}/>
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/cadastro" element={<CadastroPage />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default AppRoutes;
+export default AppRoutes

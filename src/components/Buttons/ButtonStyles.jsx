@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 export const ButtonDefault = styled.button`
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
   padding: 8px 22px;
   border: none;
   border-radius: 4px;
@@ -22,12 +25,32 @@ export const ButtonDefault = styled.button`
   &:hover {
     background: #cc4400;
   }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fdfdfd 10%, transparent 2.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+  }
+
+  &:active::after {
+    transform: scale(0, 0);
+    opacity: 0.6;
+    transition: 0s;
+  }
 `
 
-export const ButtonGrayDefault = styled.button`
-  height: 2.6rem;
-  padding: 0.5rem 1.37rem;
-  border: none;
+export const ButtonGray = styled(ButtonDefault)`
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.12);
   align-items: center;
@@ -35,16 +58,10 @@ export const ButtonGrayDefault = styled.button`
 
   /* Fonts */
   color: rgba(0, 0, 0, 0.38);
-  font-size: 0.93rem;
-  font-weight: 500;
-  line-height: 1.6rem;
-  letter-spacing: 0.028rem;
-  text-transform: uppercase;
 
   /* Hover */
   &:hover {
     color: #fff;
-    background-color: #c40;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
       0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   }

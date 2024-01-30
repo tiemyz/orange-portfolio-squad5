@@ -1,8 +1,8 @@
-import { ButtonGrayDefault } from './ButtonStyles'
+import { ButtonGray } from './ButtonStyles'
 const Buttons = () => {
   return (
     <div>
-      <ButtonGrayDefault>Adicionar Projeto</ButtonGrayDefault>
+      <ButtonGray>Adicionar Projeto</ButtonGray>
       <br />
     </div>
   )

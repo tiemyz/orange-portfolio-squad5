@@ -5,7 +5,7 @@ import {
   Name,
   Local
 } from './StylesPerfil'
-import { ButtonGrayDefault } from '../Buttons/ButtonStyles'
+import { ButtonGray } from '../Buttons/ButtonStyles'
 
 const Perfil = () => {
   return (
@@ -17,7 +17,7 @@ const Perfil = () => {
       <InfoContainer>
         <Name>Camila Soares</Name>
         <Local>Brasil</Local>
-        <ButtonGrayDefault>Adicionar Projeto</ButtonGrayDefault>
+        <ButtonGray>Adicionar Projeto</ButtonGray>
       </InfoContainer>
     </ProfileContent>
   )

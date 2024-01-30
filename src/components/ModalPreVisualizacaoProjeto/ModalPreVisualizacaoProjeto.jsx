@@ -1,4 +1,5 @@
 import Chip from "../Chip/Chip";
+import ChipRender from "../Chip/ChipRender";
 import { ChipDiv } from "../Chip/ChipStyle";
 import {
     CloseButtonPreVisualizacaoProjeto, DivCloseButton, ModalPreVisualizacaoBackground,
@@ -17,7 +18,7 @@ import {
     ModalPreVisualizacaoTime
 } from "./ModalPreVisualizacaoProjetoStyle";
 
-function ModalPreVisualizacaoProjeto({ url, nomeProjeto, nomeUsuario, data }) {
+function ModalPreVisualizacaoProjeto({ url, nomeProjeto, nomeUsuario, data, tagsList}) {
     return (
         <ModalPreVisualizacaoBackground>
             <ModalPreVisualizacaoContent>
@@ -40,11 +41,7 @@ function ModalPreVisualizacaoProjeto({ url, nomeProjeto, nomeUsuario, data }) {
                         </ModalPreVisualizacaoInfoUsuario>
                     </ModalPreVisualizacaoInfoUsuarioContainer>
 
-                    <ChipDiv>
-                        <Chip chiptext={'UX'}></Chip>
-                        <Chip chiptext={'Web'}></Chip>
-                        <Chip chiptext={'Fullstack'}></Chip>
-                    </ChipDiv>
+                    <ChipRender tags={tagsList}></ChipRender>
                 </ModalPreVisualizacaoInfoContainer>
 
                 <ModalPreVisualizacaoTextContainer>

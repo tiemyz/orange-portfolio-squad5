@@ -27,6 +27,12 @@ const Header = () => {
   const handleMenuClose = () => {
     setOpen(false)
   }
+
+  // Função para fechar o menu quando clicar em um link
+  const handleLinkClick = () => {
+    setOpen(false)
+  }
+
   return (
     <HeaderContent>
       <NavContainer>
@@ -51,13 +57,17 @@ const Header = () => {
 
           <NavbarList className={isOpen ? 'show' : ''}>
             <List>
-              <Link href="#">Meus Projetos</Link>
+              <Link href="#" onClick={handleLinkClick}>
+                Meus Projetos
+              </Link>
             </List>
             <List>
-              <Link href="#">Descobrir</Link>
+              <Link href="#" onClick={handleLinkClick}>
+                Descobrir
+              </Link>
             </List>
             <Divider className="divider"></Divider>
-            <List className="config">
+            <List className="config" onClick={handleLinkClick}>
               <Link href="#">Configurações</Link>
             </List>
           </NavbarList>

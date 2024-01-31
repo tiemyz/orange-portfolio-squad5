@@ -7,7 +7,7 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/cadastro" element={<CadastroPage />} />
         <Route path="/home" element={<Home />} />
       </Routes>
@@ -15,4 +15,4 @@ function AppRoutes() {
   )
 }
 
-export default AppRoutes
+export default AppRoutes;

@@ -1,11 +1,11 @@
-import { Perfil } from '../../components/Perfil'
+import Header from '../../components/Header'
 
 function Home() {
   return (
     <div>
-      <Perfil />
+      <Header />
     </div>
   )
 }
 
-export default Home
+export default Home;

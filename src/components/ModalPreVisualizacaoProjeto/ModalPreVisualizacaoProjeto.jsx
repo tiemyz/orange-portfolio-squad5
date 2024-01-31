@@ -1,23 +1,21 @@
-// import Chip from '../Chip/Chip'
 import ChipRender from '../Chip/ChipRender'
-// import { ChipDiv } from '../Chip/ChipStyle'
 import {
-  CloseButtonPreVisualizacaoProjeto,
-  DivCloseButton,
-  ModalPreVisualizacaoBackground,
-  ModalPreVisualizacaoContent,
-  ModalPreVisualizacaoDivImagem,
-  ModalPreVisualizacaoH5,
-  ModalPreVisualizacaoH6,
-  ModalPreVisualizacaoImagem,
-  ModalPreVisualizacaoInfoContainer,
-  ModalPreVisualizacaoInfoUsuario,
-  ModalPreVisualizacaoInfoUsuarioContainer,
-  ModalPreVisualizacaoLinks,
-  ModalPreVisualizacaoNomeUsuario,
-  ModalPreVisualizacaoP,
-  ModalPreVisualizacaoTextContainer,
-  ModalPreVisualizacaoTime
+  BackgroundPreVisualizacao,
+  CloseButton,
+  CloseButtonDiv,
+  ContentPreVisualizacao,
+  DivImagemPreVisualizacao,
+  H5PreVisualizacao,
+  H6PreVisualizacao,
+  ImagemPreVisualizacao,
+  InfoContainerPreVisualizacao,
+  InfoUsuario,
+  LinksPreVisualizacao,
+  NomeUsuario,
+  ParagrafoPreVisualizacao,
+  TextContainer,
+  TimePreVisualizacao,
+  UsuarioContainer
 } from './ModalPreVisualizacaoProjetoStyle'
 import VectorImg from '../../assets/images/Vector.png'
 import LandinPageImg from '../../assets/images/img_landingpage.png'
@@ -25,23 +23,23 @@ import UserProfileImg from '../../assets/images/user-profile.png'
 
 function ModalPreVisualizacaoProjeto() {
   return (
-    <ModalPreVisualizacaoBackground>
-      <ModalPreVisualizacaoContent>
-        <DivCloseButton>
-          <CloseButtonPreVisualizacaoProjeto type="button">
+    <BackgroundPreVisualizacao>
+      <ContentPreVisualizacao>
+        <CloseButtonDiv>
+          <CloseButton type="button">
             <img src={VectorImg}></img>
-          </CloseButtonPreVisualizacaoProjeto>
-        </DivCloseButton>
-        <ModalPreVisualizacaoH5>Orange App</ModalPreVisualizacaoH5>
-        <ModalPreVisualizacaoDivImagem>
-          <ModalPreVisualizacaoImagem
+          </CloseButton>
+        </CloseButtonDiv>
+        <H5PreVisualizacao>Orange App</H5PreVisualizacao>
+        <DivImagemPreVisualizacao>
+          <ImagemPreVisualizacao
             src={LandinPageImg}
             alt="Project-Photo"
-          ></ModalPreVisualizacaoImagem>
-        </ModalPreVisualizacaoDivImagem>
+          ></ImagemPreVisualizacao>
+        </DivImagemPreVisualizacao>
 
-        <ModalPreVisualizacaoInfoContainer>
-          <ModalPreVisualizacaoInfoUsuarioContainer>
+        <InfoContainerPreVisualizacao>
+          <UsuarioContainer>
             <img
               src={UserProfileImg}
               alt="user-profile"
@@ -49,30 +47,30 @@ function ModalPreVisualizacaoProjeto() {
               height={40}
               style={{ borderRadius: '50%' }}
             />
-            <ModalPreVisualizacaoInfoUsuario>
-              <ModalPreVisualizacaoNomeUsuario>
+            <InfoUsuario>
+              <NomeUsuario>
                 Camilla Rodrigues
-              </ModalPreVisualizacaoNomeUsuario>
-              <ModalPreVisualizacaoTime>31-01-2024</ModalPreVisualizacaoTime>
-            </ModalPreVisualizacaoInfoUsuario>
-          </ModalPreVisualizacaoInfoUsuarioContainer>
+              </NomeUsuario>
+              <TimePreVisualizacao>31-01-2024</TimePreVisualizacao>
+            </InfoUsuario>
+          </UsuarioContainer>
 
           <ChipRender tags=""></ChipRender>
-        </ModalPreVisualizacaoInfoContainer>
+        </InfoContainerPreVisualizacao>
 
-        <ModalPreVisualizacaoTextContainer>
-          <ModalPreVisualizacaoP>
+        <TextContainer>
+          <ParagrafoPreVisualizacao>
             Temos o prazer de compartilhar com vocês uma variação da nosso
             primeiro recurso gratuito, Monoceros. É um modelo de uma página para
             mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e
             minimalista do nosso primeiro template de e-commerce.
-          </ModalPreVisualizacaoP>
+          </ParagrafoPreVisualizacao>
           <br></br>
-          <ModalPreVisualizacaoH6>Download</ModalPreVisualizacaoH6>
-          <ModalPreVisualizacaoLinks href="#">Teste</ModalPreVisualizacaoLinks>
-        </ModalPreVisualizacaoTextContainer>
-      </ModalPreVisualizacaoContent>
-    </ModalPreVisualizacaoBackground>
+          <H6PreVisualizacao>Download</H6PreVisualizacao>
+          <LinksPreVisualizacao href="#">Teste</LinksPreVisualizacao>
+        </TextContainer>
+      </ContentPreVisualizacao>
+    </BackgroundPreVisualizacao>
   )
 }
 

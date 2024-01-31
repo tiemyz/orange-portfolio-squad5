@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 /*Background do modal */
 
-export const ModalPreVisualizacaoBackground = styled.div`
+export const BackgroundPreVisualizacao = styled.div`
     display: inline-flex;
     position: relative;
     background-color: rgba(0, 0, 0, 0.5);
@@ -14,7 +14,7 @@ export const ModalPreVisualizacaoBackground = styled.div`
     
 `;
 
-export const ModalPreVisualizacaoContent = styled.div`
+export const ContentPreVisualizacao = styled.div`
     width: 1042px;
     height: auto;
     margin: 134px 119px 28px 119px;
@@ -40,14 +40,14 @@ export const ModalPreVisualizacaoContent = styled.div`
 `;
 
 
-export const DivCloseButton = styled.div`
+export const CloseButtonDiv = styled.div`
     display: inline-flex;
     width: 100%;
     justify-content: right;
 `;
 
 
-export const CloseButtonPreVisualizacaoProjeto = styled.button`
+export const CloseButton = styled.button`
     width: 14px;
     background-color: #FFF;
     border: none;
@@ -59,7 +59,7 @@ export const CloseButtonPreVisualizacaoProjeto = styled.button`
 `;
 
 /*Imagem Projeto */
-export const ModalPreVisualizacaoDivImagem = styled.div`
+export const DivImagemPreVisualizacao = styled.div`
     width: 100%;
     /* width: 838px; */
     height: 585px;
@@ -73,14 +73,14 @@ export const ModalPreVisualizacaoDivImagem = styled.div`
 
 
 
-export const ModalPreVisualizacaoImagem = styled.img`
+export const ImagemPreVisualizacao = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
 `;
 
 /* Titulo */
-export const ModalPreVisualizacaoH5 = styled.h5`
+export const H5PreVisualizacao = styled.h5`
     color: var(--Neutral-Colors-Neutral-120, #303133);
     padding-top: 16px;
     padding-bottom: 32px;
@@ -94,7 +94,7 @@ export const ModalPreVisualizacaoH5 = styled.h5`
 `;
 
 /* Informaçoes do usuario */
-export const ModalPreVisualizacaoInfoContainer = styled.div`
+export const InfoContainerPreVisualizacao = styled.div`
     display: inline-flex;
     width: 312px;
     align-items: center;
@@ -115,7 +115,7 @@ export const ModalPreVisualizacaoInfoContainer = styled.div`
 
 `;
 
-export const ModalPreVisualizacaoInfoUsuarioContainer = styled.div`
+export const UsuarioContainer = styled.div`
     display: inline-flex;
     padding-top: 10px;
     padding-bottom: 26px;
@@ -124,7 +124,7 @@ export const ModalPreVisualizacaoInfoUsuarioContainer = styled.div`
 
 `;
 
-export const ModalPreVisualizacaoInfoUsuario = styled.div`
+export const InfoUsuario = styled.div`
     display: flex;
     width: auto;
     height: 50px;
@@ -136,7 +136,7 @@ export const ModalPreVisualizacaoInfoUsuario = styled.div`
 
 `;
 
-export const ModalPreVisualizacaoNomeUsuario = styled.sub`
+export const NomeUsuario = styled.sub`
     color: var(--Neutral-Colors-Neutral-120, #303133);
     font-size: 16px;
     font-style: normal;
@@ -145,7 +145,7 @@ export const ModalPreVisualizacaoNomeUsuario = styled.sub`
 
 `;
 
-export const ModalPreVisualizacaoTime = styled.time`
+export const TimePreVisualizacao = styled.time`
     color: var(--Neutral-Colors-Neutral-110, #515255);
     font-size: 16px;
     font-style: normal;
@@ -157,7 +157,7 @@ export const ModalPreVisualizacaoTime = styled.time`
 
 
 /*Paragrafo sobre o projeto */
-export const ModalPreVisualizacaoTextContainer = styled.div`
+export const TextContainer = styled.div`
     
     width: 838px;
 
@@ -178,7 +178,7 @@ export const ModalPreVisualizacaoTextContainer = styled.div`
 `;
 
 
-export const ModalPreVisualizacaoP = styled.p`
+export const ParagrafoPreVisualizacao = styled.p`
     color: var(--Neutral-Colors-Neutral-120, #303133);
     font-size: 16px;
     font-style: normal;
@@ -188,7 +188,7 @@ export const ModalPreVisualizacaoP = styled.p`
 
 `;
 
-export const ModalPreVisualizacaoH6 = styled.h6`
+export const H6PreVisualizacao = styled.h6`
     color: #0B0C0D;
     font-size: 16px;
     font-style: normal;
@@ -199,7 +199,7 @@ export const ModalPreVisualizacaoH6 = styled.h6`
 
 `;
 
-export const ModalPreVisualizacaoLinks = styled.a`
+export const LinksPreVisualizacao = styled.a`
     color: var(--Support-Colors-Info-info-80, #608AE1);
     font-size: 14px;
     font-style: normal;

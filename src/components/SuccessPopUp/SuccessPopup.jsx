@@ -1,5 +1,5 @@
-import { Alert, CheckImg, AlertText } from './SuccessPopup.styles'
-import PopupVector from '../../assets/images/popup-vector.png'
+import { Alert, CheckImg, AlertText } from './SuccessPopup.styles';
+import PopupVector from '../../assets/images/popup-vector.png';
 
 function SuccessPopup() {
   return (
@@ -10,4 +10,4 @@ function SuccessPopup() {
   )
 }
 
-export default SuccessPopup
+export default SuccessPopup;

@@ -1,5 +1,5 @@
 import Chip from "./Chip";
-import { ChipDiv} from "./ChipStyle";
+import { ChipDiv } from "./Chip.styles";
 
 function ChipRender({tags}) {
     return (

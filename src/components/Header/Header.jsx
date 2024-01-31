@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react';
 import {
   HeaderContent,
   NavContainer,
@@ -13,11 +13,11 @@ import {
   Perfil,
   ImagemPerfil,
   Notifications
-} from './HeaderStyles'
-import MenuOpen from '../../assets/images/menu-open.svg'
-import LogoImg from '../../assets/images/Logo-orange.png'
-import ProfileImg from '../../assets/images/profile.png'
-import NotificationsImg from '../../assets/images/notifications.png'
+} from './Header.styles';
+import MenuOpen from '../../assets/images/menu-open.svg';
+import LogoImg from '../../assets/images/Logo-orange.png';
+import ProfileImg from '../../assets/images/profile.png';
+import NotificationsImg from '../../assets/images/notifications.png';
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false)
@@ -105,4 +105,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

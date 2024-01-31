@@ -1,4 +1,4 @@
-import { EditDeleteDropdown, StyledLi, StyledUl } from '../SecaoMeusProjetos/SecaoMeusProjetosStyle';
+import { EditDeleteDropdown, StyledLi, StyledUl } from '../SecaoMeusProjetos/SecaoMeusProjetos.styles';
 
 export function BotaoEditarOuExcluir() {
 	return (

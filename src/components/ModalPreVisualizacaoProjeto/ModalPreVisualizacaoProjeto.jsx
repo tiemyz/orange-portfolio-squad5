@@ -1,4 +1,4 @@
-import ChipRender from '../Chip/ChipRender'
+import ChipRender from '../Chip/ChipRender';
 import {
   BackgroundPreVisualizacao,
   CloseButton,
@@ -16,10 +16,10 @@ import {
   TextContainer,
   TimePreVisualizacao,
   UsuarioContainer
-} from './ModalPreVisualizacaoProjetoStyle'
-import VectorImg from '../../assets/images/Vector.png'
-import LandinPageImg from '../../assets/images/img_landingpage.png'
-import UserProfileImg from '../../assets/images/user-profile.png'
+} from './ModalPreVisualizacaoProjeto.styles';
+import VectorImg from '../../assets/images/Vector.png';
+import LandinPageImg from '../../assets/images/img_landingpage.png';
+import UserProfileImg from '../../assets/images/user-profile.png';
 
 function ModalPreVisualizacaoProjeto() {
   return (
@@ -74,4 +74,4 @@ function ModalPreVisualizacaoProjeto() {
   )
 }
 
-export default ModalPreVisualizacaoProjeto
+export default ModalPreVisualizacaoProjeto;

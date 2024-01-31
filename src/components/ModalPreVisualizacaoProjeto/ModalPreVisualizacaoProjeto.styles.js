@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 /*Background do modal */
 
 export const BackgroundPreVisualizacao = styled.div`
@@ -36,16 +35,13 @@ export const ContentPreVisualizacao = styled.div`
     @media screen and (min-width: 768px) and (max-width: 1023px) {
         width: 80%;
     }
-
 `;
-
 
 export const CloseButtonDiv = styled.div`
     display: inline-flex;
     width: 100%;
     justify-content: right;
 `;
-
 
 export const CloseButton = styled.button`
     width: 14px;
@@ -55,7 +51,6 @@ export const CloseButton = styled.button`
     &:hover {
         background-color: grey;
     }
-
 `;
 
 /*Imagem Projeto */
@@ -68,10 +63,7 @@ export const DivImagemPreVisualizacao = styled.div`
         width: 312px;
         height: 258px;
     }
-
 `;
-
-
 
 export const ImagemPreVisualizacao = styled.img`
     width: 100%;
@@ -89,8 +81,6 @@ export const H5PreVisualizacao = styled.h5`
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
- 
-
 `;
 
 /* Informaçoes do usuario */
@@ -112,7 +102,6 @@ export const InfoContainerPreVisualizacao = styled.div`
         top: -670px;
         
     }
-
 `;
 
 export const UsuarioContainer = styled.div`
@@ -120,8 +109,6 @@ export const UsuarioContainer = styled.div`
     padding-top: 10px;
     padding-bottom: 26px;
     gap: var(--1, 8px);
-   
-
 `;
 
 export const InfoUsuario = styled.div`
@@ -132,8 +119,6 @@ export const InfoUsuario = styled.div`
     justify-content: center;
     align-items: start;
     gap: var(--1, 8px);
-   
-
 `;
 
 export const NomeUsuario = styled.sub`
@@ -142,7 +127,6 @@ export const NomeUsuario = styled.sub`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-
 `;
 
 export const TimePreVisualizacao = styled.time`
@@ -151,14 +135,10 @@ export const TimePreVisualizacao = styled.time`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
 `;
-
-
 
 /*Paragrafo sobre o projeto */
 export const TextContainer = styled.div`
-    
     width: 838px;
 
     @media screen and (max-width: 767px) {
@@ -169,14 +149,11 @@ export const TextContainer = styled.div`
         width: 100%;
     }
 
-
     @media screen and (min-width: 1024px) {
         margin-top: -50px;
         margin-bottom: 83px;
-    }
-    
+    } 
 `;
-
 
 export const ParagrafoPreVisualizacao = styled.p`
     color: var(--Neutral-Colors-Neutral-120, #303133);
@@ -185,7 +162,6 @@ export const ParagrafoPreVisualizacao = styled.p`
     font-weight: 400;
     line-height: 16px; /* 100% */
     letter-spacing: 0.5px;
-
 `;
 
 export const H6PreVisualizacao = styled.h6`
@@ -195,8 +171,6 @@ export const H6PreVisualizacao = styled.h6`
     font-weight: 400;
     line-height: 16px;
     letter-spacing: 0.15px;
-
-
 `;
 
 export const LinksPreVisualizacao = styled.a`
@@ -206,5 +180,4 @@ export const LinksPreVisualizacao = styled.a`
     font-weight: 400;
     line-height: 14px;
     letter-spacing: 0.25px;
-
 `;

@@ -1,5 +1,5 @@
 import { getAuth, signOut } from "firebase/auth";
-import { ButtonOrangeSmall } from '../../components/Buttons/ButtonStyles';
+import { ButtonOrangeSmall } from '../../components/Buttons/Buttons.styles';
 import { useNavigate } from "react-router-dom";
 
 function LogoutButton() {

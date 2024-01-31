@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { BotaoEditarOuExcluir } from '../BotãoEditarOuExcluir/BotãoEditarOuExcluir'
+import { useState } from 'react';
+import { BotaoEditarOuExcluir } from '../BotãoEditarOuExcluir/BotãoEditarOuExcluir';
 import {
   SecaoProjetos,
   CampoBuscarTags,
@@ -9,8 +9,8 @@ import {
   ListaProjetos,
   BotaoLapis,
   ContainerProjeto
-} from './SecaoMeusProjetosStyle'
-import PencilButton from '../../assets/images/pencil.png'
+} from './SecaoMeusProjetos.styles';
+import PencilButton from '../../assets/images/pencil.png';
 
 /* TODO: 
 - Retoques na responsividade (verificar a necessidade de tela intermediária) 

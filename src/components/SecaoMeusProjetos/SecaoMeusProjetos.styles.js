@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 //Estilo da Seção Projetos - Mobile
 export const SecaoProjetos = styled.section`
@@ -27,7 +27,7 @@ export const SubtituloProjetos = styled.h6`
   font-size: 20px;
   font-weight: 500;
   opacity: 0.6;
-`
+`;
 
 //Estilo do campo de busca - Mobile
 export const CampoBuscarTags = styled.input`
@@ -54,7 +54,7 @@ export const CampoBuscarTags = styled.input`
   @media screen and (min-width: 1024px) {
     width: 520px;
   }
-`
+`;
 
 //Container projetos - Mobile
 export const ListaProjetos = styled.ul`
@@ -78,7 +78,7 @@ export const ListaProjetos = styled.ul`
     gap: 16px;
     width: 100vw;
   }
-`
+`;
 
 export const ContainerProjeto = styled.li`
   position: relative;
@@ -98,7 +98,7 @@ export const ContainerProjeto = styled.li`
     width: 390px;
     height: 260px;
   }
-`
+`;
 
 //Estilo botão projeto - Mobile
 export const BotaoProjeto = styled.button`
@@ -137,7 +137,7 @@ export const BotaoProjeto = styled.button`
       margin: 155px 40px 0 45px;
     }
   }
-`
+`;
 
 //Estilo do p 1 do botão
 export const StyledBodyText1 = styled.p`
@@ -164,7 +164,7 @@ export const StyledBodyText1 = styled.p`
     top: 115px;
     right: -38px;
   }
-`
+`;
 
 //Estilo do botão de lápis para dropdown:
 export const BotaoLapis = styled.img`
@@ -179,7 +179,7 @@ export const BotaoLapis = styled.img`
   background-color: #ffcc99;
   border: none;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
-`
+`;
 
 //Estilo do dropdown:
 export const EditDeleteDropdown = styled.div`
@@ -212,7 +212,7 @@ export const EditDeleteDropdown = styled.div`
   @media screen and (min-width: 1024px) {
     right: 15px;
   }
-`
+`;
 
 export const StyledUl = styled.ul`
   list-style: none;
@@ -221,7 +221,7 @@ export const StyledUl = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 2px;
-`
+`;
 
 export const StyledLi = styled.li`
   display: flex;
@@ -232,4 +232,4 @@ export const StyledLi = styled.li`
     background-color: #ffeecc;
     cursor: pointer;
   }
-`
+`;

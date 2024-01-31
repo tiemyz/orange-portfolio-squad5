@@ -4,9 +4,9 @@ import {
   InfoContainer,
   Name,
   Local
-} from './StylesPerfil'
-import { ButtonGray } from '../Buttons/ButtonStyles'
-import ProfileImg from '../../assets/images/profile.png'
+} from './Perfil.styles';
+import { ButtonGray } from '../Buttons/Buttons.styles';
+import ProfileImg from '../../assets/images/profile.png';
 
 const Perfil = () => {
   return (

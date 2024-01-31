@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ProfileContent = styled.div`
   display: flex;
@@ -13,13 +13,14 @@ export const ProfileContent = styled.div`
     flex-direction: row;
     gap: 42px;
   }
-`
+`;
 
 export const ImageProfile = styled.img`
   width: 122px;
   height: 122px;
   clip-path: circle();
-`
+`;
+
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,17 +29,18 @@ export const InfoContainer = styled.div`
   @media (min-width: 768px) {
     gap: 24px;
   }
-`
+`;
 
 export const Name = styled.h5`
   color: #303133;
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
-`
+`;
+
 export const Local = styled.p`
   p {
     color: #0b0c0d;
     font-size: 16px;
   }
-`
+`;

@@ -1,11 +1,11 @@
-import LoginForm from '../../../components/Login-Cadastro/LoginForm/LoginForm'
+import LoginForm from '../../../components/Login-Cadastro/LoginForm/LoginForm';
 import {
   PageContainer,
   DivForm,
   DivImg,
   SideImg
-} from '../LoginCadastro.styles'
-import LoginPageImg from '../../../assets/images/img-pagina-login.png'
+} from '../LoginCadastro.styles';
+import LoginPageImg from '../../../assets/images/img-pagina-login.png';
 
 function LoginPage() {
   return (
@@ -21,4 +21,4 @@ function LoginPage() {
   )
 }
 
-export default LoginPage
+export default LoginPage;

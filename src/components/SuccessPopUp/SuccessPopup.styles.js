@@ -16,11 +16,13 @@ export const Alert = styled.div`
         width: 280px;
         margin-bottom: 56px;
     }
-`
+`;
+
 export const CheckImg = styled.img`
     width: 22px;
     height: 22px;
-`
+`;
+
 export const AlertText = styled.span`
     color: #FFFFFF;
     font-size: 16px;
@@ -28,4 +30,4 @@ export const AlertText = styled.span`
     font-weight: 500;
     line-height: 150%; 
     letter-spacing: 0.15px;
-`
+`;

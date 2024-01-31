@@ -6,7 +6,6 @@ export const ChipContent = styled.div`
     align-items: center;
     border-radius: 100px;
     background-color: rgba(0, 0, 0, 0.08);
-
 `; 
 
 export const ChipText = styled.sub`
@@ -24,5 +23,4 @@ export const ChipDiv = styled.div`
     display: inline-flex;
     align-items: center;
     column-gap: 8px;
-
 `; 

@@ -1,4 +1,4 @@
-import { ModalBackground } from '../Mobile/MobStyledAddProjectModal'
+import { ModalBackground } from '../Mobile/MobAddProjectModal.styles';
 import {
   AddProjectDiv,
   Btns,
@@ -13,9 +13,8 @@ import {
   StyledAddForm,
   StyledInput,
   StyledTextArea
-} from './StyledAddProjectModal'
-
-import CollectionsImg from '../../../assets/images/collections.png'
+} from './AddProjectModal.styles';
+import CollectionsImg from '../../../assets/images/collections.png';
 
 /*TODO: Acrescentar botões "Salvar" e "Cancelar"!
   Esta é a versão Desktop do componente

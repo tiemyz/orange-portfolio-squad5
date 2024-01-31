@@ -12,7 +12,7 @@ import {
 	StyledTextArea,
 	StyledText2,
 	ModalBackground,
-} from './MobStyledAddProjectModal';
+} from './MobAddProjectModal.styles';
 
 /*TODO: Acrescentar botões "Salvar" e "Cancelar"!
   Esta é a versão Desktop do componente

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   getAuth,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider
-} from 'firebase/auth'
-import { ButtonDefault } from '../../Buttons/ButtonStyles'
+} from 'firebase/auth';
+import { ButtonDefault } from '../../Buttons/Buttons.styles';
 import {
   LoginFormContainer,
   TitleGoogleDiv,
@@ -23,16 +23,16 @@ import {
   VisibilityButton,
   EyesIcon,
   LinkCadastro
-} from '../Forms.styles'
-import GoogleLogoImg from '../../../assets/images/logo-google.svg'
-import EyeOpenIcon from '../../../assets/images/visibility-default.svg'
-import EyeClosedIcon from '../../../assets/images/visibility-off.svg'
+} from '../Forms.styles';
+import GoogleLogoImg from '../../../assets/images/logo-google.svg';
+import EyeOpenIcon from '../../../assets/images/visibility-default.svg';
+import EyeClosedIcon from '../../../assets/images/visibility-off.svg';
 
 // Importações do FirebaseConfig
 import {
   signInWithPopup,
   googleProvider
-} from '../../../services/firebaseConfig'
+} from '../../../services/firebaseConfig';
 
 function LoginForm() {
   const [email, setEmail] = useState('')

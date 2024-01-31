@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ButtonDefault = styled.button`
     cursor: pointer;
@@ -25,21 +25,21 @@ export const ButtonDefault = styled.button`
 
     @media screen and (max-width: 768px) {
         width: 312px;
-
-    }
-  
+    } 
 `;
 
 export const ButtonOrangeSmall = styled(ButtonDefault)`
     width: 100px;
-`
+`;
 
 export const ButtonOrangeMedium = styled(ButtonDefault)`
     width: 254px;
-`
+`;
+
 export const ButtonOrangeLarge = styled(ButtonDefault)`
     width: 312px;
-`
+`;
+
 export const ButtonGray = styled(ButtonDefault)`
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.12);
@@ -55,4 +55,4 @@ export const ButtonGray = styled(ButtonDefault)`
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
       0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   }
-`
+`;

@@ -1,6 +1,6 @@
-import { ButtonOrangeMedium } from '../Buttons/ButtonStyles'
-import { ModalBackgroung, ModalContent, ModalH5 } from './ModalStyle'
-import CheckImg from '../../assets/images/check-green.png'
+import { ButtonOrangeMedium } from '../Buttons/Buttons.styles';
+import { ModalBackgroung, ModalContent, ModalH5 } from './Modal.styles';
+import CheckImg from '../../assets/images/check-green.png';
 
 function Modal() {
   return (
@@ -14,4 +14,4 @@ function Modal() {
   )
 }
 
-export default Modal
+export default Modal;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ModalBackgroung = styled.div`
     display: inline-flex;
     position: absolute;
@@ -11,7 +10,6 @@ export const ModalBackgroung = styled.div`
     justify-content: center;
     flex-shrink: 0;
 `;
-
 
 export const ModalContent = styled.div`
     display: inline-flex;

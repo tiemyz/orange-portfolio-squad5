@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { ButtonDefault } from '../../Buttons/ButtonStyles'
+import React, { useState } from 'react';
+import { ButtonDefault } from '../../Buttons/Buttons.styles';
 import {
   CadastroFormContainer,
   Title,
@@ -11,10 +11,10 @@ import {
   InputContainer,
   VisibilityButton,
   EyesIcon
-} from '../Forms.styles'
-import SuccessPopup from '../../SuccessPopUp/SuccessPopup'
-import EyeOpenIcon from '../../../assets/images/visibility-default.svg'
-import EyeClosedIcon from '../../../assets/images/visibility-off.svg'
+} from '../Forms.styles';
+import SuccessPopup from '../../SuccessPopUp/SuccessPopup';
+import EyeOpenIcon from '../../../assets/images/visibility-default.svg';
+import EyeClosedIcon from '../../../assets/images/visibility-off.svg';
 // Importações do FirebaseConfig
 import {
   createUserWithEmailAndPassword,
@@ -22,9 +22,9 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   getAuth
-} from 'firebase/auth'
-import { Form, Link, useNavigate } from 'react-router-dom'
-import { addToFirestore } from '../../../services/firebaseFirestore'
+} from 'firebase/auth';
+import { Form, Link, useNavigate } from 'react-router-dom';
+import { addToFirestore } from '../../../services/firebaseFirestore';
 
 function CadastroForm() {
   const [name, setName] = useState('')

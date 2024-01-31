@@ -14,6 +14,11 @@ import {
   ImagemPerfil,
   Notifications
 } from './HeaderStyles'
+import MenuOpen from '../../assets/images/menu-open.svg'
+import MenuClose from '../../assets/images/menu-close.svg'
+import LogoImg from '../../assets/images/Logo-orange.png'
+import ProfileImg from '../../assets/images/profile.png'
+import NotificationsImg from '../../assets/images/notifications.png'
 
 const Header = () => {
   const [isOpen, setOpen] = useState(false)
@@ -57,18 +62,18 @@ const Header = () => {
               className={`menu-open ${isOpen ? 'hidden' : ''}`}
               onClick={handleMenuOpen}
             >
-              <img src="src/assets/images/menu-open.svg" alt="Abrir menu" />
+              <img src={MenuOpen} alt="Abrir menu" />
             </Button>
 
             <Button
               className={`menu-close ${isOpen ? '' : 'hidden'}`}
               onClick={handleMenuClose}
             >
-              <img src="src/assets/images/menu-open.svg" alt="Abrir menu" />
+              <img src={MenuClose} alt="Abrir menu" />
             </Button>
           </ButtonsMobile>
 
-          <Logo src="src/assets/images/Logo-orange.png"></Logo>
+          <Logo src={LogoImg}></Logo>
 
           <NavbarList className={isOpen ? 'show' : ''}>
             <List>
@@ -91,10 +96,10 @@ const Header = () => {
         <Perfil className="perfil">
           <ImagemPerfil
             ClassName="img-perfil"
-            src="src/assets/images/profile.png"
+            src={ProfileImg}
             alt="Foto de perfil"
           ></ImagemPerfil>
-          <Notifications src="src/assets/images/notifications.png"></Notifications>
+          <Notifications src={NotificationsImg}></Notifications>
         </Perfil>
       </NavContainer>
     </HeaderContent>

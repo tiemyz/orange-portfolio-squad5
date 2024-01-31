@@ -6,14 +6,12 @@ import {
   Local
 } from './StylesPerfil'
 import { ButtonGray } from '../Buttons/ButtonStyles'
+import ProfileImg from '../../assets/images/profile.png'
 
 const Perfil = () => {
   return (
     <ProfileContent>
-      <ImageProfile
-        src="src/assets/profile.png"
-        alt="foto de perfil"
-      ></ImageProfile>
+      <ImageProfile src={ProfileImg} alt="foto de perfil"></ImageProfile>
       <InfoContainer>
         <Name>Camila Soares</Name>
         <Local>Brasil</Local>

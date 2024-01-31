@@ -1,15 +1,13 @@
-import { Alert,
-        CheckImg, 
-        AlertText} from './SuccessPopup.styles';
-import PopupVector from '../../assets/popup-vector.png';
+import { Alert, CheckImg, AlertText } from './SuccessPopup.styles'
+import PopupVector from '../../assets/images/popup-vector.png'
 
 function SuccessPopup() {
-    return (
-        <Alert>
-            <CheckImg src={PopupVector} alt="Check vector"/>
-            <AlertText>Cadastro feito com sucesso</AlertText>
-        </Alert>
-    );
+  return (
+    <Alert>
+      <CheckImg src={PopupVector} alt="Check vector" />
+      <AlertText>Cadastro feito com sucesso</AlertText>
+    </Alert>
+  )
 }
 
-export default SuccessPopup;
+export default SuccessPopup

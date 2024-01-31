@@ -15,7 +15,6 @@ import {
   Notifications
 } from './HeaderStyles'
 import MenuOpen from '../../assets/images/menu-open.svg'
-import MenuClose from '../../assets/images/menu-close.svg'
 import LogoImg from '../../assets/images/Logo-orange.png'
 import ProfileImg from '../../assets/images/profile.png'
 import NotificationsImg from '../../assets/images/notifications.png'
@@ -69,7 +68,7 @@ const Header = () => {
               className={`menu-close ${isOpen ? '' : 'hidden'}`}
               onClick={handleMenuClose}
             >
-              <img src={MenuClose} alt="Abrir menu" />
+              <img src={MenuOpen} alt="Abrir menu" />
             </Button>
           </ButtonsMobile>
 

@@ -8,7 +8,7 @@ import {
 import { ButtonGray } from '../Buttons/Buttons.styles';
 import ProfileImg from '../../assets/images/profile.png';
 
-const Perfil = () => {
+function Perfil () {
   return (
     <ProfileContent>
       <ImageProfile src={ProfileImg} alt="foto de perfil"></ImageProfile>
@@ -21,4 +21,4 @@ const Perfil = () => {
   )
 }
 
-export { Perfil }
+export default Perfil;

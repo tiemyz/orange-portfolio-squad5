@@ -13,10 +13,10 @@ import {
 import PencilButton from '../../assets/images/pencil.png';
 
 /* TODO: 
-- Retoques na responsividade (verificar a necessidade de tela intermediária) 
-- Ocultar botão editar */
+* Ocultar botão editar!
+ */
 
-export default function SecaoMeusProjetos() {
+function SecaoMeusProjetos() {
   const [openEdit, setOpenEdit] = useState(false)
   return (
     <>
@@ -57,3 +57,5 @@ export default function SecaoMeusProjetos() {
     </>
   )
 }
+
+export default SecaoMeusProjetos;

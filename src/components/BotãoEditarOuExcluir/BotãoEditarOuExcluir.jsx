@@ -1,6 +1,6 @@
 import { EditDeleteDropdown, StyledLi, StyledUl } from '../SecaoMeusProjetos/SecaoMeusProjetos.styles';
 
-export function BotaoEditarOuExcluir() {
+function BotaoEditarOuExcluir() {
 	return (
 		<>
 			<EditDeleteDropdown>
@@ -12,3 +12,5 @@ export function BotaoEditarOuExcluir() {
 		</>
 	);
 }
+
+export default BotaoEditarOuExcluir;

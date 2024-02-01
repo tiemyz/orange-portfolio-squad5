@@ -19,7 +19,7 @@ import LogoImg from '../../assets/images/Logo-orange.png';
 import ProfileImg from '../../assets/images/profile.png';
 import NotificationsImg from '../../assets/images/notifications.png';
 
-const Header = () => {
+function Header () {
   const [isOpen, setOpen] = useState(false)
   const menuRef = useRef(null)
 

@@ -18,15 +18,9 @@ import CollectionsImg from '../../../assets/images/collections.png';
 
 /*TODO: Acrescentar botões "Salvar" e "Cancelar"!
   Esta é a versão Desktop do componente
-  * Verificar se dá para transformar dois em um componente só,
-  reorganizando a ordem dos itens do componente de acordo com a tela
-  * Ao implementar, discutir se ao clicar fora do Modal ele se fechará
-  * Ao implementar, adicionar funcionalidade ao btnAddProject que pode ser
-  ativo ao clicar na preview area (onde o mouse aparece como cursor)
-  * Ao implementar, colocar a imagem da miniatura para aparecer no lugar
-  de 'preview area'
+  * TODO: Fazer a responsividade do componente!
   */
-export function AddProjectModal() {
+function AddProjectModal() {
   return (
     <ModalBackground>
       <AddProjectDiv>
@@ -83,3 +77,5 @@ export function AddProjectModal() {
     </ModalBackground>
   )
 }
+
+export default AddProjectModal;

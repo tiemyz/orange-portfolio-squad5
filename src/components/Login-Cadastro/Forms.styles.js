@@ -12,7 +12,8 @@ export const LoginFormContainer = styled.div`
     @media screen and (max-width: 768px) {
         width: 312px;
     }
-`
+`;
+
 export const TitleGoogleDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -22,7 +23,8 @@ export const TitleGoogleDiv = styled.div`
     @media screen and (max-width: 768px) {
         width: 270px;
     }
-`
+`;
+
 export const Title = styled.h3`
     font-style: normal;
     text-align: center;
@@ -36,7 +38,8 @@ export const Title = styled.h3`
         font-size: 23.8px; 
         line-height: 23.8px; 
     }
-`
+`;
+
 export const GoogleButton = styled.button`
     cursor: pointer;
     display: flex;
@@ -48,18 +51,21 @@ export const GoogleButton = styled.button`
     border-radius: 2px;
     background: #FFF;
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.17), 0px 0px 1px 0px rgba(0, 0, 0, 0.08);
-`
+`;
+
 export const GoogleButtonLogo = styled.img`
     width: 18px;
     height: 18px;
-`
+`;
+
 export const GoogleButtonText = styled.span`
     font-style: normal;
     line-height: normal;
     font-size: 14px;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.54);
-`
+`;
+
 export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
@@ -73,7 +79,8 @@ export const StyledForm = styled.form`
         width: 312px;
         padding-bottom: 3px;
     }
-`
+`;
+
 export const FormTitle = styled.h5`
     align-self: stretch;
     font-style: normal;
@@ -88,7 +95,8 @@ export const FormTitle = styled.h5`
         letter-spacing: 0.15px;
         margin-bottom: 16px;
     }
-`
+`;
+
 export const InputContainer = styled.div`
     position: relative;
     width: 517px; 
@@ -96,7 +104,8 @@ export const InputContainer = styled.div`
     @media screen and (max-width: 768px) {
         width: 312px; 
     }
-`
+`;
+
 export const InputLabel = styled.label`
     /* Label */
     position: absolute;
@@ -114,7 +123,8 @@ export const InputLabel = styled.label`
     line-height: 16px;
     letter-spacing: 0.4px;
     color: #515255;
-`
+`;
+
 export const InputField = styled.input`
     /* Input */
     display: flex;
@@ -149,7 +159,8 @@ export const InputField = styled.input`
     @media screen and (max-width: 768px) {
         width: 91.6%; 
     }
-`
+`;
+
 export const VisibilityButton = styled.button`
     transform: translateY(-50%);
     position: absolute;
@@ -158,11 +169,13 @@ export const VisibilityButton = styled.button`
     cursor: pointer;
     top: 50%;
     right: 12px;
-`
+`;
+
 export const EyesIcon = styled.img`
     width: 24px;
     height: auto;
-`
+`;
+
 export const LinkCadastro = styled(Link)`
     text-decoration: none;
     font-style: normal;
@@ -171,7 +184,8 @@ export const LinkCadastro = styled(Link)`
     line-height: 16px; 
     letter-spacing: 0.15px;
     color: #818388;
-`
+`;
+
 /* ------------ ESTILOS: FORM CADASTRO ------------ */
 export const CadastroFormContainer = styled.div`
     display: flex;
@@ -183,7 +197,8 @@ export const CadastroFormContainer = styled.div`
     @media screen and (max-width: 768px) {
         width: 312px;
     }
-`
+`;
+
 export const InputContainerFlex = styled(InputContainer)`
     display: flex;
     column-gap: 16px;
@@ -192,7 +207,8 @@ export const InputContainerFlex = styled(InputContainer)`
         row-gap: 16px;
         flex-direction: column;
     }
-`
+`;
+
 export const InputLabelSobrenome = styled(InputLabel)`
     top: -7px;
     left: 283px;
@@ -201,4 +217,4 @@ export const InputLabelSobrenome = styled(InputLabel)`
         top: 60px;
         left: 16px;
     }
-`
+`;

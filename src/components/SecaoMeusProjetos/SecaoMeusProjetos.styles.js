@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 //Estilo da Seção Projetos - Mobile
 export const SecaoProjetos = styled.section`
-  margin: 40px;
+  padding: 0px 32px;
   display: flex;
   flex-direction: column;
 
@@ -13,7 +13,6 @@ export const SecaoProjetos = styled.section`
 
   //Desktop
   @media screen and (min-width: 1024px) {
-    margin: 56px 0 79px 32px;
     flex-direction: row;
     width: 589px;
     height: 323px;
@@ -22,7 +21,7 @@ export const SecaoProjetos = styled.section`
 
 //Estilo do subtítulo "Meus Projetos" - Mobile and Desktop
 export const SubtituloProjetos = styled.h6`
-  margin: 0 0 16px 30px;
+  margin-bottom: 16px;
   color: #0b0c0d;
   font-size: 20px;
   font-weight: 500;
@@ -32,7 +31,7 @@ export const SubtituloProjetos = styled.h6`
 //Estilo do campo de busca - Mobile
 export const CampoBuscarTags = styled.input`
   align-self: stretch;
-  margin: 0 24px 24px 30px;
+  margin-bottom: 40px;
   padding: 10px 12px;
   border: 1px solid #818388;
   border-radius: 4px;
@@ -62,8 +61,8 @@ export const ListaProjetos = styled.ul`
   list-style: none;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  margin: 0 0 0 18px;
   gap: 24px;
   padding: 0;
 
@@ -75,7 +74,6 @@ export const ListaProjetos = styled.ul`
   //Desktop
   @media screen and (min-width: 1024px) {
     flex-direction: row;
-    gap: 16px;
     width: 100vw;
   }
 `;
@@ -83,17 +81,15 @@ export const ListaProjetos = styled.ul`
 export const ContainerProjeto = styled.li`
   position: relative;
   display: flex;
-  margin: 0 0 0 10px;
   width: 330px;
   height: 260px;
-  background-color: #e6e9f233;
+  background-color: #E6E9F2;
   border-radius: 4px;
   border: none;
   flex-direction: row;
 
   //Desktop
   @media screen and (min-width: 1024px) {
-    margin: 0 14px;
     width: 100vw;
     width: 390px;
     height: 260px;
@@ -102,28 +98,12 @@ export const ContainerProjeto = styled.li`
 
 //Estilo botão projeto - Mobile
 export const BotaoProjeto = styled.button`
-  position: relative;
+  position: absolute;
   width: 100%;
+  height: 100%;
   border: none;
   cursor: pointer;
-  flex-direction: column;
-  background-image: url('../../assets/images/collections.png');
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position-x: 50%;
-  background-position-y: 30%;
-  &::before {
-    content: 'Compartilhe seu talento com milhares de pessoas';
-    display: flex;
-    position: absolute;
-    right: 0;
-    color: #303133;
-    opacity: 0.6;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
-    margin: 155px 20px 0 20px;
-  }
+  background-color: transparent;
 
   //Tablet
   @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -233,3 +213,45 @@ export const StyledLi = styled.li`
     cursor: pointer;
   }
 `;
+
+
+export const imagemCollection = styled.img`
+  src: url('src\assets\images\collections.png');
+  width: 46px;
+`;
+
+/*Conteudo do container vazio */
+export const TextDiv = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 0px 30px 0px 21px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0px 60px 0px 59px;
+  }
+`;
+
+export const StyledBodyTexth5 = styled.h5`
+  color: #303133;
+  align-self: start;
+  opacity: 0.6;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  
+  `;
+
+export const StyledBodyTextP = styled.p`
+  color: #303133;
+  display: flex;
+  align-self: start;
+  opacity: 0.6;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  
+  `;

@@ -45,8 +45,6 @@ export const Name = styled.h5`
 `
 
 export const Local = styled.p`
-  p {
-    color: #0b0c0d;
-    font-size: 16px;
-  }
+  color: rgba(11, 12, 13, 0.5);
+  font-size: 16px;
 `

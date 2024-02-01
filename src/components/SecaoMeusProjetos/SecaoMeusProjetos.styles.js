@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 //Estilo da Seção Projetos - Mobile
 export const SecaoProjetos = styled.section`
-  padding: 40px 32px;
+  padding: 40px 24px;
   margin-bottom: 27px;
   display: flex;
   align-items: center;
@@ -12,17 +12,18 @@ export const SecaoProjetos = styled.section`
   //Tablet
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     padding-top: 56px;
+    padding-left: 32px;
     flex-direction: row;
     justify-content: flex-start;
+    margin-bottom: 39px;
   }
 
   //Desktop
   @media screen and (min-width: 1024px) {
-    padding-top: 241px;
+    padding-top: 56px;
     justify-content: flex-start;
     flex-direction: row;
-    /* width: 589px; */
-    height: 323px;
+    padding-bottom: 39px;
   }
 `
 
@@ -78,6 +79,7 @@ export const ListaProjetos = styled.ul`
   //Tablet
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     flex-direction: row;
+
   }
 
   //Desktop
@@ -90,14 +92,20 @@ export const ContainerProjeto = styled.li`
   position: relative;
   display: flex;
   width: 312px;
-  height: 260px;
+  height: 258px;
   background-color: #e6e9f2;
   border-radius: 4px;
   border: none;
   flex-direction: row;
 
   //Desktop
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1024px) and (max-width: 1279px){
+    width: 100vw;
+    width: 300px;
+    height: 200px;
+  }
+
+  @media screen and (min-width: 1280px){
     width: 100vw;
     width: 390px;
     height: 260px;
@@ -175,7 +183,6 @@ export const EditDeleteDropdown = styled.div`
   top: 50px;
   right: 15px;
   width: 180px;
-  height: 55px;
   padding: 16px 0;
   border-radius: 8px;
   background-color: white;
@@ -220,11 +227,6 @@ export const StyledLi = styled.li`
     background-color: #ffeecc;
     cursor: pointer;
   }
-`
-
-export const imagemCollection = styled.img`
-  src: url('src\assets\images\collections.png');
-  width: 46px;
 `
 
 /*Conteudo do container vazio */

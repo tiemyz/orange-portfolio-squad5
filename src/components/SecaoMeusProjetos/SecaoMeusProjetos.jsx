@@ -60,6 +60,7 @@ function SecaoMeusProjetos() {
               {openEdit && <BotaoEditarOuExcluir />}
             </ContainerProjeto>
             <ContainerProjeto></ContainerProjeto>
+            <ContainerProjeto></ContainerProjeto>
           </ListaProjetos>
         </div>
       </SecaoProjetos>

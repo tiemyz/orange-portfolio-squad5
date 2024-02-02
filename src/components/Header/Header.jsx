@@ -76,12 +76,12 @@ function Header () {
 
           <NavbarList className={isOpen ? 'show' : ''}>
             <List>
-              <Link href="#" onClick={handleLinkClick}>
+              <Link href="/home" onClick={handleLinkClick}>
                 Meus Projetos
               </Link>
             </List>
             <List>
-              <Link href="#" onClick={handleLinkClick}>
+              <Link href="/descobrir" onClick={handleLinkClick}>
                 Descobrir
               </Link>
             </List>

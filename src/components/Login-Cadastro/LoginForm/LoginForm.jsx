@@ -50,14 +50,17 @@ function LoginForm() {
     const unsubscribe = onAuthStateChanged(authInstance, user => {
       if (user) {
         if (!warning) {
-          setWarning('')
-          navigate('/home')
+          setWarning('');
+  
+          if (user.uid) {
+            navigate('/home');
+          }
         }
       }
-    })
-
-    return () => unsubscribe()
-  }, [authInstance, navigate, warning])
+    });
+  
+    return () => unsubscribe();
+  }, [authInstance, navigate, warning]);
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword)
@@ -79,7 +82,12 @@ function LoginForm() {
     setLoading(true)
 
     try {
-      await signInWithEmailAndPassword(authInstance, email, password)
+
+      const result = await signInWithEmailAndPassword(authInstance, email, password);
+      const user = result.user;
+
+      console.log('Usuário autenticado:', user); // Adicione esta linha para imprimir no console
+
       setEmail('')
       setPassword('')
       setWarning('')

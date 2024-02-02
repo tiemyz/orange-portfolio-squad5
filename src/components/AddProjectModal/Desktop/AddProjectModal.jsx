@@ -1,281 +1,152 @@
-import { ModalBackground } from '../Mobile/MobAddProjectModal.styles';
-import React, { useState, useEffect } from 'react';
-import { ModalBackground } from '../Mobile/MobStyledAddProjectModal';
-import {
-  AddProjectDiv,
-  Btns,
-  StyledFormContainer,
-  StyledBtnContainer,
-  StyledH5,
-  StyledText1,
-  PreviewContainer,
-  PreviewArea,
-  StyledText2,
-  BtnAddProject,
-  StyledAddForm,
-  StyledInput,
-  StyledTextArea
-} from './AddProjectModal.styles';
-import CollectionsImg from '../../../assets/images/collections.png';
-  AddProjectDiv,
-  Btns,
-  StyledFormContainer,
-  StyledBtnContainer,
-  StyledH5,
-  StyledText1,
-  PreviewContainer,
-  PreviewArea,
-  StyledText2,
-  BtnAddProject,
-  StyledAddForm,
-  StyledInput,
-  StyledTextArea,
-} from './StyledAddProjectModal';
+import React, { useState, useRef } from 'react';
+import { AddProjectContainer, 
+  DivTitulo, 
+  DivBotaoForm, 
+  DivH3Img, 
+  DivForm, 
+  DivFormInput, 
+  DivLink, 
+  DivBotoes } from './AddProjectModal.styles';
+import Img from '../../../assets/images/collections.png'
+import { collection, addDoc } from 'firebase/firestore';
+import { storage, db } from "../../../services/firebaseConfig";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { getAuth } from 'firebase/auth';
 
-/*TODO: Acrescentar botões "Salvar" e "Cancelar"!
-  Esta é a versão Desktop do componente
-  * TODO: Fazer a responsividade do componente!
-  */
+// arquivo secundário com o POST de imagem e infos funcionando + salvamento no firestore & storage
 function AddProjectModal() {
-  return (
-    <ModalBackground>
-      <AddProjectDiv>
-        <StyledH5>Adicionar projeto</StyledH5>
-        <StyledBtnContainer>
-          <p className="preview-caption">Visualizar publicação</p>
-          <Btns>
-            <button>SALVAR</button>
-            <button>CANCELAR</button>
-          </Btns>
-        </StyledBtnContainer>
-        <StyledFormContainer>
-          <PreviewContainer>
-            <StyledText1>
-              Selecione o conteúdo que você deseja fazer upload
-            </StyledText1>
-          </PreviewContainer>
-          <PreviewArea>
-            <BtnAddProject>
-              <img src={CollectionsImg} alt="Icon image" className="img-icon" />
-              <StyledText2>
-                Compartilhe seu talento com milhares de pessoas
-              </StyledText2>
-            </BtnAddProject>
-          </PreviewArea>
-          <StyledAddForm>
-            <StyledInput>
-              <label htmlFor="title">
-                <input type="text" className="title" placeholder="Título" />
-              </label>
-            </StyledInput>
-            <StyledInput>
-              <label htmlFor="tags">
-                <input type="text" className="tags" placeholder="Tags" />
-              </label>
-            </StyledInput>
-            <StyledInput>
-              <label htmlFor="link">
-                <input type="text" className="link" placeholder="Link" />
-              </label>
-            </StyledInput>
-            <StyledTextArea>
-              <label htmlFor="description">
-                <textarea
-                  type="text"
-                  className="description"
-                  placeholder="Descrição"
-                />
-              </label>
-            </StyledTextArea>
-          </StyledAddForm>
-        </StyledFormContainer>
-      </AddProjectDiv>
-    </ModalBackground>
-  )
-// Importar instância do Firebase Storage e funções de CRUD
-import { uploadImage, getImageURL, deleteImage } from '../../../services/firebaseStorage';
+    const [title, setTitle] = useState('');
+    const [tags, setTags] = useState('');
+    const [link, setLink] = useState('');
+    const [description, setDescription] = useState('');
+    const [image, setImage] = useState(null);
+    const fileInputRef = useRef(null);
+    const [progressPorcent, setProgressPorcent] = useState(0);
+    const authInstance = getAuth();
 
-export function AddProjectModal() {
-  const [image, setImage] = useState(null);
-  const [imageURL, setImageURL] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [formData, setFormData] = useState({
-    title: '',
-    tags: '',
-    link: '',
-    description: '',
-  });
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0];
 
-  // UseEffect para carregar os dados existentes (caso de Update)
-  useEffect(() => {
-    // Lógica para carregar os dados do projeto existente, se aplicável
-  }, []); 
+    // lógica para upload da imagem
+    const storageRef = ref(storage, `images/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
-  const handleImageChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
-    }
-  };
-
-  const handleUpload = async () => {
-    if (image) {
-      try {
-        const imageRef = ref(storage, `images/${image.name + v4()}`);
-        
-        // Realize o upload do arquivo
-        await uploadBytes(imageRef, image);
-  
-        // Obtenha a URL de download do arquivo
-        const downloadURL = await getDownloadURL(imageRef);
-  
-        // Atualize o estado ou realize qualquer outra ação necessária
-        setSuccessMessage('Imagem enviada com sucesso!');
-        setImageURL(downloadURL);
-  
-        // Adicione a lógica para salvar a URL no estado ou no banco de dados, se necessário
-      } catch (error) {
-        console.error('Erro ao enviar a imagem:', error);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgressPorcent(progress);
+      },
+      (error) => {
+        alert(error);
+      },
+      () => {
+        // url da imagem para subir no firebase
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImage(downloadURL);
+        });
       }
-    }
-  };
-  
-
-  const handlePreview = () => {
-    if (image) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImageURL(reader.result);
-      };
-      reader.readAsDataURL(image);
-    }
+    );
   };
 
-  const handleDelete = async () => {
-    if (imageURL) {
-      try {
-        // Exclui a imagem no Firebase Storage
-        await deleteImage('images/');  
-        console.log('Imagem excluída com sucesso!');
-        // Lógica adicional para excluir o projeto no banco de dados
-      } catch (error) {
-        console.error('Erro ao excluir a imagem:', error);
+  // abrir a pasta do computador para selecionar uma imagem
+  const handleOpenFileSelector = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleSaveProject = async () => {
+    try {
+      // conexão com o usuário logado na aplicação + save das infos 
+      const user = authInstance.currentUser; 
+
+      if (!user) {
+        console.error('Erro ao salvar o projeto: Usuário não autenticado.');
+        return;
       }
+
+      // nome da coleção no firestore: "projetos"
+      const docRef = await addDoc(collection(db, 'projetos'), {
+        userId: user.uid, // id do usuário
+        title, // título do projeto
+        tags, // tags do projeto
+        link, // url do projeto
+        description, // descrição do projeto
+        image, // imagem do projeto carregada pelo usuário
+      });
+
+      console.log('Projeto salvo com o ID:', docRef.id);
+
+      setTitle('');
+      setTags('');
+      setLink('');
+      setDescription('');
+      setImage(null);
+      setProgressPorcent(0);
+    } catch (error) {
+      console.error('Erro ao salvar o projeto:', error.message);
     }
-  };
-
-  const handleSave = () => {
-    // Lógica para salvar os dados no banco de dados
-    console.log('Dados salvos:', formData);
-  };
-
-  const handleInputChange = (e, field) => {
-    setFormData({
-      ...formData,
-      [field]: e.target.value,
-    });
   };
 
   return (
-    <ModalBackground>
-      <AddProjectDiv>
-        <StyledH5>Adicionar projeto</StyledH5>
-        <StyledBtnContainer>
-          <p className='preview-caption'>Visualizar publicação</p>
-          <Btns>
-            <button onClick={handleSave}>SALVAR</button>
-            <button onClick={handleDelete}>EXCLUIR</button>
-          </Btns>
-        </StyledBtnContainer>
-        <StyledFormContainer>
-          <PreviewContainer>
-            <StyledText1>
-              Selecione o conteúdo que você deseja fazer upload
-            </StyledText1>
-          </PreviewContainer>
-          <PreviewArea>
-            <BtnAddProject>
-              <img
-                src={imageURL || '../../../assets/secao-projetos/collections.png'}
-                alt='Icon image'
-                className='img-icon'
-              />
-              <StyledText2>
-                Compartilhe seu talento com milhares de pessoas
-              </StyledText2>
-            </BtnAddProject>
-          </PreviewArea>
-          <StyledAddForm>
-            <StyledInput>
-              <label htmlFor='title'>
-                Título:
-                <input
-                  type='text'
-                  id='title'
-                  className='title'
-                  placeholder='Título'
-                  value={formData.title}
-                  onChange={(e) => handleInputChange(e, 'title')}
-                />
-              </label>
-            </StyledInput>
-            <StyledInput>
-              <label htmlFor='tags'>
-                Tags:
-                <input
-                  type='text'
-                  id='tags'
-                  className='tags'
-                  placeholder='Tags'
-                  value={formData.tags}
-                  onChange={(e) => handleInputChange(e, 'tags')}
-                />
-              </label>
-            </StyledInput>
-            <StyledInput>
-              <label htmlFor='link'>
-                Link:
-                <input
-                  type='text'
-                  id='link'
-                  className='link'
-                  placeholder='Link'
-                  value={formData.link}
-                  onChange={(e) => handleInputChange(e, 'link')}
-                />
-              </label>
-            </StyledInput>
-            <StyledTextArea>
-              <label htmlFor='description'>
-                Descrição:
-                <textarea
-                  type='text'
-                  id='description'
-                  className='description'
-                  placeholder='Descrição'
-                  value={formData.description}
-                  onChange={(e) => handleInputChange(e, 'description')}
-                />
-              </label>
-            </StyledTextArea>
-         {/* Adiciona um campo de entrada para seleção de imagem */}
-            <StyledInput>
-              <label htmlFor='image'>
-                Selecionar imagem:
-                <input type='file' id='image' onChange={handleImageChange} />
-              </label>
-            </StyledInput>
-            <button onClick={handleUpload}>Enviar Imagem</button>
-            {/* Adicione este trecho para exibir a mensagem de sucesso */}
-            {successMessage && (
-              <p style={{ color: 'green' }}>{successMessage}</p>
-            )}
-            {/* Adicione um botão para visualizar a publicação */}
-          </StyledAddForm>
-        </StyledFormContainer>
-      </AddProjectDiv>
-    </ModalBackground>
+    // Container do Modal
+    <AddProjectContainer>
+
+      {/* DIV DO TÍTULO */}
+      <DivTitulo>
+        <h3>Adicionar projeto</h3>
+      </DivTitulo>
+
+      {/* DIV COM O BOTÃO DE SELECIONAR IMAGEM E INPUTS */}
+      <DivBotaoForm>
+
+        {/* DIV COM O <p> E O BOTÃO PARA SELECIONAR A IMAGEM */}
+        <DivH3Img>
+          <h3>Selecione o conteúdo que você deseja fazer upload</h3>
+          <button onClick={handleOpenFileSelector}>
+            <input type="file" ref={fileInputRef} style={{ display: 'none' }} onChange={handleImageUpload} />
+            <img src={Img} alt="Ícone de upload" />
+            <span>Compartilhe seu talento com milhares de pessoas</span>
+          </button>
+        </DivH3Img>
+
+        {/* DIV PAI DO FORMULÁRIO + INPUTS */}
+        <DivForm>
+          {/* DIV DOS INPUTS */}
+          <DivFormInput>
+            <input type='text' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} />
+            <input type='text' placeholder='Tags' value={tags} onChange={(e) => setTags(e.target.value)} />
+            <input type='text' placeholder='Link' value={link} onChange={(e) => setLink(e.target.value)} />
+            <input type='text' placeholder='Descrição' value={description} onChange={(e) => setDescription(e.target.value)} />
+          </DivFormInput>
+        </DivForm>
+      </DivBotaoForm>
+
+      {/* DIV DO LINK PARA VISUALIZAR PUBLICAÇÃO */}
+      <DivLink>
+        <a href="#">Visualizar publicação</a>
+      </DivLink>
+
+      {/* DIV DOS BOTÕES DE SALVAR E CANCELAR */}
+      <DivBotoes>
+        <button onClick={handleSaveProject}>SALVAR</button>
+        <button>CANCELAR</button>
+      </DivBotoes>
+
+      {/* IMAGEM SELECIONADA + PORCENTAGEM DE CARREGAMENTO */}
+      {!image && (
+      <div>
+        <p>{progressPorcent}%</p>
+      </div>
+      )}
+      {image && (
+        <div>
+          <img src={image} alt="Imagem" height={200} />
+        </div>
+      )}
+    </AddProjectContainer>
   );
 }
 
-export default AddProjectModal;
 export default AddProjectModal;

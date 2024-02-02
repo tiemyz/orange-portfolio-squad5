@@ -1,19 +1,22 @@
-import { useState } from 'react';
-import { BotaoEditarOuExcluir } from '../BotãoEditarOuExcluir/BotãoEditarOuExcluir';
+import { useState } from 'react'
+import BotaoEditarOuExcluir from '../BotaoEditarOuExcluir/BotaoEditarOuExcluir'
 import {
   SecaoProjetos,
   CampoBuscarTags,
   SubtituloProjetos,
   BotaoProjeto,
-  StyledBodyText1,
   ListaProjetos,
   BotaoLapis,
-  ContainerProjeto
-} from './SecaoMeusProjetos.styles';
-import PencilButton from '../../assets/images/pencil.png';
+  ContainerProjeto,
+  StyledBodyTexth5,
+  StyledBodyTextP,
+  TextDiv
+} from './SecaoMeusProjetos.styles'
+import PencilButton from '../../assets/images/pencil.png'
+import collectionsImage from '../../assets/images/collections.png'
 
-/* TODO: 
-* Ocultar botão editar!
+/* TODO:
+ * Ocultar botão editar!
  */
 
 function SecaoMeusProjetos() {
@@ -25,15 +28,15 @@ function SecaoMeusProjetos() {
           <div>
             <SubtituloProjetos>Meus projetos</SubtituloProjetos>
           </div>
-          <div className="campo-de-busca">
-            <label htmlFor="buscar-tags">
-              <CampoBuscarTags
-                type="text"
-                id="buscar-tags"
-                placeholder="Buscar tags"
-              />
-            </label>
-          </div>
+
+          <label htmlFor="buscar-tags">
+            <CampoBuscarTags
+              type="text"
+              id="buscar-tags"
+              placeholder="Buscar tags"
+            />
+          </label>
+
           <ListaProjetos>
             <ContainerProjeto>
               <BotaoLapis
@@ -42,14 +45,21 @@ function SecaoMeusProjetos() {
                 alt="Pencil icon"
                 onClick={() => setOpenEdit(!openEdit)}
               />
-              <BotaoProjeto onClick={() => window.alert('Tudo ok!')}>
-                <StyledBodyText1>Adicione seu primeiro projeto</StyledBodyText1>
-              </BotaoProjeto>
+              <BotaoProjeto
+                onClick={() => window.alert('Tudo ok!')}
+              ></BotaoProjeto>
+              <TextDiv>
+                <img src={collectionsImage} width={'46px'}></img>
+                <StyledBodyTexth5>
+                  Adicione seu primeiro projeto
+                </StyledBodyTexth5>
+                <StyledBodyTextP>
+                  Compartilhe seu talento com milhares de pessoas
+                </StyledBodyTextP>
+              </TextDiv>
               {openEdit && <BotaoEditarOuExcluir />}
             </ContainerProjeto>
-
             <ContainerProjeto></ContainerProjeto>
-
             <ContainerProjeto></ContainerProjeto>
           </ListaProjetos>
         </div>
@@ -58,4 +68,4 @@ function SecaoMeusProjetos() {
   )
 }
 
-export default SecaoMeusProjetos;
+export default SecaoMeusProjetos

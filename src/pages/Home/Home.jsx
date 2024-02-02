@@ -1,13 +1,13 @@
-import AddProject from '../../components/AddProjectModal/AddProject';
-//import Header from '../../components/Header/Header';
-import LogoutButton from '../../components/LogoutButton/LogoutButton';
+import Header from '../../components/Header/Header'
+import Perfil from '../../components/Perfil/Perfil'
+import SecaoMeusProjetos from '../../components/SecaoMeusProjetos/SecaoMeusProjetos'
 
 function Home() {
   return (
     <div>
-      {/** <Header />*/}
-      <AddProject/>
-      <LogoutButton/>
+      <Header />
+      <Perfil />
+      <SecaoMeusProjetos />
     </div>
   )
 }

@@ -24,6 +24,8 @@ export const ButtonDefault = styled.button`
     background: #cc4400;
   }
 
+  height: ${(props) => (props.customHeight ? '42px' : 'auto')};
+
   @media screen and (max-width: 768px) {
     width: 312px;
   }
@@ -42,7 +44,7 @@ export const ButtonOrangeLarge = styled(ButtonDefault)`
 `
 
 export const ButtonGray = styled(ButtonDefault)`
-  width: 200px;
+  width: ${(props) => (props.customWidth ? '124px' : '200px')};
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.12);
   align-items: center;

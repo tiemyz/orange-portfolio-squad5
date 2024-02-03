@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import {
   HeaderContent,
   NavContainer,
@@ -16,41 +16,43 @@ import {
 } from './Header.styles';
 import MenuOpen from '../../assets/images/menu-open.svg';
 import LogoImg from '../../assets/images/Logo-orange.png';
-import ProfileImg from '../../assets/images/profile.png';
 import NotificationsImg from '../../assets/images/notifications.png';
+import { ProfileImageContext } from '../contex/ProfileImageContext';  // Importe o contexto
 
-function Header () {
-  const [isOpen, setOpen] = useState(false)
-  const menuRef = useRef(null)
+function Header() {
+  const [isOpen, setOpen] = useState(false);
+  const menuRef = useRef(null);
+  const { profileImage } = useContext(ProfileImageContext);  // Consuma o contexto
 
   // Fecha o menu
   const handleMenuOpen = () => {
-    setOpen(true)
+    setOpen(true);
   }
 
   // Abre o menu
   const handleMenuClose = () => {
-    setOpen(false)
+    setOpen(false);
   }
 
   // Função para fechar o menu quando clicar em um link
   const handleLinkClick = () => {
-    setOpen(false)
+    setOpen(false);
   }
-  // Fecha o menu quando clicar em outro campo da página
+
+  // Fecha o menu quando clicar fora
   const handleOutsideMenu = clickEvent => {
     if (menuRef.current && !menuRef.current.contains(clickEvent.target)) {
-      setOpen(false)
+      setOpen(false);
     }
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleOutsideMenu)
+    document.addEventListener('click', handleOutsideMenu);
 
     return () => {
-      document.addEventListener('click', handleOutsideMenu)
+      document.removeEventListener('click', handleOutsideMenu);
     }
-  }, [])
+  }, []);
 
   return (
     <HeaderContent>
@@ -94,15 +96,15 @@ function Header () {
 
         <Perfil className="perfil">
           <ImagemPerfil
-            ClassName="img-perfil"
-            src={ProfileImg}
+            className="img-perfil"
+            src={profileImage || 'https://via.placeholder.com/150'}
             alt="Foto de perfil"
-          ></ImagemPerfil>
-          <Notifications src={NotificationsImg}></Notifications>
+          />
+          <Notifications src={NotificationsImg} alt="Ícone de notificações" />
         </Perfil>
       </NavContainer>
     </HeaderContent>
-  )
+  );
 }
 
 export default Header;

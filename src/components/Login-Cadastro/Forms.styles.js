@@ -131,7 +131,7 @@ export const InputField = styled.input`
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
-    width: 95%; 
+    width: 100%; 
     padding: 12px;
     border-radius: 4px;
     transition: border-color 0.3s ease;
@@ -157,7 +157,7 @@ export const InputField = styled.input`
     }
 
     @media screen and (max-width: 768px) {
-        width: 91.6%; 
+        width: 100%; 
     }
 `;
 

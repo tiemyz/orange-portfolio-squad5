@@ -13,6 +13,18 @@ Este projeto foi uma realização do Hackthon do Programa de Formação da [Oran
 ### 🖥️ [Confira o site](https://orange-portfolio-squad5.vercel.app/)
 
 ## 🖼️ Screenshots
+<h4>DESKTOP</h4>
+
+- Adicionar Projeto
+
+![Adicionar projeto](https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/fb239a52-a4c2-4fbb-a8a1-b1547d9b5fab)
+
+<h4>MOBILE</h4>
+
+- Adicionar Projeto
+
+<img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/4c548255-83e1-4207-858a-0c47fd5b43f2" height="350px">
+
 
 ## 🔧 Stacks utilizadas
 

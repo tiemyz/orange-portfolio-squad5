@@ -86,8 +86,7 @@ function LoginForm() {
       const result = await signInWithEmailAndPassword(authInstance, email, password);
       const user = result.user;
 
-      console.log('Usuário autenticado:', user); // Adicione esta linha para imprimir no console
-
+      console.log('Usuário autenticado:', user); 
       setEmail('')
       setPassword('')
       setWarning('')
@@ -166,7 +165,6 @@ function LoginForm() {
         <LinkCadastro to="/cadastro">Cadastre-se</LinkCadastro>
       </StyledForm>
 
-      {/* Adicionar mensagens de aviso ou sucesso */}
       {loading && <p>Carregando...</p>}
       {!loading && warning && <p style={{ color: 'red' }}>{warning}</p>}
       {!loading && successMessage && (
@@ -176,4 +174,7 @@ function LoginForm() {
   )
 }
 
-export default LoginForm
+export default LoginForm;
+
+
+

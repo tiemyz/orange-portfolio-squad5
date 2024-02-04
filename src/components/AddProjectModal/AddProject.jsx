@@ -1,213 +1,311 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
-	ModalBackground,
-	AddProjectContainer,
-	DivTitulo,
-	DivBotaoForm,
-	DivH3Img,
-	DivForm,
-	DivFormInput,
-	DivLink,
-	DivBotoes,
-	TituloDoModal,
-	BotaoProjeto,
-	TextDiv,
-	StyledBodyTextP,
-	SubtituloModal,
-	DivSubtitulo,
-	PorcentagemProgresso,
+  ModalBackground,
+  AddProjectContainer,
+  DivTitulo,
+  TituloDoModal,
+  DivBotaoForm,
+  DivH3Img,
+  SubtituloModal,
+  BotaoProjeto,
+  TextDiv,
+  StyledBodyTextP,
+  DivForm,
+  DivFormInput,
+  DivLink,
+  DivBotoes,
+  UploadImageDiv,
+  UploadImage,
 } from './AddProject.styles';
+
+import {
+  collection,
+  addDoc,
+  doc,
+  updateDoc,
+  deleteDoc,
+} from 'firebase/firestore';
 import collectionsImage from '../../assets/images/collections.png';
-import { collection, addDoc } from 'firebase/firestore';
-import { storage, db } from '../../services/firebaseConfig';
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
+import ModalPreVisualizacaoProjeto from '../ModalPreVisualizacaoProjeto/ModalPreVisualizacaoProjeto';
+import Modal from '../Modal/Modal';
 import { ButtonGray, ButtonOrangeSmall } from '../Buttons/Buttons.styles';
+import { storage, db } from '../../services/firebaseConfig';
+import { getUserNameById } from '../../services/firebaseFirestore';
 
-// arquivo secundário com o POST de imagem e infos funcionando + salvamento no firestore & storage
-function AddProject() {
-	const [title, setTitle] = useState('');
-	const [tags, setTags] = useState('');
-	const [link, setLink] = useState('');
-	const [description, setDescription] = useState('');
-	const [image, setImage] = useState(null);
-	const fileInputRef = useRef(null);
-	const [progressPorcent, setProgressPorcent] = useState(0);
-	const authInstance = getAuth();
+function AddProject({ onClose, adicionarProjeto, projetoSelecionado }) {
+  const [projectData, setProjectData] = useState({
+    title: '',
+    tags: '',
+    link: '',
+    description: '',
+    image: null,
+  });
 
-	const handleImageUpload = async (event) => {
-		const file = event.target.files[0];
+  const fileInputRef = useRef(null);
+  const [progressPorcent, setProgressPorcent] = useState(0);
+  const authInstance = getAuth();
+  const [mostrarModalPreVisualizacao, setMostrarModalPreVisualizacao] = useState(false);
+  const [formattedDate, setFormattedDate] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
-		// lógica para upload da imagem
-		const storageRef = ref(storage, `images/${file.name}`);
-		const uploadTask = uploadBytesResumable(storageRef, file);
+  useEffect(() => {
+    if (projetoSelecionado) {
+      setProjectData((prevData) => ({
+        ...prevData,
+        title: projetoSelecionado.title || '',
+        tags: projetoSelecionado.tags || '',
+        link: projetoSelecionado.link || '',
+        description: projetoSelecionado.description || '',
+        image: projetoSelecionado.image || null,
+      }));
+    }
+  }, [projetoSelecionado]);
 
-		uploadTask.on(
-			'state_changed',
-			(snapshot) => {
-				const progress = Math.round(
-					(snapshot.bytesTransferred / snapshot.totalBytes) * 100
-				);
-				setProgressPorcent(progress);
-			},
-			(error) => {
-				alert(error);
-			},
-			() => {
-				// url da imagem para subir no firebase
-				getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-					setImage(downloadURL);
-				});
-			}
-		);
-	};
+  useEffect(() => {
+    const fetchProjetos = async () => {
+      try {
+        const projetosCollection = collection(db, 'projetos');
+        const projetosSnapshot = await getDocs(projetosCollection);
+        const projetosData = projetosSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setFormattedDate(`${new Date().getMonth() + 1}/${new Date().getDate()}`);
+      } catch (error) {
+        console.error('Erro ao buscar projetos:', error.message);
+      }
+    };
 
-	// abrir a pasta do computador para selecionar uma imagem
-	const handleOpenFileSelector = () => {
-		fileInputRef.current.click();
-	};
+    fetchProjetos();
+  }, []);
 
-	const handleSaveProject = async () => {
-		try {
-			// conexão com o usuário logado na aplicação + save das infos
-			const user = authInstance.currentUser;
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0];
+    const storageRef = ref(storage, `images/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
-			if (!user) {
-				console.error('Erro ao salvar o projeto: Usuário não autenticado.');
-				return;
-			}
+    uploadTask.on(
+      'state_changed',
+      (snapshot) => {
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgressPorcent(progress);
+      },
+      (error) => {
+        alert(error);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setProjectData((prevData) => ({ ...prevData, image: downloadURL }));
+        });
+      }
+    );
+  };
 
-			// nome da coleção no firestore: "projetos"
-			const docRef = await addDoc(collection(db, 'projetos'), {
-				userId: user.uid, // id do usuário
-				title, // título do projeto
-				tags, // tags do projeto
-				link, // url do projeto
-				description, // descrição do projeto
-				image, // imagem do projeto carregada pelo usuário
-			});
+  const handleOpenFileSelector = () => {
+    fileInputRef.current.click();
+  };
 
-			console.log('Projeto salvo com o ID:', docRef.id);
+  const handleOpenModalPreVisualizacao = async () => {
+    try {
+      const userName = await getUserNameById(authInstance.currentUser.uid);
+  
+      const projectDataWithUserName = {
+        ...projectData,
+        userName,
+      };
+  
+      setMostrarModalPreVisualizacao(true);
+      setProjectData(projectDataWithUserName);
+    } catch (error) {
+      console.error('Error fetching user name:', error.message);
+    }
+  };
+  
+  const handleCloseModalPreVisualizacao = () => {
+    setMostrarModalPreVisualizacao(false);
+  };
 
-			setTitle('');
-			setTags('');
-			setLink('');
-			setDescription('');
-			setImage(null);
-			setProgressPorcent(0);
-		} catch (error) {
-			console.error('Erro ao salvar o projeto:', error.message);
-		}
-	};
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
 
-/*
- * TODO: Fazer o background do modal cobrir a tela inteira (verificar se)
-   será necessário fazer isso com todos os outros modais!
- */
+  const handleCloseShowModal = () => {
+    setShowModal(false);
+  };
 
-	return (
-		// Fundo do modal
-		<ModalBackground>
-			{/* Container do Modal */}
-			<AddProjectContainer>
-				{/* DIV DO TÍTULO */}
-				<DivTitulo>
-					<TituloDoModal>Adicionar projeto</TituloDoModal>
-				</DivTitulo>
+  const handleSaveProject = async () => {
+    try {
+      const user = authInstance.currentUser;
 
-				{/* DIV DO SUBTITULO DO FORMULÁRIO */}
-				<DivSubtitulo>
-					<SubtituloModal>
-						Selecione o conteúdo que você deseja fazer upload
-					</SubtituloModal>
-				</DivSubtitulo>
+      if (!user) {
+        console.error('Erro ao salvar o projeto: Usuário não autenticado.');
+        return;
+      }
 
-				{/* DIV COM O BOTÃO DE SELECIONAR IMAGEM E INPUTS */}
-				<DivBotaoForm>
-					{/* DIV COM O <p> E O BOTÃO PARA SELECIONAR A IMAGEM */}
-					<DivH3Img>
-						<BotaoProjeto onClick={handleOpenFileSelector}>
-							<input
-								type='file'
-								ref={fileInputRef}
-								style={{ display: 'none' }}
-								onChange={handleImageUpload}
-							/>
-						</BotaoProjeto>
-						<TextDiv>
-							<img
-								src={collectionsImage}
-								width={'46px'}
-								alt='Ícone de upload'></img>
-							<StyledBodyTextP>
-								Compartilhe seu talento com milhares de pessoas
-							</StyledBodyTextP>
-						</TextDiv>
-					</DivH3Img>
+      if (projetoSelecionado) {
+        const projetoRef = doc(db, 'projetos', projetoSelecionado.id);
+        await updateDoc(projetoRef, {
+          title: projectData.title,
+          tags: projectData.tags,
+          link: projectData.link,
+          description: projectData.description,
+          image: projectData.image,
+        });
 
-					{/* DIV PAI DO FORMULÁRIO + INPUTS */}
-					<DivForm>
-						{/* DIV DOS INPUTS */}
-						<DivFormInput>
-							<input
-								type='text'
-								placeholder='Título'
-								value={title}
-								onChange={(e) => setTitle(e.target.value)}
-							/>
-							<input
-								type='text'
-								placeholder='Tags'
-								value={tags}
-								onChange={(e) => setTags(e.target.value)}
-							/>
-							<input
-								type='text'
-								placeholder='Link'
-								value={link}
-								onChange={(e) => setLink(e.target.value)}
-							/>
-							<textarea
-								type='text'
-								placeholder='Descrição'
-								value={description}
-								onChange={(e) => setDescription(e.target.value)}
-							/>
-						</DivFormInput>
-					</DivForm>
-				</DivBotaoForm>
+        adicionarProjeto((prevProjetos) =>
+          prevProjetos.map((projeto) =>
+            projeto.id === projetoSelecionado.id
+              ? { ...projeto, title: projectData.title, tags: projectData.tags, link: projectData.link, description: projectData.description, image: projectData.image }
+              : projeto
+          )
+        );
+      } else {
+        const docRef = await addDoc(collection(db, 'projetos'), {
+          userId: user.uid,
+          title: projectData.title,
+          tags: projectData.tags,
+          link: projectData.link,
+          description: projectData.description,
+          image: projectData.image,
+        });
 
-				{/* DIV DO LINK PARA VISUALIZAR PUBLICAÇÃO */}
-				<DivLink>
-					<a href='#'>Visualizar publicação</a>
-					{/* DIV DOS BOTÕES DE SALVAR E CANCELAR */}
-					<DivBotoes>
-						<ButtonOrangeSmall
-							onClick={handleSaveProject}
-							customHeight
-							customWidth>
-							SALVAR
-						</ButtonOrangeSmall>
-						<ButtonGray customHeight customWidth>
-							CANCELAR
-						</ButtonGray>
-					</DivBotoes>
-				</DivLink>
+        adicionarProjeto((prevProjetos) => [
+          ...prevProjetos,
+          { id: docRef.id, title: projectData.title, description: projectData.description },
+        ]);
+      }
 
-				{/* IMAGEM SELECIONADA + PORCENTAGEM DE CARREGAMENTO */}
-				{!image && (
-					<PorcentagemProgresso>
-						<p>{progressPorcent}%</p>
-					</PorcentagemProgresso>
-				)}
-				{image && (
-					<div>
-						<img src={image} alt='Imagem' height={200} />
-					</div>
-				)}
-			</AddProjectContainer>
-		</ModalBackground>
-	);
+      setProjectData({
+        title: '',
+        tags: '',
+        link: '',
+        description: '',
+        image: null,
+      });
+      setProgressPorcent(0);
+
+      onClose();
+  
+      handleShowModal();
+    } catch (error) {
+      console.error('Erro ao salvar o projeto:', error.message);
+    }
+  };
+
+  const handleExcluirProjeto = async () => {
+    try {
+      if (projetoSelecionado) {
+        const projetoRef = doc(db, 'projetos', projetoSelecionado.id);
+        await deleteDoc(projetoRef);
+
+        adicionarProjeto((prevProjetos) =>
+          prevProjetos.filter((projeto) => projeto.id !== projetoSelecionado.id)
+        );
+
+        onClose();
+      }
+    } catch (error) {
+      console.error('Erro ao excluir o projeto:', error.message);
+    }
+  };
+
+  return (
+    <ModalBackground>
+      <AddProjectContainer>
+        <DivTitulo>
+          <TituloDoModal>Adicionar projeto</TituloDoModal>
+        </DivTitulo>
+
+        <DivBotaoForm>
+          <DivH3Img>
+            <SubtituloModal>
+              Selecione o conteúdo que você deseja fazer upload
+            </SubtituloModal>
+
+            <BotaoProjeto onClick={handleOpenFileSelector}>
+              <input
+                type='file'
+                ref={fileInputRef}
+                style={{ display: 'none' }}
+                onChange={handleImageUpload}
+              />
+
+              <TextDiv>
+                <img
+                  src={collectionsImage}
+                  width={'46px'}
+                  alt='Ícone de upload'
+                />
+
+                <StyledBodyTextP>
+                  Compartilhe seu talento com milhares de pessoas
+                </StyledBodyTextP>
+
+                {!projectData.image && <div><p>{progressPorcent}%</p></div>}
+                {projectData.image && (
+                  <UploadImageDiv>
+                    <UploadImage src={projectData.image} alt="Imagem upload" />
+                  </UploadImageDiv>
+                )}
+              </TextDiv>
+            </BotaoProjeto>
+          </DivH3Img>
+
+          <DivForm>
+            <DivFormInput>
+              <input
+                type='text'
+                placeholder='Título'
+                value={projectData.title}
+                onChange={(e) => setProjectData((prevData) => ({ ...prevData, title: e.target.value }))}
+              />
+              <input
+                type='text'
+                placeholder='Tags'
+                value={projectData.tags}
+                onChange={(e) => setProjectData((prevData) => ({ ...prevData, tags: e.target.value }))}
+              />
+              <input
+                type='text'
+                placeholder='Link'
+                value={projectData.link}
+                onChange={(e) => setProjectData((prevData) => ({ ...prevData, link: e.target.value }))}
+              />
+              <textarea
+                type='text'
+                placeholder='Descrição'
+                value={projectData.description}
+                onChange={(e) => setProjectData((prevData) => ({ ...prevData, description: e.target.value }))}
+              />
+            </DivFormInput>
+          </DivForm>
+        </DivBotaoForm>
+
+        <DivLink>
+          <a href="#" onClick={handleOpenModalPreVisualizacao}>
+            Visualizar publicação
+          </a>
+        </DivLink>
+        {mostrarModalPreVisualizacao && (
+          <ModalPreVisualizacaoProjeto
+            onClose={handleCloseModalPreVisualizacao}
+            projectData={projectData}
+          />
+        )}
+
+
+        <DivBotoes>
+          <ButtonOrangeSmall onClick={() => { handleSaveProject(); handleShowModal(); }}>Salvar</ButtonOrangeSmall>
+          <ButtonGray onClick={onClose}>Cancelar</ButtonGray>
+        </DivBotoes>
+
+        {showModal && (
+          <Modal onClose={handleCloseShowModal} />
+        )}
+      </AddProjectContainer>
+    </ModalBackground>
+  );
 }
 
 export default AddProject;

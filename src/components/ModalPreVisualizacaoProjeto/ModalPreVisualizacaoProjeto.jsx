@@ -1,4 +1,4 @@
-import ChipRender from '../Chip/ChipRender';
+import React from 'react';
 import {
   BackgroundPreVisualizacao,
   CloseButton,
@@ -18,22 +18,23 @@ import {
   UsuarioContainer
 } from './ModalPreVisualizacaoProjeto.styles';
 import VectorImg from '../../assets/images/Vector.png';
-import LandinPageImg from '../../assets/images/img_landingpage.png';
 import UserProfileImg from '../../assets/images/user-profile.png';
 
-function ModalPreVisualizacaoProjeto() {
+function ModalPreVisualizacaoProjeto({ onClose, projectData }) {
   return (
     <BackgroundPreVisualizacao>
       <ContentPreVisualizacao>
-        <CloseButtonDiv>
+        <CloseButtonDiv onClick={onClose}>
           <CloseButton type="button">
-            <img src={VectorImg}></img>
+            <img src={VectorImg} alt="Fechar Modal" />
           </CloseButton>
         </CloseButtonDiv>
-        <H5PreVisualizacao>Orange App</H5PreVisualizacao>
+
+        <H5PreVisualizacao>{projectData.title}</H5PreVisualizacao>
+
         <DivImagemPreVisualizacao>
           <ImagemPreVisualizacao
-            src={LandinPageImg}
+            src={projectData.image}
             alt="Project-Photo"
           ></ImagemPreVisualizacao>
         </DivImagemPreVisualizacao>
@@ -49,29 +50,26 @@ function ModalPreVisualizacaoProjeto() {
             />
             <InfoUsuario>
               <NomeUsuario>
-                Camilla Rodrigues
+                {projectData.userName}
               </NomeUsuario>
-              <TimePreVisualizacao>31-01-2024</TimePreVisualizacao>
+              <TimePreVisualizacao>{projectData.formattedDate}</TimePreVisualizacao>
             </InfoUsuario>
           </UsuarioContainer>
 
-          <ChipRender tags=""></ChipRender>
+          <div>{projectData.tags}</div>
         </InfoContainerPreVisualizacao>
 
         <TextContainer>
           <ParagrafoPreVisualizacao>
-            Temos o prazer de compartilhar com vocês uma variação da nosso
-            primeiro recurso gratuito, Monoceros. É um modelo de uma página para
-            mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e
-            minimalista do nosso primeiro template de e-commerce.
+            {projectData.description}
           </ParagrafoPreVisualizacao>
           <br></br>
           <H6PreVisualizacao>Download</H6PreVisualizacao>
-          <LinksPreVisualizacao href="#">Teste</LinksPreVisualizacao>
+          <LinksPreVisualizacao>{projectData.link}</LinksPreVisualizacao>
         </TextContainer>
       </ContentPreVisualizacao>
     </BackgroundPreVisualizacao>
-  )
+  );
 }
 
 export default ModalPreVisualizacaoProjeto;

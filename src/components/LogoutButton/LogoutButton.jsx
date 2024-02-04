@@ -1,6 +1,7 @@
 import { getAuth, signOut } from "firebase/auth";
-import { ButtonOrangeSmall } from '../../components/Buttons/Buttons.styles';
+import { ButtonOrangeExit } from '../../components/Buttons/Buttons.styles';
 import { useNavigate } from "react-router-dom";
+import ExitIcon from '../../assets/images/exit-icon.png';
 
 function LogoutButton() {
     const authInstance = getAuth();
@@ -16,7 +17,9 @@ function LogoutButton() {
     };
 
     return (
-        <ButtonOrangeSmall onClick={handleLogout}>Logout</ButtonOrangeSmall>
+        <ButtonOrangeExit onClick={handleLogout} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <img src={ExitIcon} style={{height: '20px'}}/>
+        </ButtonOrangeExit>
     );
 }
 

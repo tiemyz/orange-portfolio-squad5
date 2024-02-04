@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalBackgroung = styled.div`
+export const ModalBackground = styled.div`
     display: inline-flex;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
@@ -12,6 +12,7 @@ export const ModalBackgroung = styled.div`
 `;
 
 export const ModalContent = styled.div`
+    background-color: pink;
     display: inline-flex;
     flex-direction: column;
     row-gap: 24px;
@@ -34,4 +35,20 @@ export const ModalH5 = styled.h5`
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+`;
+
+export const ModalContent2 = styled.div`
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    width: 312px;
+    height: 242px;
+    background-color: #FCFDFF;
+    align-items: start;
+    padding: 40px 42px;
+
+    @media (width >= 1024px ) {
+        width: 351px;
+    }
 `;

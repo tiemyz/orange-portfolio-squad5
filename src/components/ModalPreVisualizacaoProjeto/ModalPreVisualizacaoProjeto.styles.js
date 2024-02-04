@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 /*Background do modal */
-
 export const BackgroundPreVisualizacao = styled.div`
     display: inline-flex;
     position: relative;
@@ -44,12 +43,16 @@ export const CloseButtonDiv = styled.div`
 `;
 
 export const CloseButton = styled.button`
-    width: 14px;
+    cursor: pointer;
+    background-color: yellow;
+    height: 30px;
+    width: 30px;
     background-color: #FFF;
     border: none;
 
     &:hover {
-        background-color: grey;
+        border-radius: 10px;
+        background-color: lightgrey;
     }
 `;
 

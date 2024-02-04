@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CadastroPage from "../pages/Login-Cadastro/CadastroPage/CadastroPage";
 import LoginPage from "../pages/Login-Cadastro/LoginPage/LoginPage";
@@ -14,7 +15,7 @@ function AppRoutes() {
         <Route path="/descobrir" element={<DescobrirPage />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default AppRoutes;

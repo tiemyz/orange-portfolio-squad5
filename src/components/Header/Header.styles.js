@@ -6,19 +6,18 @@ export const HeaderContent = styled.header`
   padding: 12px 24px;
   border: 4px;
   background: #113;
-  position: fixed;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  z-index: 100;
 
   @media screen and (min-width: 1024px) {
+    position: fixed;
     height: 73px;
+    z-index: 100;
   }
 `
-
 export const NavContainer = styled.nav`
   width: 100%;
   margin: 0;

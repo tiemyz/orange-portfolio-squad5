@@ -18,26 +18,24 @@ import MenuOpen from '../../assets/images/menu-open.svg';
 import LogoImg from '../../assets/images/Logo-orange.png';
 import ProfileImg from '../../assets/images/profile.png';
 import NotificationsImg from '../../assets/images/notifications.png';
+import LogoutButton from '../LogoutButton/LogoutButton';
 
 function Header () {
   const [isOpen, setOpen] = useState(false)
   const menuRef = useRef(null)
 
-  // Fecha o menu
   const handleMenuOpen = () => {
     setOpen(true)
   }
 
-  // Abre o menu
   const handleMenuClose = () => {
     setOpen(false)
   }
 
-  // Função para fechar o menu quando clicar em um link
   const handleLinkClick = () => {
     setOpen(false)
   }
-  // Fecha o menu quando clicar em outro campo da página
+
   const handleOutsideMenu = clickEvent => {
     if (menuRef.current && !menuRef.current.contains(clickEvent.target)) {
       setOpen(false)
@@ -99,6 +97,7 @@ function Header () {
             alt="Foto de perfil"
           ></ImagemPerfil>
           <Notifications src={NotificationsImg}></Notifications>
+          <LogoutButton/>
         </Perfil>
       </NavContainer>
     </HeaderContent>

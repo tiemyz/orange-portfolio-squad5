@@ -43,3 +43,12 @@ npm install firebase
 - Rodar o projeto:
 ```bash
 npm run dev
+```
+
+## 💼 Colaboradoras
+
+#### Graziela Felix
+<a href="https://github.com/Grazifelix"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/58229bc1-d408-4ea8-82ae-e648cb04eeab" width="70px" height="86px"></a>
+
+#### Daiane Porcena
+<a href="https://github.com/DaianePorcena"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/103866712/b11d6bae-bdb5-41bb-9f99-b9f3428bfc23"  width="70px"></a>

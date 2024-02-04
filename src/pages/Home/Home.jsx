@@ -1,20 +1,15 @@
-import Header from '../../components/Header/Header'
-import Perfil from '../../components/Perfil/Perfil'
-import SecaoMeusProjetos from '../../components/SecaoMeusProjetos/SecaoMeusProjetos'
-import React from 'react';
-import AddProject from '../../components/AddProjectModal/Desktop/AddProjectModal';
-import LogoutButton from '../../components/LogoutButton/LogoutButton';
+import Header from '../../components/Header/Header';
 import Perfil from '../../components/Perfil/Perfil';
+import SecaoMeusProjetos from '../../components/SecaoMeusProjetos/SecaoMeusProjetos';
 
-function MinhaPagina({ profileImage, setProfileImage }) {
+function Home() {
   return (
     <div>
-      <Perfil profileImage={profileImage} setProfileImage={setProfileImage} />
-      <AddProject />
-      <LogoutButton />
+      <Header/>
+      <Perfil/>
       <SecaoMeusProjetos />
     </div>
   );
 }
 
-export default MinhaPagina;
+export default Home;

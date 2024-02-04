@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   HeaderContent,
   NavContainer,
@@ -16,43 +16,39 @@ import {
 } from './Header.styles';
 import MenuOpen from '../../assets/images/menu-open.svg';
 import LogoImg from '../../assets/images/Logo-orange.png';
+import ProfileImg from '../../assets/images/profile.png';
 import NotificationsImg from '../../assets/images/notifications.png';
-import { ProfileImageContext } from '../contex/ProfileImageContext';  // Importe o contexto
+import LogoutButton from '../LogoutButton/LogoutButton';
 
-function Header() {
-  const [isOpen, setOpen] = useState(false);
-  const menuRef = useRef(null);
-  const { profileImage } = useContext(ProfileImageContext);  // Consuma o contexto
+function Header () {
+  const [isOpen, setOpen] = useState(false)
+  const menuRef = useRef(null)
 
-  // Fecha o menu
   const handleMenuOpen = () => {
-    setOpen(true);
+    setOpen(true)
   }
 
-  // Abre o menu
   const handleMenuClose = () => {
-    setOpen(false);
+    setOpen(false)
   }
 
-  // Função para fechar o menu quando clicar em um link
   const handleLinkClick = () => {
-    setOpen(false);
+    setOpen(false)
   }
 
-  // Fecha o menu quando clicar fora
   const handleOutsideMenu = clickEvent => {
     if (menuRef.current && !menuRef.current.contains(clickEvent.target)) {
-      setOpen(false);
+      setOpen(false)
     }
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleOutsideMenu);
+    document.addEventListener('click', handleOutsideMenu)
 
     return () => {
-      document.removeEventListener('click', handleOutsideMenu);
+      document.addEventListener('click', handleOutsideMenu)
     }
-  }, []);
+  }, [])
 
   return (
     <HeaderContent>
@@ -78,12 +74,12 @@ function Header() {
 
           <NavbarList className={isOpen ? 'show' : ''}>
             <List>
-              <Link href="#" onClick={handleLinkClick}>
+              <Link href="/home" onClick={handleLinkClick}>
                 Meus Projetos
               </Link>
             </List>
             <List>
-              <Link href="#" onClick={handleLinkClick}>
+              <Link href="/descobrir" onClick={handleLinkClick}>
                 Descobrir
               </Link>
             </List>
@@ -96,15 +92,16 @@ function Header() {
 
         <Perfil className="perfil">
           <ImagemPerfil
-            className="img-perfil"
-            src={profileImage || 'https://via.placeholder.com/150'}
+            ClassName="img-perfil"
+            src={ProfileImg}
             alt="Foto de perfil"
-          />
-          <Notifications src={NotificationsImg} alt="Ícone de notificações" />
+          ></ImagemPerfil>
+          <Notifications src={NotificationsImg}></Notifications>
+          <LogoutButton/>
         </Perfil>
       </NavContainer>
     </HeaderContent>
-  );
+  )
 }
 
 export default Header;

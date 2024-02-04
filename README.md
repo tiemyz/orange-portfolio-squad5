@@ -8,7 +8,7 @@
 
 ### 🍊 Hackathon Orange Juice:
 
-Este projeto foi uma realização do Hackthon do Programa de Formação da Orange Juice (acrescetar link).
+Este projeto foi uma realização do Hackthon do Programa de Formação da [Orange Juice](https://tech.orangejuice.com.br/orangejuice).
 
 ### 🖥️ [Confira o site](https://orange-portfolio-squad5.vercel.app/)
 
@@ -67,10 +67,27 @@ npm run dev
 
 ## 💼 Colaboradoras
 
-#### Graziela Felix
+<br>
+<a href="https://github.com/DaianePorcena"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/ac62380c-bc39-4cc1-a17c-79481d842637" height="80px">
 
-<a href="https://github.com/Grazifelix"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/58229bc1-d408-4ea8-82ae-e648cb04eeab" width="70px" height="86px"></a>
+---- Daiane Porcena --- </a>
 
-#### Daiane Porcena
+<br>
+<a href="https://github.com/Grazifelix"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/e7c35816-a72e-43bb-b319-5e39eae20876" height="80px">
 
-<a href="https://github.com/DaianePorcena"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/103866712/b11d6bae-bdb5-41bb-9f99-b9f3428bfc23"  width="70px"></a>
+---- Graziela Felix ----</a>
+
+<br>
+<a href="https://github.com/tiemyz)"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/4be2d6ce-d093-4ace-9a16-b26fe6d7aa20" height="86px">
+
+---- Isaballa Tiemy ----</a>
+
+<br>
+<a href="https://github.com/olgacsmendes"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/6f1dd3c0-e5b0-431f-8e1c-a303d0f5ff51" height="86px">
+
+---- Olga Mendes ----</a>
+
+<br>
+<a href="https://github.com/vlruiz108"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/9da44009-2446-4c46-aa79-ea4fba28b433" height="80px">
+
+---- Vanessa Ruiz ----</a>

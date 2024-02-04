@@ -255,6 +255,27 @@ export const StyledBodyTextP = styled.p`
   font-weight: 400;
   text-align: left;
 `
+/*Seção Descobrir Projetos*/
+export const DivDescobrirH4 = styled.div`
+  margin-top: 88px;
+  height: 120px;
+  width: 312px;
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    width: auto;
+  }
+`;
 
+export const DescobrirH4 = styled.h4`
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  text-align: center; 
+  
+  @media screen and (min-width: 1024px) {
+    padding: 0px 268px 0px 268px;
+    font-size: 34px;
+  }
 
-
+`;

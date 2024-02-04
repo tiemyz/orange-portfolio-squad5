@@ -24,15 +24,13 @@ export const ButtonDefault = styled.button`
     background: #cc4400;
   }
 
-  height: ${(props) => (props.customHeight ? '42px' : 'auto')};
-
   @media screen and (max-width: 768px) {
     width: 312px;
   }
 `
 
 export const ButtonOrangeSmall = styled(ButtonDefault)`
-  width: 100px;
+    width: 100px;
 `
 
 export const ButtonOrangeMedium = styled(ButtonDefault)`
@@ -42,9 +40,11 @@ export const ButtonOrangeMedium = styled(ButtonDefault)`
 export const ButtonOrangeLarge = styled(ButtonDefault)`
   width: 312px;
 `
-
+export const ButtonOrangeExit = styled(ButtonDefault)`
+  width: 50px;
+`
 export const ButtonGray = styled(ButtonDefault)`
-  width: ${(props) => (props.customWidth ? '124px' : '200px')};
+  width: 124px;
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.12);
   align-items: center;
@@ -63,4 +63,7 @@ export const ButtonGray = styled(ButtonDefault)`
   &:active {
     background: linear-gradient(135deg, #f83 0%, #f52 73.9%);
   }
+`
+export const ButtonGrayLarge = styled(ButtonGray)`
+  width: 200px;
 `

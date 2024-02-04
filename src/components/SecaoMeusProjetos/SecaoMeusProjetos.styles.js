@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-//Estilo da Seção Projetos - Mobile
 export const SecaoProjetos = styled.section`
   padding: 40px 24px;
   margin-bottom: 27px;
@@ -9,7 +8,6 @@ export const SecaoProjetos = styled.section`
   justify-content: center;
   flex-direction: column;
 
-  //Tablet
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     padding-top: 56px;
     padding-left: 32px;
@@ -18,7 +16,6 @@ export const SecaoProjetos = styled.section`
     margin-bottom: 39px;
   }
 
-  //Desktop
   @media screen and (min-width: 1024px) {
     padding-top: 56px;
     justify-content: flex-start;
@@ -26,8 +23,6 @@ export const SecaoProjetos = styled.section`
     padding-bottom: 39px;
   }
 `
-
-//Estilo do subtítulo "Meus Projetos" - Mobile and Desktop
 export const SubtituloProjetos = styled.h6`
   margin-bottom: 16px;
   color: #0b0c0d;
@@ -35,8 +30,6 @@ export const SubtituloProjetos = styled.h6`
   font-weight: 500;
   opacity: 0.6;
 `
-
-//Estilo do campo de busca - Mobile
 export const CampoBuscarTags = styled.input`
   align-self: stretch;
   margin-bottom: 40px;
@@ -65,74 +58,77 @@ export const CampoBuscarTags = styled.input`
     width: 520px;
   }
 `
-
-//Container projetos - Mobile
-export const ListaProjetos = styled.ul`
+export const ListaProjetos = styled.div`
   position: relative;
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   gap: 24px;
   padding: 0;
+  width: 312px;
+  height: 258px;
+  justify-content: space-between;
 
   //Tablet
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    flex-direction: row;
-
+    justify-content: flex-start;
+    width: 389px;
+    height: 298px;
+    flex-wrap: nowrap;
   }
 
   //Desktop
   @media screen and (min-width: 1024px) {
-    flex-direction: row;
+    justify-content: flex-start;
+    width: 389px;
+    height: 258px;
+    flex-wrap: nowrap;
   }
-`
+`;
 
-export const ContainerProjeto = styled.li`
+export const ContainerProjeto = styled.div`
   position: relative;
-  display: flex;
   width: 312px;
   height: 258px;
   background-color: #e6e9f2;
   border-radius: 4px;
   border: none;
-  flex-direction: row;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 
-  //Desktop
-  @media screen and (min-width: 1024px) and (max-width: 1279px){
-    width: 100vw;
-    width: 300px;
-    height: 200px;
-  }
-
-  @media screen and (min-width: 1280px){
-    width: 100vw;
+  @media screen and (min-width: 768px){
     width: 390px;
-    height: 260px;
+    height: 300px;
+
   }
-`
+`;
 
 //Estilo botão projeto - Mobile
 export const BotaoProjeto = styled.button`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  z-index: 0;
+  width: 312px;
+  height: 258px;
   border: none;
   cursor: pointer;
   background-color: transparent;
 
-  //Tablet
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    &::before {
-      margin: 155px 40px 0 30px;
-    }
-  }
-  //Desktop
   @media screen and (min-width: 1024px) {
-    &::before {
-      margin: 155px 40px 0 45px;
-    }
+    width: 390px;
+    height: 258px;
   }
+`;
+
+export const InfosProject = styled.div`
+  margin-top: 340px;
+  //background-color: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 384px;
+  padding: 5px 10px;
 `
 
 //Estilo do p 1 do botão
@@ -164,6 +160,7 @@ export const StyledBodyText1 = styled.p`
 
 //Estilo do botão de lápis para dropdown:
 export const BotaoLapis = styled.img`
+  cursor:pointer;
   position: absolute;
   z-index: 1;
   top: 4%;
@@ -177,7 +174,6 @@ export const BotaoLapis = styled.img`
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
 `
 
-//Estilo do dropdown:
 export const EditDeleteDropdown = styled.div`
   position: absolute;
   top: 50px;
@@ -188,7 +184,7 @@ export const EditDeleteDropdown = styled.div`
   background-color: white;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);
 
-  & ::before {
+  &::before {
     content: '';
     position: absolute;
     top: -0.3rem;
@@ -209,26 +205,23 @@ export const EditDeleteDropdown = styled.div`
   }
 `
 
-export const StyledUl = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-`
-
-export const StyledLi = styled.li`
+export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   padding: 4px 0 6px 20px;
   justify-content: space-between;
+  width: 180px;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+
   &:hover {
     background-color: #ffeecc;
-    cursor: pointer;
   }
 `
-
 /*Conteudo do container vazio */
 export const TextDiv = styled.div`
   display: flex;
@@ -262,3 +255,6 @@ export const StyledBodyTextP = styled.p`
   font-weight: 400;
   text-align: left;
 `
+
+
+

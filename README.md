@@ -78,7 +78,7 @@ npm run dev
 ---- Graziela Felix ----</a>
 
 <br>
-<a href="https://github.com/tiemyz)"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/4be2d6ce-d093-4ace-9a16-b26fe6d7aa20" height="86px">
+<a href="https://github.com/tiemyz"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/4be2d6ce-d093-4ace-9a16-b26fe6d7aa20" height="86px">
 
 ---- Isaballa Tiemy ----</a>
 

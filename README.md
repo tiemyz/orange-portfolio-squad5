@@ -1,4 +1,17 @@
 # Orange Portfólio - SQUAD 5
+<div style="text-align: center;">
+<img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/d42129bf-dc8f-421d-a68f-4199b1500109" width="100px">
+</div>
+
+> <em> Somos o Squad 5 e esse é o nosso Orange Portfólio! Uma plataforma que permite aos usuários cadastrar e exibir projetos desenvolvidos.</em>
+
+
+### 🍊 Hackathon Orange Juice:
+Este projeto foi uma realização do Hackthon do Programa de Formação da Orange Juice (acrescetar link).
+
+### 🖥️ [Confira o site](https://orange-portfolio-squad5.vercel.app/)
+
+
 
 ## 🔧 Stacks utilizadas
 
@@ -13,7 +26,4 @@
 
 - ![Node.js](https://img.shields.io/badge/-Node.js-ff5522?style=flat&logo=node.js)
 - ![Firebase](https://img.shields.io/badge/-Firebase-ff5522?style=flat&logo=firebase)
-  Comandos para rodar ao clonar o repositório:
-
-- npm install (baixar a node modules)
-- npm run dev (para rodar o projeto)
+  

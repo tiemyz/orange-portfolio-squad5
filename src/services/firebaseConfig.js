@@ -1,4 +1,3 @@
-// Importe as funções necessárias do Firebase
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -14,13 +13,10 @@ const firebaseConfig = {
   measurementId: "G-ZN7KKLQ6V7"
 };
 
-// Inicializar o Firebase
 const app = initializeApp(firebaseConfig);
 
-// Criar instâncias dos serviços
 const auth = getAuth(app);
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 const storage = getStorage(app);  
-// Exportar as instâncias dos serviços para uso em outros lugares do seu aplicativo
-export { app, auth, db, storage, createUserWithEmailAndPassword, signInWithPopup, googleProvider};
+export { app, auth, db, storage, createUserWithEmailAndPassword, signInWithPopup, googleProvider };

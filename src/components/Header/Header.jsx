@@ -92,7 +92,7 @@ function Header () {
 
         <Perfil className="perfil">
           <ImagemPerfil
-            ClassName="img-perfil"
+            className="img-perfil"
             src={ProfileImg}
             alt="Foto de perfil"
           ></ImagemPerfil>

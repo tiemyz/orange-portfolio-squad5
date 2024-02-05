@@ -5,7 +5,8 @@ export const PageContainer = styled.div`
     width: 100vw;
     display: flex;
     justify-content: space-between;
-`
+`;
+
 export const DivImg = styled.div`
     width: 30%;
     height: 100%;
@@ -14,22 +15,32 @@ export const DivImg = styled.div`
     justify-content: center;
     overflow: hidden; 
 
-    @media screen and (max-width: 1020px) {
+    @media screen and (max-width: 1400px) {
+        width: 40%;
+    }
+
+    @media screen and (max-width: 1120px) {
         display: none;
     }
-`
+`;
+
 export const DivForm = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 70%;
 
-    @media screen and (max-width: 1020px) {
-        width: 1000%;
+    @media screen and (max-width: 1400px) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: 1120px) {
+        width: 100%;
     }  
-`
+`;
+
 export const SideImg = styled.img`
     width: 100%;
     height: 100%;
     object-fit: fit;
-`
+`;

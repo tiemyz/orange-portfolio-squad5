@@ -4,13 +4,17 @@
 <img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/d42129bf-dc8f-421d-a68f-4199b1500109" width="100px">
 </div>
 <em> Somos o Squad 5 e esse é o nosso Orange Portfólio! Uma plataforma que permite aos usuários cadastrar e exibir projetos desenvolvidos.</em>
-
 </br>
+</br>
+</br>
+
 
 > <h4>🍊 Hackathon Orange Juice:</h4>
 > Este projeto foi uma realização do Hackthon do Programa de Formação da <a href="https://tech.orangejuice.com.br/orangejuice">Orange Juice</a>.
+</br>
 
 ### 🖥️ [Confira o site](https://orange-portfolio-squad5.vercel.app/)
+</br>
 
 ## 🖼️ Screenshots
 <h4>DESKTOP</h4>

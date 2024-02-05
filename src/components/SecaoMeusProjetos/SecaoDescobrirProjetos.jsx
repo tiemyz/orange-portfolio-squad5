@@ -14,7 +14,7 @@ import {
   StyledBodyTextP,
   ContainerProjetoDescobrir,
   InfosProjectDescobrir } from './SecaoMeusProjetos.styles'
-import Project1 from '../../assets/images/image 1.png';
+import Project1 from '../../assets/images/Image 1.png';
 import Project2 from '../../assets/images/image 4.png';
 import Project3 from '../../assets/images/image 3.png';
 import Project4 from '../../assets/images/image 6.png';

@@ -21,8 +21,6 @@ import AddProject from '../AddProjectModal/AddProject';
 import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../services/firebaseConfig';
 import { getUserNameById } from '../../services/firebaseFirestore';
-// import { ChipRender } from '../Chip/ChipRender';
-import ModalExcluir from '../ModalExcluir/ModalExcluir';
 import ChipRender from '../Chip/ChipRender';
 
 function SecaoMeusProjetos() {
@@ -140,7 +138,6 @@ function SecaoMeusProjetos() {
                     </div>
 
                     <div>
-                      {/* <StyledBodyTextP>{projectData.tags}</StyledBodyTextP> */}
                       <ChipRender tags={projectData.tags}></ChipRender>
                     </div>
                   </InfosProject>

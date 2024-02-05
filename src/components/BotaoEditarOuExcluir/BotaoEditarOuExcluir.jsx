@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { EditDeleteDropdown, StyledButton } from '../SecaoMeusProjetos/SecaoMeusProjetos.styles';
 import ModalExcluir from '../ModalExcluir/ModalExcluir';
+import ModalExcluirPopUp from '../ModalExcluir/ModalExcluirPopUp';
 
-function BotaoEditarOuExcluir({ onEditar, onExcluir }) {
+function BotaoEditarOuExcluir({ onEditar, onExcluir, onCloseExcluirPopUp  }) {
   const [showExcluirModal, setShowExcluirModal] = useState(false);
+  const [showExcluirPopUp, setShowExcluirPopUp] = useState(false);
 
   const handleExcluirClick = () => {
     setShowExcluirModal(true);
@@ -11,8 +13,8 @@ function BotaoEditarOuExcluir({ onEditar, onExcluir }) {
 
   const handleExcluirConfirm = () => {
     onExcluir();
-
     setShowExcluirModal(false);
+    setShowExcluirPopUp(true);
   };
 
   const handleExcluirCancel = () => {
@@ -30,6 +32,15 @@ function BotaoEditarOuExcluir({ onEditar, onExcluir }) {
         <ModalExcluir
           onConfirm={handleExcluirConfirm}
           onCancel={handleExcluirCancel}
+        />
+      )}
+
+      {showExcluirPopUp && (
+        <ModalExcluirPopUp
+          onClose={() => {
+            setShowExcluirPopUp(false);
+            onCloseExcluirPopUp();
+          }}
         />
       )}
     </>

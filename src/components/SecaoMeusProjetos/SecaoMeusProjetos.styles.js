@@ -290,5 +290,26 @@ export const DescobrirH4 = styled.h4`
     padding: 0px 268px 0px 268px;
     font-size: 34px;
   }
+`;
 
+export const ProjectsImg = styled.img`
+  width: 320px;
+  height: 256px;
+
+  @media screen and (min-width: 768px){
+    width: 389px;
+    height: 298px;
+  }
+`;
+
+export const ContainerProjetoDescobrir = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+`;
+
+export const InfosProjectDescobrir = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

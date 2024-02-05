@@ -71,17 +71,15 @@ export const ListaProjetos = styled.div`
   //Tablet
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     justify-content: flex-start;
-    width: 389px;
+    width: 100%;
     height: 298px;
-    flex-wrap: nowrap;
   }
 
   //Desktop
   @media screen and (min-width: 1024px) {
     justify-content: flex-start;
-    width: 389px;
+    width: 100%;
     height: 258px;
-    flex-wrap: nowrap;
   }
 `;
 
@@ -92,7 +90,6 @@ export const ContainerProjeto = styled.div`
   background-color: #e6e9f2;
   border-radius: 4px;
   border: none;
-  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,7 +98,6 @@ export const ContainerProjeto = styled.div`
   @media screen and (min-width: 768px){
     width: 390px;
     height: 300px;
-
   }
 `;
 

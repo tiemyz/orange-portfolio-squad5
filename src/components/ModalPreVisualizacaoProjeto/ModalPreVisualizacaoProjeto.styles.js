@@ -2,20 +2,21 @@ import styled from "styled-components";
 
 /*Background do modal */
 export const BackgroundPreVisualizacao = styled.div`
-    display: inline-flex;
-    position: relative;
+display: inline-flex;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
-    
+    overflow: auto;
+    top: 0;
 `;
 
 export const ContentPreVisualizacao = styled.div`
     width: 1042px;
     height: auto;
-    margin: 134px 119px 28px 119px;
+    margin: 500px 119px 28px 119px;
     padding: 24px;
     display: inline-flex;
     flex-direction: column;
@@ -32,6 +33,7 @@ export const ContentPreVisualizacao = styled.div`
     }
 
     @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin: 400px 119px 28px 119px;
         width: 80%;
     }
 `;

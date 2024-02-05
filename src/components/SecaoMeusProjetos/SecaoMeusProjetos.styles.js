@@ -62,17 +62,20 @@ export const ListaProjetos = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 56px;
   padding: 0;
   width: 312px;
   height: 258px;
   justify-content: space-between;
 
   //Tablet
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  @media screen and (min-width: 767px) and (max-width: 1024px) {
     justify-content: flex-start;
     width: 100%;
     height: 298px;
+    gap: 24px;
+    row-gap: 70px;
+    
   }
 
   //Desktop
@@ -80,6 +83,9 @@ export const ListaProjetos = styled.div`
     justify-content: flex-start;
     width: 100%;
     height: 258px;
+    gap: 24px;
+    row-gap: 70px;
+    padding-bottom: 50px;
   }
 `;
 
@@ -98,6 +104,10 @@ export const ContainerProjeto = styled.div`
   @media screen and (min-width: 768px){
     width: 390px;
     height: 300px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1200) {
+    
   }
 `;
 
@@ -118,13 +128,20 @@ export const BotaoProjeto = styled.button`
 `;
 
 export const InfosProject = styled.div`
-  margin-top: 340px;
+  margin-top: 310px;
   //background-color: green;
+  height: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 384px;
-  padding: 5px 10px;
+  /* width: 312px; */
+  width: 100%;
+  /* padding: 5px 10px; */
+
+  @media screen and (min-width: 767px) {
+    margin-top: 345px;
+    height: 39px;
+  }
 `
 
 //Estilo do p 1 do botão

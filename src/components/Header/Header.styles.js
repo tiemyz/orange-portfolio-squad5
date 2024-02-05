@@ -15,7 +15,7 @@ export const HeaderContent = styled.header`
   @media screen and (min-width: 1024px) {
     position: fixed;
     height: 73px;
-    z-index: 100;
+    z-index: 10;
   }
 `
 export const NavContainer = styled.nav`

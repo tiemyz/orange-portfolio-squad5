@@ -11,6 +11,7 @@ export const ModalBackground = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 2;
+  overflow: auto;
 
   @media screen and (min-width: 1024px) {
     height: 100vh;
@@ -26,11 +27,19 @@ export const AddProjectContainer = styled.div`
   padding: 24px 16px;
   row-gap: 16px;
   flex-direction: column; 
+  margin-top: 500px;
+  align-items: center;
+  
+  @media screen and (min-width: 768px) {
+    width: 624px;
+  }
+
 
   @media screen and (min-width: 1024px) {
     height: 522px;
     width: 890px;
     padding: 24px 32px;
+    margin-top: 155px;
   }
 `;
 
@@ -50,7 +59,7 @@ export const DivBotaoForm = styled.div`
 	height: 671px;
   width: 280px;
   column-gap: 24px;
-	width: 826px;
+  width: auto;
   row-gap: 16px;
 	
   @media screen and (min-width: 1024px) {
@@ -63,7 +72,7 @@ export const DivH3Img = styled.div`
 	display: flex;
   flex-direction: column;
 	height: 324px;  
-	width: 280px; 
+  width: 100%;
   row-gap: 16px;
 	cursor: pointer;
 
@@ -115,6 +124,11 @@ export const DivForm = styled.div`
 	height: 304px; 
 	width: 280px; 
 
+  @media screen and (min-width: 768px) {
+    width: 413px;
+    height: 336px;
+  }
+
   @media screen and (min-width: 1024px) {
     width: 413px;
     height: 336px;
@@ -142,6 +156,19 @@ export const DivFormInput = styled.div`
 		padding: 10px 0 10px 12px;
 		height: 88px;
     }
+
+  @media screen and (min-width: 768px) {
+    & input{
+      width: 100%;
+    }
+    & textarea {
+        width: 100%;
+        height: 120px;
+    }
+    
+    
+  }
+
 
   @media screen and (min-width: 1024px) {
       & input {
@@ -175,6 +202,7 @@ export const DivBotoes = styled.div`
 
 export const UploadImageDiv = styled.div`
   position: absolute;
+  width: 100%;
   top: -77px;
   left: 0;
 
@@ -185,10 +213,16 @@ export const UploadImageDiv = styled.div`
 `
 export const UploadImage = styled.img`
   height: 270px;
-  width: 280px;
+  width: 100%;
   border-radius: 4px;
 
+  @media screen and (min-width: 768px) {
+    margin-top: -16px;
+    height: 286px;
+
+  }
   @media screen and (min-width: 1024px) {
+    margin-top: 0;
     height: 307px;
     width: 388px;
   }

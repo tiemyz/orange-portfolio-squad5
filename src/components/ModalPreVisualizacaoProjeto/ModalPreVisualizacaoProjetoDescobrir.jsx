@@ -18,7 +18,7 @@ import {
   UsuarioContainer
 } from './ModalPreVisualizacaoProjeto.styles';
 import VectorImg from '../../assets/images/Vector.png';
-import Project1 from '../../assets/images/image 1.png';
+import Project1 from '../../assets/images/Image 1.png';
 import User1 from '../../assets/images/Vertical container.png';
 import Chip from '../Chip/Chip';
 

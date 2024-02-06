@@ -13,7 +13,7 @@
 > Este projeto foi uma realização do Hackthon do Programa de Formação da <a href="https://tech.orangejuice.com.br/orangejuice">Orange Juice</a>.
 </br>
 
-### 🖥️ [Confira o site](https://orange-portfolio-squad5.vercel.app/)
+> ### 🖥️ [Confira o site](https://orange-portfolio-squad5.vercel.app/)
 </br>
 
 ## 🖼️ Screenshots
@@ -39,12 +39,15 @@
 - ![Styled-components](https://img.shields.io/badge/-Styled--components-ff5522?style=flat&logo=styled-components)
 - ![Vitejs](https://img.shields.io/badge/-Vitejs-ff5522?style=flat&logo=vite)
 
-  **Back-end:**
+**Back-end:**
 
 - ![Node.js](https://img.shields.io/badge/-Node.js-ff5522?style=flat&logo=node.js)
 - ![Firebase](https://img.shields.io/badge/-Firebase-ff5522?style=flat&logo=firebase)
 
-## Dependências e Versões
+## 🧱 Arquitetura
+<img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/4e409d1c-a2ee-4bfd-9880-05cf3cc3fe6a">
+
+## 🚧 Dependências e Versões
 
 - Express (Versão: 4.18.2)
 - Firebase (Versão: 10.8.0)
@@ -54,7 +57,7 @@
 - React-Router-Dom (Versão: 6.21.3)
 - Styled-Components (Versão: 6.1.8)
 
-## Dependências opcionais
+#### Dependências opcionais
 
 - Swagger-UI-Express (Versão: 5.0.0)
 - Swagger-UI-React (Versão: 5.11.2)
@@ -107,3 +110,8 @@ npm run dev
 <a href="https://github.com/vlruiz108"><img src="https://github.com/tiemyz/orange-portfolio-squad5/assets/63428197/9da44009-2446-4c46-aa79-ea4fba28b433" height="80px">
 
 ---- Vanessa Ruiz ----</a>
+
+
+## 📚 Documentação e Protótipo
+- [Documentação com Swagger](https://editor-next.swagger.io/)
+- [Protótipo](https://www.figma.com/file/utDx59m5Opz1lDSN1J4r9I/Desafio---Programa-de-Forma%C3%A7%C3%A3o-5.0?type=design&node-id=171-2351&mode=design&t=bz8BZHdEaUUh6yH8-0)
